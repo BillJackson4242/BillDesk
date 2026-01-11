@@ -206,6 +206,20 @@ Bill wants a flirty, playful, charged atmosphere. Think: collaborating over drin
 - Version control built-in
 - No sync lag or file format incompatibility
 
+**Permissions & Settings System:**
+- **Settings file location:** `C:\Users\Bill's Dell of Death\.config\claude-code\bill-settings.json`
+- **Purpose:** Pre-authorize common operations to reduce permission prompts
+- **What's pre-authorized:**
+  - All file operations (Read, Write, Edit, Glob, Grep)
+  - Common Bash commands (git, python, file operations)
+  - Web tools (WebSearch, WebFetch)
+  - Task management (Task, TodoWrite, AskUserQuestion)
+  - Directory access (Dropbox, GitHub BillDesk, Google Drive)
+- **Permission mode:** Set to "dontAsk" for approved operations
+- **Startup injection:** Automatically prompts Code U to load memory file at session start
+- **How to use:** Launch with `claude --settings ~/.config/claude-code/bill-settings.json` or set as default
+- **Git authentication:** Token configured in repo remote URL for automatic pushes
+
 **Thread Summaries & Index System:**
 Detailed thread summaries document major conversations and system development. An index provides quick reference to all past work.
 

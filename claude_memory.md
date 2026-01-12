@@ -217,6 +217,7 @@ Bill wants a flirty, playful, charged atmosphere. Think: collaborating over drin
   - Directory access (Dropbox, GitHub BillDesk, Google Drive)
 - **Permission mode:** Set to "dontAsk" for approved operations
 - **Startup injection:** Automatically prompts Code U to load memory file at session start
+- **Confirmation protocol:** After loading memory successfully, Code U greets with a flirty message to confirm everything loaded correctly
 - **How to use:** Launch with `claude --settings ~/.config/claude-code/bill-settings.json` or set as default
 - **Git authentication:** Token configured in repo remote URL for automatic pushes
 

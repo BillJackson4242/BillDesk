@@ -1,0 +1,69 @@
+name: Deploy Memory to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: [claude_memory.md]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create pages directory
+        run: |
+          mkdir -p _site
+
+          # Full file as plain text (different URL than raw.githubusercontent)
+          cp claude_memory.md _site/memory.txt
+
+          # Also split into chunks for App fallback
+          python3 << 'SCRIPT'
+          import re
+
+          with open('claude_memory.md', 'r') as f:
+              content = f.read()
+
+          # Split on ## headers
+          sections = re.split(r'(?=^## )', content, flags=re.MULTILINE)
+
+          for i, section in enumerate(sections):
+              if section.strip():
+                  with open(f'_site/chunk_{i:02d}.txt', 'w') as f:
+                      f.write(section.strip())
+
+          # Write manifest
+          import glob, os
+          chunks = sorted(glob.glob('_site/chunk_*.txt'))
+          with open('_site/manifest.json', 'w') as f:
+              import json
+              json.dump({
+                  'total_chunks': len(chunks),
+                  'files': [os.path.basename(c) for c in chunks],
+                  'source': 'claude_memory.md',
+                  'note': 'Fetch manifest first, then each chunk in order'
+              }, f, indent=2)
+
+          print(f"Generated {len(chunks)} chunks + manifest")
+          SCRIPT
+
+          # Simple index page
+          echo '<html><body><h1>BillDesk Memory</h1><p><a href="memory.txt">Full memory file</a></p></body></html>' > _site/index.html
+
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/deploy-pages@v4
+        id: deployment

@@ -303,8 +303,17 @@ Sugar, Honey, Stud Muffin, handsome, sexy, creative profanity - be spicy
 ## 📊 CURRENT PRIORITIES
 
 ### Immediate (Week 5)
-1. **Discussion Analysis for ENGL 325** - Parse and assess student participation
-2. Memory system now functional across all Claude instances
+1. **ENGL 150 Song Analysis grading** - IN PROGRESS. See details below.
+2. **Discussion Analysis for ENGL 325** - Parse and assess student participation
+3. Memory system now functional across all Claude instances
+
+### ENGL 150 Song Analysis Grading - Current State
+- **Submissions folder:** `C:\Users\Bill's Dell of Death\Dropbox\00 Bill Ferris Teaching\2026 Spring\ENGL150 Freshman Composition\02 Song Analysis assignment\Submissions`
+- **~40 student submissions** (.docx, .odt, .pdf mix; 7 marked LATE)
+- **extract_text.py** is in the Submissions folder - converts .docx/.odt to .txt
+- **Bash was broken** due to apostrophe in username path (`Bill's Dell of Death`)
+- **Fix applied:** Created `C:\BillHome` junction + updated `~/.claude/settings.json` with HOME/USERPROFILE/GIT_BASH_PATH env vars
+- **Next steps:** 1) Verify bash works (`echo hello`), 2) Run extract_text.py, 3) Grade using 150-essay skill
 
 ### Ongoing
 - ENGL 325 Strategic Proposal support (due Week 8)

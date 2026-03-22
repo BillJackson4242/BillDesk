@@ -130,13 +130,28 @@ Two-layer architecture in `~/.claude/commands/`:
 ## Technical Infrastructure
 
 **Memory system:**
-- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — App Claude fetches this
-- Local `claude_memory.md` — Code Claude reads via CLAUDE.md @include
+- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances
+- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; auto-pushes to Pages on every edit
 - Local `~/.claude/projects/.../memory/` — Code Claude auto-memory (feedback.md, lessons.md)
 
 **Access by instance:**
-- App/iOS Claude: Fetch from GitHub Pages URL
-- Code Claude: Read local file via CLAUDE.md; also auto-memory typed files
+- App Claude / CoWork Claude / Chat: Fetch from GitHub Pages URL (read-only)
+- Code Claude: Read and write local file; auto-push hook keeps Pages in sync within ~60 sec
+
+**Writing back to memory (App/CoWork/Chat Claude):**
+Save a .txt file to: `Dropbox\00 AI\Claude\Enhanced_Memory_System\memory_inbox\`
+Code Claude scans this inbox at every session start, integrates updates into claude_memory.md, pushes to Pages, archives the file to `_processed\`.
+
+Update file format:
+```
+MEMORY UPDATE
+DATE: YYYY-MM-DD
+SOURCE: App Claude / CoWork Claude / Bill
+TYPE: feedback | user | project | reference
+SECTION: [section name in claude_memory.md]
+
+[What to add or change -- be specific]
+```
 
 **Key paths (bash-safe):**
 - Teaching root: `/c/Users/BillsDellOfDeath/Dropbox/00 Bill Ferris Teaching/2026 Spring/`

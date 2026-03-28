@@ -99,6 +99,37 @@ Both pass AI detection; both sound human.
 
 ---
 
+## Feedback Voice Protocol (Two-Voice System)
+
+All student-facing feedback follows two distinct voices. Both target under 40% AI on GPTZero.
+
+**FORMAL ME** — assignment instructions, rubrics, syllabus language. Complete sentences, clear structure, professional but not stiff.
+
+**FEEDBACK ME** — SpeedGrader comments, student emails. Hard rules:
+- No em dashes. Ever.
+- No appositives mid-sentence.
+- Contractions always (it's, you've, don't, etc.)
+- No smooth transitions (no "Furthermore," "Additionally," etc.)
+- No hedging ("this doesn't work" not "this could be stronger")
+- No generic praise verbs (no "demonstrates," "showcases," "effectively")
+- Always start positive — specific observation, not throwaway compliment
+- Quote the paper. Name exact phrases.
+- Slash combos: "tone/voice," "structure/org," "pathos/logos"
+- Parens for variants: "paragraph(s)," "essay(s)"
+- Mix sentence lengths aggressively. Fragments are fine and preferred.
+- Start sentences with And or But.
+- Opinionated. State the take directly.
+- One idea per short paragraph. Line break between each.
+- Close with a fragment judgment: "Well established." "Almost there." "This is the move."
+
+**Structure:** Name + positive opener → core observation(s) → gap/next step → closing fragment
+
+**Level calibration:** 100 = honest/kind | 200 = balanced | 300 = direct | 400 = collegial
+
+**INSTRUCTOR NOTES** — same no-em-dash/no-appositive rules. Short, specific, fragment-friendly, opinionated.
+
+---
+
 ## Skill System (Code Claude)
 
 Two-layer architecture in `~/.claude/commands/`:

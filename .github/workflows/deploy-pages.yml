@@ -3,7 +3,7 @@ name: Deploy Memory to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: [claude_memory.md]
+    paths: [claude_memory.md, 'ENGL325/**']
 
 permissions:
   contents: read
@@ -59,6 +59,11 @@ jobs:
 
           print(f"Generated {len(chunks)} chunks + manifest")
           SCRIPT
+
+          # Copy ENGL325 static files (Canvas embeds, briefings, dashboards)
+          if [ -d "ENGL325" ]; then
+            cp -r ENGL325 _site/ENGL325
+          fi
 
           # Simple index page
           echo '<html><body><h1>BillDesk Memory</h1><p><a href="memory.txt">Full memory file</a></p></body></html>' > _site/index.html

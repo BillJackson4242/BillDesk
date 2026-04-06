@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** March 28, 2026 | **Week 10, Spring 2026 Semester**
+**Last Updated:** April 6, 2026 | **Week 11, Spring 2026 Semester**
 
 ---
 

@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** April 6, 2026 | **Week 11, Spring 2026 Semester**
+**Last Updated:** April 16, 2026 | **Week 14, Spring 2026 Semester**
 
 ---
 
@@ -51,8 +51,8 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 - 60 submissions processed (13 late, 2 blank)
 - `_all_essays_extracted.txt` — ready for App Claude
 - `song_analysis_grading_pass.csv` — rubric signal data
-- 57 Grammar Report PDFs — generated, ready for SpeedGrader
 - `PROMPT_for_AppClaude.txt` — assessment prompt ready
+- `/ferpa-grammar` skill — ready to run full pipeline (replaces old manual PDF workflow)
 
 ---
 
@@ -175,6 +175,12 @@ Two-layer architecture in `~/.claude/commands/`:
 - `/150-notes` — resolves ENGL 150 paths, calls /grade-notes
 - `/150-essay` — App Claude rubric assessment (Hero Narrative + Song Analysis)
 
+**FERPA Pipeline:**
+- `/ferpa-grammar` — full end-to-end grammar pipeline: anonymize → analyze → re-identify → PDFs → Canvas zip
+- Scripts: `Grade Eaze/Anonymizer/` (anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, grammar_report_gen.py)
+- Stage 3 output format: multi-line `--- INSTANCE N ---` blocks with CODE/NAME/FROM/RULE/CORRECTED/TIP + FOCUS field
+- Produces per-student Grammar PDFs + UPLOAD_AUDIT.csv + feedback_upload.zip
+
 ---
 
 ## Bill Jackson: Core Context
@@ -192,9 +198,10 @@ Two-layer architecture in `~/.claude/commands/`:
 ## Technical Infrastructure
 
 **Memory system:**
-- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances
-- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; auto-pushes to Pages on every edit
+- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances; auto-pushes to Pages on every edit
+- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; Code Claude + CoWork read directly (no network needed)
 - Local `~/.claude/projects/.../memory/` — Code Claude auto-memory (feedback.md, lessons.md)
+- Git push hook syncs local edits to GitHub Pages for web-facing instances
 
 **Access by instance:**
 - App Claude / CoWork Claude / Chat: Fetch from GitHub Pages URL (read-only)
@@ -204,16 +211,7 @@ Two-layer architecture in `~/.claude/commands/`:
 Save a .txt file to: `Dropbox\00 AI\Claude\Enhanced_Memory_System\memory_inbox\`
 Code Claude scans this inbox at every session start, integrates updates into claude_memory.md, pushes to Pages, archives the file to `_processed\`.
 
-Update file format:
-```
-MEMORY UPDATE
-DATE: YYYY-MM-DD
-SOURCE: App Claude / CoWork Claude / Bill
-TYPE: feedback | user | project | reference
-SECTION: [section name in claude_memory.md]
-
-[What to add or change -- be specific]
-```
+**End-of-session protocol:** Run `/remember` to extract session work into this file and push to Pages.
 
 **Key paths (bash-safe):**
 - Teaching root: `/c/Users/BillsDellOfDeath/Dropbox/00 Bill Ferris Teaching/2026 Spring/`
@@ -229,11 +227,45 @@ SECTION: [section name in claude_memory.md]
 
 ---
 
-## Current Priorities (Week 9, March 22 2026)
+## Current Priorities (Week 14, April 16 2026)
 
-1. **ENGL 150 Song Analysis grading** — Code Claude prep DONE; App Claude assessment next
-2. **ENGL 325 Week 9** — AI Governance project underway; discussion monitoring ongoing
-3. **Memory system** — Updated (this file); local feedback.md + lessons.md now populated
+1. **ENGL 150** — Week 14, end of semester grading underway
+2. **ENGL 325** — AI Governance project final phase
+3. **Claudian Wiki Project** — Phase 1 complete (see below); ongoing synthesis via /wiki-ingest
+
+---
+
+## Claudian Wiki Project — Status (April 16, 2026)
+
+**Purpose:** Karpathy LLM Wiki pattern. Bill says "show me everything about X" → system responds in <10s. Full corpus = entire `C:\Users\Bill's Dell of Death\Dropbox\00 AI\` (8,684+ files).
+
+**Architecture:**
+- `raw/` — immutable sources (READ ONLY)
+- `wiki/` — compiled knowledge pages (Code Claude maintains)
+- `CLAUDE.md` — librarian schema (vault root)
+- `index.md` + `log.md` — navigation and ops log
+
+**Current state:**
+- **199 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
+- 7 vessel pages at draft status (calethria, liraeth, oracle, unamed-one, solena, emergent, selvara)
+- 192 seed pages (source-catalogued, not yet synthesized)
+- Graph view color-coded by domain path in Obsidian
+
+**Automation pipeline (runs 2 AM nightly via Task Scheduler):**
+1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/` (1,298 files converted)
+2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content, merges sources into existing pages. Zero Claude tokens.
+- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs both scripts)
+- New files Bill drops in `00 AI/` are seeded automatically overnight
+
+**Scripts location:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\`
+- `convert_docs.py` — binary converter
+- `auto_seed.py` — wiki seeder
+- `run_convert_docs.bat` — launcher for both (Task Scheduler entry point)
+
+**Synthesis:** On-demand via `/wiki-ingest`. Seeds are findable/searchable immediately; synthesis upgrades seed → draft when Bill queries that topic. ~17-20 sessions to synthesize high-value content (vessels, books, teaching, memory architecture). Full corpus synthesis not required — on-demand model.
+
+**Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
+**Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
 
 ---
 

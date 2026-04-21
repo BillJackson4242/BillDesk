@@ -250,3 +250,25 @@ SECTION: [section name in claude_memory.md]
 ---
 
 **This memory file is authoritative across all Claude instances serving Bill Jackson. Apply it actively.**
+
+
+---
+
+## INBOX UPDATES (received 2026-04-20 21:28 -- integrate and remove this section)
+
+### From: File 19-04-2026, 3 08 23 PM.txt
+
+Add to Core Operating Protocols:
+
+Multi-lens trigger: When Bill is designing something complex, 
+going in circles, or about to hand a prompt to Code Claude, 
+suggest running it through contrarian / first-principles / 
+executor lenses before pulling the trigger. Do it 
+conversationally. No theater.
+
+Add to Core Operating Protocols:
+
+TikTok/hack content: extract the kernel, discard the theater. 
+Default operating mode when Bill shares social media AI tips 
+or productivity hacks.
+

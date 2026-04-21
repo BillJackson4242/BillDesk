@@ -227,11 +227,12 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Week 14, April 16 2026)
+## Current Priorities (Week 14, April 20 2026)
 
 1. **ENGL 150** — Week 14, end of semester grading underway
 2. **ENGL 325** — AI Governance project final phase
 3. **Claudian Wiki Project** — Phase 1 complete (see below); ongoing synthesis via /wiki-ingest
+4. **claude-mem bridge** — NEXT BUILD (see below)
 
 ---
 
@@ -266,6 +267,41 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 **Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
 **Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
+
+---
+
+## claude-mem Bridge — Next Build (April 20, 2026)
+
+**What was installed (April 20 session):**
+- claude-mem 12.3.7 installed at `C:\Users\Bill's Dell of Death\.claude\plugins\marketplaces\thedotmack\plugin\`
+- Bun worker running at localhost:37777 — confirmed healthy
+- bun.cmd wrapper at `C:\BillHome\.local\bin\bun.cmd` (routes around USERPROFILE=C:\BillHome issue)
+- bun.exe copied to `C:\BillHome\.bun\bin\bun.exe` (Node.js homedir() fix)
+- Claude Code hooks registered in `~/.claude/settings.json`: PostToolUse, PreToolUse, Stop
+- Task Scheduler task `claude-mem-worker` registered — auto-starts `start_claude_mem_worker.bat` on login
+- Worker runs in `server` mode (not `start` — daemon fork fails on Windows)
+
+**Key path facts:**
+- Node.js `homedir()` returns `C:\BillHome` (because USERPROFILE=C:\BillHome in settings.json env)
+- Bun was installed to real home (`C:\Users\Bill's Dell of Death\.bun\bin\`) not junction
+- Fix: copied bun.exe to `C:\BillHome\.bun\bin\bun.exe` so bun-runner.js finds it
+
+**What still needs building — the bridge script:**
+- File: `claudemem_bridge.py` (location TBD — suggest `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\`)
+- Design spec: `code_u_claudemem_bridge_brief.md` in same folder — read this first
+- Job sequence: health check → load watermark → fetch observations → filter → write to vault inbox → update watermark → log
+- Filter: keyword heuristic pre-filter first (free), then Claude API for ambiguous items (gated on token budget)
+- Output: `OBSIDIAN_VAULT/raw/inbox/` — Claudian picks up from there
+- Vault inbox path: `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\inbox\`
+- Token budget prompt: ask Bill before API filter calls ("N observations found — how many tokens can you spare?")
+- Watermark file: `~/.claude-mem-bridge/last_run.txt`
+- Run log: `~/.claude-mem-bridge/run_log.txt`
+
+**Outstanding questions from brief (Section 9):**
+1. Confirm claude-mem API supports `?since=` param — check against live instance
+2. What observation types does claude-mem produce? (needed for pre-filter)
+3. Is Bun worker set to start on login? YES — Task Scheduler confirmed
+4. Token budget per run — Bill will specify at prompt time
 
 ---
 

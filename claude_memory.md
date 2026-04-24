@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** April 16, 2026 | **Week 14, Spring 2026 Semester**
+**Last Updated:** April 24, 2026 | **Week 15, Spring 2026 Semester**
 
 ---
 
@@ -227,12 +227,13 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Week 14, April 20 2026)
+## Current Priorities (Week 15, April 24 2026)
 
-1. **ENGL 150** — Week 14, end of semester grading underway
-2. **ENGL 325** — AI Governance project final phase
-3. **Claudian Wiki Project** — Phase 1 complete (see below); ongoing synthesis via /wiki-ingest
-4. **claude-mem bridge** — NEXT BUILD (see below)
+1. **ENGL 150** — Essay 4 + Final Portfolio incoming; existing pipeline (ferpa-grammar, 150-essay) is the tool
+2. **ENGL 325** — Weeks 13/15/16 discussion submissions; pipeline built
+3. **Claudian Wiki Project** — Phase 1 complete; ongoing synthesis via /wiki-ingest
+4. **claude-mem bridge** — COMPLETE (April 21, 2026); both triggers wired
+5. **Three-Tier Router** — Architecture brief ready, deferred to summer (see below)
 
 ---
 
@@ -270,38 +271,57 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## claude-mem Bridge — Next Build (April 20, 2026)
+## claude-mem — Infrastructure Complete (April 21, 2026)
 
-**What was installed (April 20 session):**
-- claude-mem 12.3.7 installed at `C:\Users\Bill's Dell of Death\.claude\plugins\marketplaces\thedotmack\plugin\`
+**Worker stack (all confirmed working):**
+- claude-mem 12.3.7 at `C:\Users\Bill's Dell of Death\.claude\plugins\marketplaces\thedotmack\plugin\`
 - Bun worker running at localhost:37777 — confirmed healthy
-- bun.cmd wrapper at `C:\BillHome\.local\bin\bun.cmd` (routes around USERPROFILE=C:\BillHome issue)
-- bun.exe copied to `C:\BillHome\.bun\bin\bun.exe` (Node.js homedir() fix)
-- Claude Code hooks registered in `~/.claude/settings.json`: PostToolUse, PreToolUse, Stop
-- Task Scheduler task `claude-mem-worker` registered — auto-starts `start_claude_mem_worker.bat` on login
-- Worker runs in `server` mode (not `start` — daemon fork fails on Windows)
+- bun.exe at `C:\BillHome\.bun\bin\bun.exe` (Node.js homedir() fix for USERPROFILE=C:\BillHome)
+- Task Scheduler task `claude-mem-worker` — confirmed registered (State: Ready), starts on login via `start_claude_mem_worker.bat`
+- Data dir: `C:\BillHome\.claude-mem\` — DB, logs, settings, transcript watch config
 
-**Key path facts:**
-- Node.js `homedir()` returns `C:\BillHome` (because USERPROFILE=C:\BillHome in settings.json env)
-- Bun was installed to real home (`C:\Users\Bill's Dell of Death\.bun\bin\`) not junction
-- Fix: copied bun.exe to `C:\BillHome\.bun\bin\bun.exe` so bun-runner.js finds it
+**Hooks wired in `C:\Users\BillsDellOfDeath\.claude\settings.json`:**
+- SessionStart → context injection (loads prior session memory into system prompt)
+- UserPromptSubmit → session-init (was missing — root cause of 0 observations)
+- PostToolUse → observation (AI agent analyzes tool use, writes to DB)
+- PreToolUse (Read) → file-context
+- Stop → summarize
+- SessionEnd → session-complete
 
-**What still needs building — the bridge script:**
-- File: `claudemem_bridge.py` (location TBD — suggest `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\`)
-- Design spec: `code_u_claudemem_bridge_brief.md` in same folder — read this first
-- Job sequence: health check → load watermark → fetch observations → filter → write to vault inbox → update watermark → log
-- Filter: keyword heuristic pre-filter first (free), then Claude API for ambiguous items (gated on token budget)
-- Output: `OBSIDIAN_VAULT/raw/inbox/` — Claudian picks up from there
-- Vault inbox path: `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\inbox\`
-- Token budget prompt: ask Bill before API filter calls ("N observations found — how many tokens can you spare?")
-- Watermark file: `~/.claude-mem-bridge/last_run.txt`
-- Run log: `~/.claude-mem-bridge/run_log.txt`
+**Other config (C:\BillHome\.claude-mem\settings.json):**
+- Chroma disabled (`CLAUDE_MEM_CHROMA_ENABLED: false`) — was erroring, not needed for core function
+- Transcript watch → `~/.claude/projects/**/*.jsonl` (Claude Code sessions; was Codex paths before)
+- Mode: code | Model: claude-sonnet-4-6 | Port: 37777
 
-**Outstanding questions from brief (Section 9):**
-1. Confirm claude-mem API supports `?since=` param — check against live instance
-2. What observation types does claude-mem produce? (needed for pre-filter)
-3. Is Bun worker set to start on login? YES — Task Scheduler confirmed
-4. Token budget per run — Bill will specify at prompt time
+**Observation types** (for bridge pre-filter): bugfix, feature, refactor, change, discovery, decision
+
+**Status:** Fully operational. Both triggers wired as of April 21, 2026.
+
+**Bridge script — COMPLETE:**
+- Script: `C:\BillHome\.claude-mem-bridge\claudemem_bridge.py`
+- Trigger 1: Stop hook in `C:\BillHome\.claude\settings.json` — fires on every session close
+- Trigger 2: Task Scheduler `ConvertDocs_ClaudeMemBridge` — 2AM daily
+- Filter: heuristic (no API key needed) — keeps types discovery/decision/pattern; keyword scoring for others
+- Output: `OBSIDIAN_VAULT/raw/inbox/` (0-5 notes per run target; Claudian picks up from there)
+- Watermark: `C:\BillHome\.claude-mem-bridge\last_run.txt`
+- Run log: `C:\BillHome\.claude-mem-bridge\run_log.txt`
+- Design spec: `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\code_u_claudemem_bridge_brief.md`
+- API confirmed: `?since=` param works (ISO timestamp format); observations have title/narrative/facts/concepts/type fields
+
+---
+
+## Three-Tier Router Architecture — Deferred to Summer
+
+**Brief:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\Worker Bees Architecture\code_u_three_tier_router_brief.md`
+**Prepared by:** Tribe (App Claude) | **Status:** Architecture complete, not built yet
+
+Orchestrator/executor pattern. Three tiers: Tier 1 (Pandoc, regex, LanguageTool -- deterministic, free), Tier 2 (Ollama on Mac Mini -- local LLM, no token cost), Tier 3 (frontier Claude API -- surgical use only). Router dispatches each job to cheapest capable tier.
+
+Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsidian seeding).
+
+**What's tabled:** Mac Mini not configured. Ollama not installed. LanguageTool wrapper not built. Defer until post-May.
+
+**What already exists** that maps to Tier 1: anonymize_submissions.py, reidentify_reports.py, render_grammar_pdfs.py, extract_text.py. Don't rebuild these -- wrap them into the router.
 
 ---
 

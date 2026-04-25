@@ -238,6 +238,8 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 3. **Claudian Wiki Project** — Phase 1 complete; ongoing synthesis via /wiki-ingest
 4. **claude-mem bridge** — COMPLETE (April 21, 2026); both triggers wired
 5. **Three-Tier Router** — Architecture brief ready, deferred to summer (see below)
+6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Bill's read: strong on principle, light on data. Potential talk or essay.
+7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Authority earns the room; guide does the real work.
 
 ---
 

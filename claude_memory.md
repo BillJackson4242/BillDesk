@@ -233,11 +233,12 @@ SECTION: [section name in claude_memory.md]
 
 ---
 
-## Current Priorities (Week 9, March 22 2026)
+## Current Priorities (Week 11+, April 2026)
 
-1. **ENGL 150 Song Analysis grading** — Code Claude prep DONE; App Claude assessment next
-2. **ENGL 325 Week 9** — AI Governance project underway; discussion monitoring ongoing
-3. **Memory system** — Updated (this file); local feedback.md + lessons.md now populated
+1. **ENGL 150 Song Analysis grading** — rubric-assess pipeline complete; SpeedGrader work ongoing
+2. **ENGL 325 Governance Project** — WK11 graded; pipeline running
+3. **CCCC 2026 AI position response** — Bill is drafting a critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics); Bill's key tension: strong on principle, weak on data. Potential talk or essay.
+4. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Show up as authority to get in the room, then shift to guide to activate client thinking.
 
 ---
 

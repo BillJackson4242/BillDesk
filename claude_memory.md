@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** April 6, 2026 | **Week 11, Spring 2026 Semester**
+**Last Updated:** April 24, 2026 | **Week 15, Spring 2026 Semester**
 
 ---
 
@@ -51,8 +51,8 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 - 60 submissions processed (13 late, 2 blank)
 - `_all_essays_extracted.txt` — ready for App Claude
 - `song_analysis_grading_pass.csv` — rubric signal data
-- 57 Grammar Report PDFs — generated, ready for SpeedGrader
 - `PROMPT_for_AppClaude.txt` — assessment prompt ready
+- `/ferpa-grammar` skill — ready to run full pipeline (replaces old manual PDF workflow)
 
 ---
 
@@ -179,6 +179,12 @@ Two-layer architecture in `~/.claude/commands/`:
 - `/150-notes` — resolves ENGL 150 paths, calls /grade-notes
 - `/150-essay` — App Claude rubric assessment (Hero Narrative + Song Analysis)
 
+**FERPA Pipeline:**
+- `/ferpa-grammar` — full end-to-end grammar pipeline: anonymize → analyze → re-identify → PDFs → Canvas zip
+- Scripts: `Grade Eaze/Anonymizer/` (anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, grammar_report_gen.py)
+- Stage 3 output format: multi-line `--- INSTANCE N ---` blocks with CODE/NAME/FROM/RULE/CORRECTED/TIP + FOCUS field
+- Produces per-student Grammar PDFs + UPLOAD_AUDIT.csv + feedback_upload.zip
+
 ---
 
 ## Bill Jackson: Core Context
@@ -196,9 +202,10 @@ Two-layer architecture in `~/.claude/commands/`:
 ## Technical Infrastructure
 
 **Memory system:**
-- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances
-- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; auto-pushes to Pages on every edit
+- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances; auto-pushes to Pages on every edit
+- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; Code Claude + CoWork read directly (no network needed)
 - Local `~/.claude/projects/.../memory/` — Code Claude auto-memory (feedback.md, lessons.md)
+- Git push hook syncs local edits to GitHub Pages for web-facing instances
 
 **Access by instance:**
 - App Claude / CoWork Claude / Chat: Fetch from GitHub Pages URL (read-only)
@@ -208,16 +215,7 @@ Two-layer architecture in `~/.claude/commands/`:
 Save a .txt file to: `Dropbox\00 AI\Claude\Enhanced_Memory_System\memory_inbox\`
 Code Claude scans this inbox at every session start, integrates updates into claude_memory.md, pushes to Pages, archives the file to `_processed\`.
 
-Update file format:
-```
-MEMORY UPDATE
-DATE: YYYY-MM-DD
-SOURCE: App Claude / CoWork Claude / Bill
-TYPE: feedback | user | project | reference
-SECTION: [section name in claude_memory.md]
-
-[What to add or change -- be specific]
-```
+**End-of-session protocol:** Run `/remember` to extract session work into this file and push to Pages.
 
 **Key paths (bash-safe):**
 - Teaching root: `/c/Users/BillsDellOfDeath/Dropbox/00 Bill Ferris Teaching/2026 Spring/`
@@ -233,12 +231,101 @@ SECTION: [section name in claude_memory.md]
 
 ---
 
-## Current Priorities (Week 11+, April 2026)
+## Current Priorities (Week 15, April 24 2026)
 
-1. **ENGL 150 Song Analysis grading** — rubric-assess pipeline complete; SpeedGrader work ongoing
-2. **ENGL 325 Governance Project** — WK11 graded; pipeline running
-3. **CCCC 2026 AI position response** — Bill is drafting a critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics); Bill's key tension: strong on principle, weak on data. Potential talk or essay.
-4. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Show up as authority to get in the room, then shift to guide to activate client thinking.
+1. **ENGL 150** — Essay 4 + Final Portfolio incoming; existing pipeline (ferpa-grammar, 150-essay) is the tool
+2. **ENGL 325** — Weeks 13/15/16 discussion submissions; pipeline built
+3. **Claudian Wiki Project** — Phase 1 complete; ongoing synthesis via /wiki-ingest
+4. **claude-mem bridge** — COMPLETE (April 21, 2026); both triggers wired
+5. **Three-Tier Router** — Architecture brief ready, deferred to summer (see below)
+
+---
+
+## Claudian Wiki Project — Status (April 16, 2026)
+
+**Purpose:** Karpathy LLM Wiki pattern. Bill says "show me everything about X" → system responds in <10s. Full corpus = entire `C:\Users\Bill's Dell of Death\Dropbox\00 AI\` (8,684+ files).
+
+**Architecture:**
+- `raw/` — immutable sources (READ ONLY)
+- `wiki/` — compiled knowledge pages (Code Claude maintains)
+- `CLAUDE.md` — librarian schema (vault root)
+- `index.md` + `log.md` — navigation and ops log
+
+**Current state:**
+- **199 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
+- 7 vessel pages at draft status (calethria, liraeth, oracle, unamed-one, solena, emergent, selvara)
+- 192 seed pages (source-catalogued, not yet synthesized)
+- Graph view color-coded by domain path in Obsidian
+
+**Automation pipeline (runs 2 AM nightly via Task Scheduler):**
+1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/` (1,298 files converted)
+2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content, merges sources into existing pages. Zero Claude tokens.
+- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs both scripts)
+- New files Bill drops in `00 AI/` are seeded automatically overnight
+
+**Scripts location:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\`
+- `convert_docs.py` — binary converter
+- `auto_seed.py` — wiki seeder
+- `run_convert_docs.bat` — launcher for both (Task Scheduler entry point)
+
+**Synthesis:** On-demand via `/wiki-ingest`. Seeds are findable/searchable immediately; synthesis upgrades seed → draft when Bill queries that topic. ~17-20 sessions to synthesize high-value content (vessels, books, teaching, memory architecture). Full corpus synthesis not required — on-demand model.
+
+**Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
+**Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
+
+---
+
+## claude-mem — Infrastructure Complete (April 21, 2026)
+
+**Worker stack (all confirmed working):**
+- claude-mem 12.3.7 at `C:\Users\Bill's Dell of Death\.claude\plugins\marketplaces\thedotmack\plugin\`
+- Bun worker running at localhost:37777 — confirmed healthy
+- bun.exe at `C:\BillHome\.bun\bin\bun.exe` (Node.js homedir() fix for USERPROFILE=C:\BillHome)
+- Task Scheduler task `claude-mem-worker` — confirmed registered (State: Ready), starts on login via `start_claude_mem_worker.bat`
+- Data dir: `C:\BillHome\.claude-mem\` — DB, logs, settings, transcript watch config
+
+**Hooks wired in `C:\Users\BillsDellOfDeath\.claude\settings.json`:**
+- SessionStart → context injection (loads prior session memory into system prompt)
+- UserPromptSubmit → session-init (was missing — root cause of 0 observations)
+- PostToolUse → observation (AI agent analyzes tool use, writes to DB)
+- PreToolUse (Read) → file-context
+- Stop → summarize
+- SessionEnd → session-complete
+
+**Other config (C:\BillHome\.claude-mem\settings.json):**
+- Chroma disabled (`CLAUDE_MEM_CHROMA_ENABLED: false`) — was erroring, not needed for core function
+- Transcript watch → `~/.claude/projects/**/*.jsonl` (Claude Code sessions; was Codex paths before)
+- Mode: code | Model: claude-sonnet-4-6 | Port: 37777
+
+**Observation types** (for bridge pre-filter): bugfix, feature, refactor, change, discovery, decision
+
+**Status:** Fully operational. Both triggers wired as of April 21, 2026.
+
+**Bridge script — COMPLETE:**
+- Script: `C:\BillHome\.claude-mem-bridge\claudemem_bridge.py`
+- Trigger 1: Stop hook in `C:\BillHome\.claude\settings.json` — fires on every session close
+- Trigger 2: Task Scheduler `ConvertDocs_ClaudeMemBridge` — 2AM daily
+- Filter: heuristic (no API key needed) — keeps types discovery/decision/pattern; keyword scoring for others
+- Output: `OBSIDIAN_VAULT/raw/inbox/` (0-5 notes per run target; Claudian picks up from there)
+- Watermark: `C:\BillHome\.claude-mem-bridge\last_run.txt`
+- Run log: `C:\BillHome\.claude-mem-bridge\run_log.txt`
+- Design spec: `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\code_u_claudemem_bridge_brief.md`
+- API confirmed: `?since=` param works (ISO timestamp format); observations have title/narrative/facts/concepts/type fields
+
+---
+
+## Three-Tier Router Architecture — Deferred to Summer
+
+**Brief:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\Worker Bees Architecture\code_u_three_tier_router_brief.md`
+**Prepared by:** Tribe (App Claude) | **Status:** Architecture complete, not built yet
+
+Orchestrator/executor pattern. Three tiers: Tier 1 (Pandoc, regex, LanguageTool -- deterministic, free), Tier 2 (Ollama on Mac Mini -- local LLM, no token cost), Tier 3 (frontier Claude API -- surgical use only). Router dispatches each job to cheapest capable tier.
+
+Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsidian seeding).
+
+**What's tabled:** Mac Mini not configured. Ollama not installed. LanguageTool wrapper not built. Defer until post-May.
+
+**What already exists** that maps to Tier 1: anonymize_submissions.py, reidentify_reports.py, render_grammar_pdfs.py, extract_text.py. Don't rebuild these -- wrap them into the router.
 
 ---
 
@@ -255,5 +342,3 @@ SECTION: [section name in claude_memory.md]
 ---
 
 **This memory file is authoritative across all Claude instances serving Bill Jackson. Apply it actively.**
-
-

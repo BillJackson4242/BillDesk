@@ -17,8 +17,8 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 | Course | Format | Enrollment | Status |
 |--------|--------|-----------|--------|
-| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Week 9 — Song Analysis grading |
-| ENGL 325 | Online async | Upper-level | Week 9 — Week 7 discussion parse complete |
+| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Week 15 — Essay 4 + Final Portfolio incoming |
+| ENGL 325 | Online async | Upper-level | Week 15 — WK13 + WK14 pipeline complete; WK15 incoming |
 
 **Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8
 
@@ -31,9 +31,27 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 **Three major projects:**
 1. Communication Problem Analysis (Week 4) — Complete
 2. Strategic Proposal (due Week 8) — Complete
-3. AI Governance Group Project (Weeks 9-16) — In progress
+3. AI Governance Group Project (Weeks 9-16) — WK13 + WK14 complete; WK15 (report compilation) incoming; WK16 oral defense
 
-**Current infrastructure:** Dual-agent analytics (Code Claude parses Canvas HTML; App Claude assesses quality), discussion dashboards built and operational. Week 7 parse DONE — CSVs + qualitative report complete.
+**Current pipeline state (April 29, 2026):**
+- WK13 (Governance & Oversight Plan) — Code You rubric pass complete; JSONs live on GitHub. Team Y + VitalHire deliverables were not in Dropbox folder; App Claude scored from discussion + SR only.
+- WK14 (Executive Decision Memo) — Full rubric pass complete; all three deliverables extracted. JSONs live on GitHub. WK14 JSON was saved by App Claude to wrong folder ("Week 13 with individual comments") — moved to `Reporting/output/WK14/` this session.
+- GitHub repo: `ENGL325-Pulse` | `data/project/` has WK10-WK14 JSONs
+- Output folder pattern: `[project root]/Reporting/output/WK[XX]/`
+
+**WK13 grades (Code You read):** Team X: B (83.75) | Team Y: estimated C | VitalHire: estimated (no deliverable text)
+**WK14 grades (Code You read):** Team X: B (85) | Team Y: C (72.5) | VitalHire: B (80)
+**WK14 recommendations:** Team X=Cancel | Team Y=Proceed with Conditions | VitalHire=Delay
+
+**Persistent student flags (instructor action warranted):**
+- **Mekyle Harris (Team Y):** Week 4 of non-delivery on deliverable sections. WK14 SR officially states "Did not participate." Nathan Haygood covered his section. Pattern fully documented in status reports.
+- **Brennan Monarch (Team X):** Repeated coordination failures (claimed taken sections without reading discussion). Liz Ann Dumas absorbed double work WK13. Section misaligned with team recommendation WK14.
+- **Sam Baldwin (VitalHire):** WK12=absent, WK13=minimal, WK14=adequate. Improving trajectory -- note but no action yet.
+
+**AI concern flag:**
+- Team Y WK13 deliverable came back 100% AI. Disclosed ChatGPT in status report ("Formatting, Executive Language, Ideas") -- technically compliant. WK14 rationale section (Section 2) is assertion-driven with no prior-week evidence trace; voice mismatch with Section 5 (Helsel's conditions). Oral defense (WK16) is the acid test.
+
+**Infrastructure:** Dual-agent analytics (Code Claude parses submissions + scores rubric; App Claude assesses quality + writes JSON). `pdfplumber` installed April 29 (now available for PDF extraction).
 
 ---
 
@@ -233,13 +251,17 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ## Current Priorities (Week 15, April 29 2026)
 
-1. **ENGL 150** — Essay 4 + Final Portfolio incoming; existing pipeline (ferpa-grammar, 150-essay) is the tool
-2. **ENGL 325** — Weeks 13/15/16 discussion submissions; pipeline built
+1. **ENGL 150** — Essay 4 + Final Portfolio incoming; ferpa-grammar + 150-essay pipeline is the tool
+2. **ENGL 325** — WK15 (report compilation) due end of week; WK16 oral defense finals week. WK13 + WK14 JSONs live. Harris situation needs instructor decision before WK16.
 3. **Claudian Wiki Project** — Phase 1 complete; ongoing synthesis via /wiki-ingest
 4. **Memory pipeline** — Rebuilt April 29: claude-mem removed, new convert_docs.py + session_capture.py active (see Technical Infrastructure)
 5. **Three-Tier Router** — Architecture brief ready, deferred to summer
 6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Bill's read: strong on principle, light on data. Potential talk or essay.
 7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Authority earns the room; guide does the real work.
+=======
+6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged argument mapped. Potential talk or essay.
+7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
+>>>>>>> 08d71b1 (Memory update: ENGL 325 WK13/WK14 pipeline complete, student flags, priorities)
 
 ---
 

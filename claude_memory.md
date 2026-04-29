@@ -277,42 +277,29 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## claude-mem — Infrastructure Complete (April 21, 2026)
+## Vault Intake Pipeline — Active (April 29, 2026)
 
-**Worker stack (all confirmed working):**
-- claude-mem 12.3.7 at `C:\Users\Bill's Dell of Death\.claude\plugins\marketplaces\thedotmack\plugin\`
-- Bun worker running at localhost:37777 — confirmed healthy
-- bun.exe at `C:\BillHome\.bun\bin\bun.exe` (Node.js homedir() fix for USERPROFILE=C:\BillHome)
-- Task Scheduler task `claude-mem-worker` — confirmed registered (State: Ready), starts on login via `start_claude_mem_worker.bat`
-- Data dir: `C:\BillHome\.claude-mem\` — DB, logs, settings, transcript watch config
+**Session capture (replaces claude-mem):**
+- Script: `C:\BillHome\.claude-stop-hook\session_capture.py`
+- Hook: Stop hook in `C:\Users\BillsDellOfDeath\.claude\settings.json`
+- Output: `OBSIDIAN_VAULT/raw/inbox/session_YYYY-MM-DD_HHMMSS.md` — files touched, commands run, domain tag
+- No AI calls, no worker process, no external dependencies
 
-**Hooks wired in `C:\Users\BillsDellOfDeath\.claude\settings.json`:**
-- SessionStart → context injection (loads prior session memory into system prompt)
-- UserPromptSubmit → session-init (was missing — root cause of 0 observations)
-- PostToolUse → observation (AI agent analyzes tool use, writes to DB)
-- PreToolUse (Read) → file-context
-- Stop → summarize
-- SessionEnd → session-complete
+**File conversion (nightly, 2AM via Task Scheduler):**
+- Script: `OBSIDIAN_VAULT/raw/convert_docs.py`
+- Handles: `.docx`, `.pdf` (pdfplumber), `.txt`, `.html/.htm`, `.pptx` (python-pptx), images (metadata stub)
+- Output: `OBSIDIAN_VAULT/raw/converted/` — preserves folder structure, `.md` output
+- auto_seed.py runs after, creates wiki seed pages for new content
 
-**Other config (C:\BillHome\.claude-mem\settings.json):**
-- Chroma disabled (`CLAUDE_MEM_CHROMA_ENABLED: false`) — was erroring, not needed for core function
-- Transcript watch → `~/.claude/projects/**/*.jsonl` (Claude Code sessions; was Codex paths before)
-- Mode: code | Model: claude-sonnet-4-6 | Port: 37777
+**Synthesis (on-demand):**
+- `/wiki-ingest [slug]` — synthesizes a seed page into a real wiki page
+- Only manual step in the pipeline
 
-**Observation types** (for bridge pre-filter): bugfix, feature, refactor, change, discovery, decision
+**What to do with files:**
+- Drop anything into `00 AI/` → converted overnight → seeded overnight → run `/wiki-ingest` to synthesize
+- Transcripts / PDFs / PPTs / HTML exports all handled automatically
 
-**Status:** Fully operational. Both triggers wired as of April 21, 2026.
-
-**Bridge script — COMPLETE:**
-- Script: `C:\BillHome\.claude-mem-bridge\claudemem_bridge.py`
-- Trigger 1: Stop hook in `C:\BillHome\.claude\settings.json` — fires on every session close
-- Trigger 2: Task Scheduler `ConvertDocs_ClaudeMemBridge` — 2AM daily
-- Filter: heuristic (no API key needed) — keeps types discovery/decision/pattern; keyword scoring for others
-- Output: `OBSIDIAN_VAULT/raw/inbox/` (0-5 notes per run target; Claudian picks up from there)
-- Watermark: `C:\BillHome\.claude-mem-bridge\last_run.txt`
-- Run log: `C:\BillHome\.claude-mem-bridge\run_log.txt`
-- Design spec: `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\code_u_claudemem_bridge_brief.md`
-- API confirmed: `?since=` param works (ISO timestamp format); observations have title/narrative/facts/concepts/type fields
+**claude-mem: REMOVED April 29, 2026** — never wrote observations (hooks silently failed); replaced by session_capture.py. Task Scheduler task `claude-mem-worker` deleted.
 
 ---
 

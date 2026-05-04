@@ -221,13 +221,14 @@ Two-layer architecture in `~/.claude/commands/`:
 
 **Memory system:**
 - GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances; auto-pushes to Pages on every edit
-- Local `claude_memory.md` at `C:\GitHub\BillDesk\` — Code Claude reads via CLAUDE.md @include; Code Claude + CoWork read directly (no network needed)
+- **Canonical file:** `C:\GitHub\BillDesk\claude_memory.md` — Code Claude reads via CLAUDE.md @include; /remember reads and writes here. This is the only authoritative copy.
+- OneDrive BillDesk repo (`C:\Users\Bill's Dell of Death\OneDrive\Documents\GitHub\BillDesk\`) — archived/stale as of May 4, 2026. Do not write to it.
 - Local `~/.claude/projects/.../memory/` — Code Claude auto-memory (feedback.md, lessons.md)
 - Git push hook syncs local edits to GitHub Pages for web-facing instances
 
 **Access by instance:**
 - App Claude / CoWork Claude / Chat: Fetch from GitHub Pages URL (read-only)
-- Code Claude: Read and write local file; auto-push hook keeps Pages in sync within ~60 sec
+- Code Claude: Read and write canonical file; auto-push hook keeps Pages in sync within ~60 sec
 
 **Writing back to memory (App/CoWork/Chat Claude):**
 Save a .txt file to: `Dropbox\00 AI\Claude\Enhanced_Memory_System\memory_inbox\`

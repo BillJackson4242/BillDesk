@@ -17,10 +17,10 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 | Course | Format | Enrollment | Status |
 |--------|--------|-----------|--------|
-| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Week 15 — Essay 4 + Final Portfolio incoming |
-| ENGL 325 | Online async | Upper-level | Week 15 — WK13 + WK14 pipeline complete; WK15 incoming |
+| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Finals week — Essay 4 + Final Portfolio |
+| ENGL 325 | Online async | Upper-level | Finals week — WK16 oral defense |
 
-**Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8
+**Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8 (NOW)
 
 ---
 

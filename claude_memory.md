@@ -258,10 +258,6 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 5. **Three-Tier Router** — Architecture brief ready, deferred to summer
 6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Bill's read: strong on principle, light on data. Potential talk or essay.
 7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Authority earns the room; guide does the real work.
-=======
-6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged argument mapped. Potential talk or essay.
-7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
->>>>>>> 08d71b1 (Memory update: ENGL 325 WK13/WK14 pipeline complete, student flags, priorities)
 
 ---
 

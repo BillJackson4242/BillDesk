@@ -185,23 +185,26 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 
 ## Skill System (Code Claude)
 
-Two-layer architecture in `~/.claude/commands/`:
+17 commands in `C:\BillHome\.claude\commands\`. **Overhaul in progress (May 2026).**
 
-**Layer 1 — Generic:**
-- `/grade-prep` — extract essays, grammar PDFs, rubric CSV for any assignment folder
-- `/grade-notes` — process App Claude Assessment Notes → SpeedGrader dump
-- `/grammar-mark` — deep grammar marking with GradeEaze codes
+**Current command set:**
+- Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`, `/rubric-assess`
+- Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`
+- FERPA pipeline: `/grammar-report` (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
+- ENGL 325: `/325-pulse` — weekly governance project grading
+- Voice/detection references: `/feedback-voice`, `/ai-detection`
+- Memory: `/remember`
+- Wiki: `/wiki-ingest`, `/wiki-status`
+- Infrastructure: `/fix-bash`, `/ss`
 
-**Layer 2 — ENGL 150 wrappers:**
-- `/150-prep` — resolves ENGL 150 paths, calls /grade-prep
-- `/150-notes` — resolves ENGL 150 paths, calls /grade-notes
-- `/150-essay` — App Claude rubric assessment (Hero Narrative + Song Analysis)
+**Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py
 
-**FERPA Pipeline:**
-- `/ferpa-grammar` — full end-to-end grammar pipeline: anonymize → analyze → re-identify → PDFs → Canvas zip
-- Scripts: `Grade Eaze/Anonymizer/` (anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, grammar_report_gen.py)
-- Stage 3 output format: multi-line `--- INSTANCE N ---` blocks with CODE/NAME/FROM/RULE/CORRECTED/TIP + FOCUS field
-- Produces per-student Grammar PDFs + UPLOAD_AUDIT.csv + feedback_upload.zip
+**Overhaul status (App Claude design + Code Claude execution):**
+- Phase 1 audit — COMPLETE (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)
+- Phase 1.5 fixes — COMPLETE (memory path fix, PYTHONIOENCODING backport to grammar-report, /remember repointed)
+- Phase 2 design — INCOMING from App U after closeout handoff
+- Phase 2 target: promote 5 commands to Skills with references/; add 5 new commands; add TRIGGER blocks; wire vault/grading bridge via memory_inbox
+- **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.
 
 ---
 

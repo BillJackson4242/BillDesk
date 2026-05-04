@@ -253,15 +253,15 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Week 15, April 29 2026)
+## Current Priorities (Finals Week, May 4 2026)
 
-1. **ENGL 150** — Essay 4 + Final Portfolio incoming; ferpa-grammar + 150-essay pipeline is the tool
-2. **ENGL 325** — WK15 (report compilation) due end of week; WK16 oral defense finals week. WK13 + WK14 JSONs live. Harris situation needs instructor decision before WK16.
-3. **Claudian Wiki Project** — Phase 1 complete; ongoing synthesis via /wiki-ingest
-4. **Memory pipeline** — Rebuilt April 29: claude-mem removed, new convert_docs.py + session_capture.py active (see Technical Infrastructure)
-5. **Three-Tier Router** — Architecture brief ready, deferred to summer
-6. **CCCC 2026 AI position response** — Drafting critical response to CCCC's right-to-refuse-AI statement. Three-pronged CCCC argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Bill's read: strong on principle, light on data. Potential talk or essay.
-7. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: "I give them epistemological models instead of answers. I equip them with mental operating systems, not instructions." Authority earns the room; guide does the real work.
+1. **ENGL 150** — Finals week. Essay 4 + Final Portfolio submissions incoming. /grammar-report + /150-essay are the tools.
+2. **ENGL 325** — WK16 oral defense THIS WEEK (May 4-8). Harris decision needed before oral defense. WK15 status unclear.
+3. **Skills overhaul** — Phase 1 + 1.5 complete. Next: Bill pastes closeout (`memory_inbox/2026-05-04-phase15-closeout.md`) to App U → App U produces Phase 2 design doc → Code Claude executes phase by phase.
+4. **Claudian Wiki Project** — Ongoing synthesis via /wiki-ingest. 199 pages, 7 vessel pages at draft.
+5. **Three-Tier Router** — Deferred to summer. Architecture brief exists.
+6. **CCCC 2026 AI position response** — Three-pronged argument mapped. Drafting when semester clears.
+7. **LinkedIn positioning strategy** — Authority + guide dual stance. Deferred until post-semester.
 
 ---
 

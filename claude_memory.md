@@ -33,10 +33,10 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 2. Strategic Proposal (due Week 8) — Complete
 3. AI Governance Group Project (Weeks 9-16) — WK13 + WK14 complete; WK15 (report compilation) incoming; WK16 oral defense
 
-**Current pipeline state (April 29, 2026):**
-- WK13 (Governance & Oversight Plan) — Code You rubric pass complete; JSONs live on GitHub. Team Y + VitalHire deliverables were not in Dropbox folder; App Claude scored from discussion + SR only.
-- WK14 (Executive Decision Memo) — Full rubric pass complete; all three deliverables extracted. JSONs live on GitHub. WK14 JSON was saved by App Claude to wrong folder ("Week 13 with individual comments") — moved to `Reporting/output/WK14/` this session.
-- GitHub repo: `ENGL325-Pulse` | `data/project/` has WK10-WK14 JSONs
+**Current pipeline state (May 4, 2026):**
+- WK13 + WK14 — Complete. JSONs live on GitHub (`ENGL325-Pulse` | `data/project/`)
+- WK15 (report compilation) — Status unknown; may be complete or skipped
+- WK16 (oral defense) — This week, finals May 4-8. Harris decision needed before it starts.
 - Output folder pattern: `[project root]/Reporting/output/WK[XX]/`
 
 **WK13 grades (Code You read):** Team X: B (83.75) | Team Y: estimated C | VitalHire: estimated (no deliverable text)

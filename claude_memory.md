@@ -211,7 +211,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Phase 1: Audit (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)
 - Phase 1.5: Memory path fix, PYTHONIOENCODING backport, /remember repointed
 - Phase 2A: 5 commands promoted to Skills with references/ subdirectories
-- Phase 2B: /325-defense built (WK16); /150-essay extended for Essay 03; /grade-summary + /memory-status built
+- Phase 2B: /325-defense built (WK16 -- now scrapped); /150-essay extended for Essays 03+04; /grade-summary + /memory-status + /150-portfolio built
 - Phase 2C: TRIGGER blocks added to all 22 commands/skills
 - Phase 2D: Grading bridge added to 4 grading commands (memory_inbox completion records)
 - **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.

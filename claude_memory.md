@@ -185,25 +185,37 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 
 ## Skill System (Code Claude)
 
-17 commands in `C:\BillHome\.claude\commands\`. **Overhaul in progress (May 2026).**
+**22 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026).**
 
 **Current command set:**
-- Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`, `/rubric-assess`
+- Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*
 - Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`
-- FERPA pipeline: `/grammar-report` (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
-- ENGL 325: `/325-pulse` — weekly governance project grading
-- Voice/detection references: `/feedback-voice`, `/ai-detection`
+- FERPA pipeline: `/grammar-report`* (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
+- ENGL 325: `/325-pulse`*, `/325-defense`
+- Voice/detection references: `/feedback-voice`*, `/ai-detection`
 - Memory: `/remember`
 - Wiki: `/wiki-ingest`, `/wiki-status`
 - Infrastructure: `/fix-bash`, `/ss`
+- New (Phase 2): `/grade-summary`, `/memory-status`
+
+*Promoted to Skill (subdirectory + references/ folder)
+
+**Skills structure** — promoted skills live at `commands/[name]/[name].md` + `references/`:
+- `feedback-voice/` → references: `feedback-structure.md`
+- `grammar-mark/` → references: `gradeeaze-codes.md`, `level-profiles.md`
+- `grammar-report/` → references: `pipeline-config.md`
+- `rubric-assess/` → references: `assessment-flags.md`
+- `325-pulse/` → references: `project-roster.md`
 
 **Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py
 
-**Overhaul status (App Claude design + Code Claude execution):**
-- Phase 1 audit — COMPLETE (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)
-- Phase 1.5 fixes — COMPLETE (memory path fix, PYTHONIOENCODING backport to grammar-report, /remember repointed)
-- Phase 2 design — INCOMING from App U after closeout handoff
-- Phase 2 target: promote 5 commands to Skills with references/; add 5 new commands; add TRIGGER blocks; wire vault/grading bridge via memory_inbox
+**Overhaul phases complete:**
+- Phase 1: Audit (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)
+- Phase 1.5: Memory path fix, PYTHONIOENCODING backport, /remember repointed
+- Phase 2A: 5 commands promoted to Skills with references/ subdirectories
+- Phase 2B: /325-defense built (WK16); /150-essay extended for Essay 03; /grade-summary + /memory-status built
+- Phase 2C: TRIGGER blocks added to all 22 commands/skills
+- Phase 2D: Grading bridge added to 4 grading commands (memory_inbox completion records)
 - **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.
 
 ---

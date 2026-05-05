@@ -59,18 +59,16 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 **Student population:** First-generation, trade program majors (HVACR, welding, construction)
 
-**Assignment sequence:**
+**Assignment sequence (Spring 2026):**
 - Hero Narrative (01) — Graded
-- Song Analysis (02) — Infrastructure complete, App Claude assessment pending
-- Triangulation Paper (03) — Upcoming
-- Problem-Solution Essay (04) — Upcoming
+- Meme Analysis (02) — Official name this semester; also called "Song Analysis" in some contexts. Status unknown.
+- Triangulation Paper (03) — Status unknown
+- Problem-Solution Essay (04) — Submissions in hand. Grammar pipeline already run (`04 Problem Solution/Spring 2026 Submissions/`). Assessment pending.
+- Final Portfolio (05) — Submissions incoming. Due end of finals week.
 
-**Song Analysis grading infrastructure (March 2026):**
-- 60 submissions processed (13 late, 2 blank)
-- `_all_essays_extracted.txt` — ready for App Claude
-- `song_analysis_grading_pass.csv` — rubric signal data
-- `PROMPT_for_AppClaude.txt` — assessment prompt ready
-- `/ferpa-grammar` skill — ready to run full pipeline (replaces old manual PDF workflow)
+**Grading commands ready for finals:**
+- `/150-essay` — covers assignments 01 through 04. Rubrics embedded.
+- `/150-portfolio` — Final Portfolio assessment. 5-criterion rubric. Completeness check + Feedback Me output.
 
 ---
 

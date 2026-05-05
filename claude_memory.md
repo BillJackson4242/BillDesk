@@ -183,13 +183,13 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 
 ## Skill System (Code Claude)
 
-**22 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026).**
+**23 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026).**
 
 **Current command set:**
 - Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*
-- Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`
+- Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`, `/150-portfolio`
 - FERPA pipeline: `/grammar-report`* (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
-- ENGL 325: `/325-pulse`*, `/325-defense`
+- ENGL 325: `/325-pulse`*, `/325-defense` (built but oral defenses scrapped -- pending deletion decision)
 - Voice/detection references: `/feedback-voice`*, `/ai-detection`
 - Memory: `/remember`
 - Wiki: `/wiki-ingest`, `/wiki-status`

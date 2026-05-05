@@ -263,6 +263,8 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 - `/c/Users/BillsDellOfDeath/` bash path (reliable for all Dropbox/OneDrive content)
 - Must launch via `cl` or `code-u` — sets USERPROFILE=C:\BillHome before launching
 
+**PowerShell profile fix (May 5, 2026):** `cl` and `code-u` functions were doing `Push-Location "C:\BillHome\Dropbox\00 AI\Claude\Claude Code"` — path didn't exist, causing red error on every launch. Fixed to `Push-Location "C:\BillHome"`. Profile: `C:\Users\Bill's Dell of Death\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`.
+
 ---
 
 ## Current Priorities (Finals Week, May 5 2026)

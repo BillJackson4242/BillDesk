@@ -265,11 +265,11 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Finals Week, May 4 2026)
+## Current Priorities (Finals Week, May 5 2026)
 
 1. **ENGL 150** — Finals week. Essay 4 + Final Portfolio submissions incoming. /grammar-report + /150-essay are the tools.
-2. **ENGL 325** — WK16 oral defense THIS WEEK (May 4-8). Harris decision needed before oral defense. WK15 status unclear.
-3. **Skills overhaul** — Phase 1 + 1.5 complete. Next: Bill pastes closeout (`memory_inbox/2026-05-04-phase15-closeout.md`) to App U → App U produces Phase 2 design doc → Code Claude executes phase by phase.
+2. **ENGL 325** — WK16 oral defense THIS WEEK (May 4-8). Harris decision needed before oral defense.
+3. **Skills overhaul** — COMPLETE as of May 5. All 22 commands have TRIGGER blocks; 5 promoted to Skills; 5 new commands built. Audit log updated: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
 4. **Claudian Wiki Project** — Ongoing synthesis via /wiki-ingest. 199 pages, 7 vessel pages at draft.
 5. **Three-Tier Router** — Deferred to summer. Architecture brief exists.
 6. **CCCC 2026 AI position response** — Three-pronged argument mapped. Drafting when semester clears.

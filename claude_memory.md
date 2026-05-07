@@ -201,7 +201,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 **Skills structure** — promoted skills live at `commands/[name]/[name].md` + `references/`:
 - `feedback-voice/` → references: `feedback-structure.md`
 - `grammar-mark/` → references: `gradeeaze-codes.md`, `level-profiles.md`
-- `grammar-report/` → references: `pipeline-config.md`
+- `grammar-report/` → references: `pipeline-config.md`, `tier-2-overlay.md`, `tier-3-overlay.md`
 - `rubric-assess/` → references: `assessment-flags.md`
 - `325-pulse/` → references: `project-roster.md`
 

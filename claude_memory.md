@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** May 5, 2026 | **Week 16 (Finals), Spring 2026 Semester**
+**Last Updated:** May 7, 2026 | **Week 16 (Finals), Spring 2026 Semester**
 
 ---
 
@@ -365,3 +365,42 @@ Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsi
 ---
 
 **This memory file is authoritative across all Claude instances serving Bill Jackson. Apply it actively.**
+
+
+---
+
+## INBOX UPDATES (received 2026-05-07 10:09 -- integrate and remove this section)
+
+### From: 2026-05-06_grade_150_problem_solution.txt
+
+## GRADING_COMPLETION
+date: 2026-05-06
+course: ENGL 150
+assignment: Problem-Solution Essay (Assignment 04)
+command_used: /150-essay
+submissions_processed: 52
+output_location: /c/Users/BillsDellOfDeath/Dropbox/00 Bill Ferris Teaching/2026 Spring/ENGL150 Freshman Composition/04 Problem Solution/Problem_Solution_Assessment_Notes.txt
+
+## FLAGS
+- Burdalic, Leigh Anne E. (student_008): Only 203 words submitted — appears to be conclusion fragment only. Full essay missing. REQUIRES instructor contact.
+- Sweet, Derrica Marie (student_045) [LATE]: Submitted Triangulation Paper (Assignment 3) instead of Problem-Solution Essay. File name: "3 point perspective paper-1.docx". REQUIRES immediate instructor contact.
+- Kennedy, J-Shawn (student_023): 555 words — major length deficit (need 4-6 pages). Broad generic topic. Needs direct conversation.
+- Cajiga, Kamya (student_009): 2 sources, no citation format, 906 words. Significant development deficit.
+- McGee, Brooklynn: NOT assessed — submitted as PDF, held in _held/ subfolder. Requires separate handling.
+- Strait, KJ: NOT assessed — submitted as PDF, held in _held/ subfolder. Requires separate handling.
+- Perez, Genesis (student_039): Disclosed ChatGPT (proofreading) + Grammarly use. Technically within policy. Handle per course policy on AI assistance.
+
+## AI CONCERNS (for possible oral check)
+- Elevated: Alkema (001), Westerman (050)
+- Moderate: Gabalis (016), Moir (029), Piggar (040)
+- Mild: Barraza (003), Benjamin (004), Clink (011), Johnson Riyah (020), Obenau (035), Venema (047)
+
+## NOTES
+- All 3 sections mixed in same submission batch (52 students total).
+- 8 LATE submissions: Alkema, Helweg, Hutchings, Johnson Riyah, Nowicki, Papesh, Sweet, Tinsley.
+- Grammar pipeline already completed before this assessment pass — Grammar PDFs and _comments.txt files in canvas_ready/.
+- Grade distribution: ~3 A-range, 6 B+, 8 B, 11 B-, 9 C+, 10 C, 5 D/F, 1 wrong paper.
+- Popular topics: housing affordability (5+), cost of living (3+), social media distraction (3+), Iran War (2), NIL regulation (2), homelessness (2).
+- Standouts: Nowicki (game design unions, LATE), Westerman (social isolation/MADD analogy), Alkema (benefits cliff, LATE), Piggar (homelessness/Housing First).
+- Assessment file ready for App U (VeraBelle) handoff for feedback voice formatting if needed.
+

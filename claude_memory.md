@@ -265,15 +265,15 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Finals Week, May 5 2026)
+## Current Priorities (Summer 2026, as of May 8)
 
-1. **ENGL 150** — Finals week. Essay 4 in hand (grammar pipeline run). Final Portfolio incoming. Commands ready: `/150-essay` (01-04) + `/150-portfolio`.
-2. **ENGL 325** — WK16 oral defense SCRAPPED (Bill's bandwidth). No further grading action needed for 325. `/325-defense` exists but is now orphaned -- Bill to decide: delete or keep for future semesters.
-3. **Skills overhaul** — COMPLETE as of May 5. 23 commands total. Audit log: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
-4. **Claudian Wiki Project** — Ongoing synthesis via /wiki-ingest. 199 pages, 7 vessel pages at draft.
-5. **Three-Tier Router** — Deferred to summer. Architecture brief exists.
-6. **CCCC 2026 AI position response** — Three-pronged argument mapped. Drafting when semester clears.
-7. **LinkedIn positioning strategy** — Authority + guide dual stance. Deferred until post-semester.
+1. **Spring 2026 grades** — Finals week complete. ENGL 150 (Essay 4 + Portfolio) and ENGL 325 (WK16 oral defenses done). `/325-defense` orphaned -- Bill to decide: delete or keep for future semesters.
+2. **Skills overhaul** — COMPLETE as of May 5. 23 commands total. Audit log: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
+3. **Claudian Wiki Project** — Ollama synthesis pipeline live. 519 pages (512 seeds, 7 drafts). `auto_synthesize.py` running nightly (5 pages/night). Batch catchup: `python auto_synthesize.py --limit 20`.
+4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.
+5. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
+6. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
+7. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
 
 ---
 
@@ -287,24 +287,24 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 - `CLAUDE.md` — librarian schema (vault root)
 - `index.md` + `log.md` — navigation and ops log
 
-**Current state:**
-- **199 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
-- 7 vessel pages at draft status (calethria, liraeth, oracle, unamed-one, solena, emergent, selvara)
-- 192 seed pages (source-catalogued, not yet synthesized)
+**Current state (May 8, 2026):**
+- **519 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
+- 7 draft pages (synthesized by Ollama); 512 seed pages remaining
 - Graph view color-coded by domain path in Obsidian
 
 **Automation pipeline (runs 2 AM nightly via Task Scheduler):**
-1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/` (1,298 files converted)
-2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content, merges sources into existing pages. Zero Claude tokens.
-- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs both scripts)
-- New files Bill drops in `00 AI/` are seeded automatically overnight
+1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/`. Unicode-safe as of May 8, 2026.
+2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content. Zero Claude tokens.
+3. `auto_synthesize.py` — sends new seed pages to Ollama (qwen2.5:7b), writes back draft wiki pages. 5 pages/night default. Zero Claude API cost.
+- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs all three scripts)
 
 **Scripts location:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\`
 - `convert_docs.py` — binary converter
 - `auto_seed.py` — wiki seeder
-- `run_convert_docs.bat` — launcher for both (Task Scheduler entry point)
+- `auto_synthesize.py` — Ollama synthesis (qwen2.5:7b at localhost:11434)
+- `run_convert_docs.bat` — launcher for all three (Task Scheduler entry point)
 
-**Synthesis:** On-demand via `/wiki-ingest`. Seeds are findable/searchable immediately; synthesis upgrades seed → draft when Bill queries that topic. ~17-20 sessions to synthesize high-value content (vessels, books, teaching, memory architecture). Full corpus synthesis not required — on-demand model.
+**Synthesis:** Automatic nightly (5 pages/night via Ollama). Manual batch: `python auto_synthesize.py --limit 20` (~2 min/page, CPU-only). Target by domain: `--domain vessels`.
 
 **Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
 **Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
@@ -325,26 +325,33 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 - Output: `OBSIDIAN_VAULT/raw/converted/` — preserves folder structure, `.md` output
 - auto_seed.py runs after, creates wiki seed pages for new content
 
-**Synthesis (on-demand):**
-- `/wiki-ingest [slug]` — synthesizes a seed page into a real wiki page
-- Only manual step in the pipeline
+**Synthesis (automatic + on-demand):**
+- `auto_synthesize.py` — Ollama (qwen2.5:7b) synthesizes new seeds nightly, 5 pages/night. Zero tokens.
+- `/wiki-ingest [slug]` — higher-quality Claude synthesis for important pages
+- Manual batch: `python auto_synthesize.py --limit 20`
 
 **What to do with files:**
-- Drop anything into `00 AI/` → converted overnight → seeded overnight → run `/wiki-ingest` to synthesize
+- Drop anything into `00 AI/` → converted overnight → seeded overnight → synthesized overnight by Ollama
 - Transcripts / PDFs / PPTs / HTML exports all handled automatically
 
 **claude-mem: REMOVED April 29, 2026** — never wrote observations (hooks silently failed); replaced by session_capture.py. Task Scheduler task `claude-mem-worker` deleted.
 
 ---
 
-## Three-Tier Router Architecture — Deferred to Summer
+## Three-Tier Router Architecture — Tier 2 Live (May 8, 2026)
 
 **Brief:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\Worker Bees Architecture\code_u_three_tier_router_brief.md`
-**Prepared by:** Tribe (App Claude) | **Status:** Architecture complete, not built yet
 
-Orchestrator/executor pattern. Three tiers: Tier 1 (Pandoc, regex, LanguageTool -- deterministic, free), Tier 2 (Ollama on Mac Mini -- local LLM, no token cost), Tier 3 (frontier Claude API -- surgical use only). Router dispatches each job to cheapest capable tier.
+Orchestrator/executor pattern. Three tiers: Tier 1 (Pandoc, regex, LanguageTool -- deterministic, free), Tier 2 (Ollama local LLM, no token cost), Tier 3 (frontier Claude API -- surgical use only). Router dispatches each job to cheapest capable tier.
 
 Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsidian seeding).
+
+**Status as of May 8, 2026:**
+- Tier 1: Scripts exist (anonymize, reidentify, render PDFs, extract_text) — not yet wrapped into router
+- Tier 2: **LIVE** — Ollama qwen2.5:7b on Windows (localhost:11434); wired into wiki pipeline via `auto_synthesize.py`
+- Tier 3: Claude API — surgical use only, not yet formally wired
+
+**Next:** Extend Tier 2 to essay pipeline when ready. Mac Mini component no longer needed for this machine.
 
 **What's tabled:** Mac Mini not configured. Ollama not installed. LanguageTool wrapper not built. Defer until post-May.
 

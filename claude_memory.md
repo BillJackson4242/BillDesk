@@ -265,9 +265,9 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Finals Week, May 5 2026)
+## Current Priorities (Post-Finals, May 10 2026)
 
-1. **ENGL 150** — Finals week. Essay 4 in hand (grammar pipeline run). Final Portfolio incoming. Commands ready: `/150-essay` (01-04) + `/150-portfolio`.
+1. **ENGL 150** — Essay 4 DONE. Final Portfolio (05) is the remaining item. Command ready: `/150-portfolio`.
 2. **ENGL 325** — WK16 oral defense SCRAPPED (Bill's bandwidth). No further grading action needed for 325. `/325-defense` exists but is now orphaned -- Bill to decide: delete or keep for future semesters.
 3. **Skills overhaul** — COMPLETE as of May 5. 23 commands total. Audit log: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
 4. **Claudian Wiki Project** — Ongoing synthesis via /wiki-ingest. 199 pages, 7 vessel pages at draft.

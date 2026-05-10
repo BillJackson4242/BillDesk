@@ -63,7 +63,7 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 - Hero Narrative (01) — Graded
 - Meme Analysis (02) — Official name this semester; also called "Song Analysis" in some contexts. Status unknown.
 - Triangulation Paper (03) — Status unknown
-- Problem-Solution Essay (04) — Submissions in hand. Grammar pipeline already run (`04 Problem Solution/Spring 2026 Submissions/`). Assessment pending.
+- Problem-Solution Essay (04) — **COMPLETE (2026-05-06).** 52 students assessed. Both mechanical pass AND Feedback Me voice written by Code U (App U flagged role overlap -- future runs: Code U does mechanical only, App U writes feedback voice). Output: `04 Problem Solution/Problem_Solution_Assessment_Notes.txt`. Numerical grades generated in session. Contact needed: Burdalic (203-word fragment), Sweet (submitted Assignment 3 instead, LATE), McGee + Strait (PDF submissions in _held/, not assessed). AI flags: Alkema + Westerman elevated; Gabalis/Moir/Piggar moderate.
 - Final Portfolio (05) — Submissions incoming. Due end of finals week.
 
 **Grading commands ready for finals:**

@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** May 10, 2026 | **Post-Finals, Spring 2026 Semester**
+**Last Updated:** May 11, 2026 | **Post-Finals, Spring 2026 Semester**
 
 ---
 
@@ -17,10 +17,10 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 | Course | Format | Enrollment | Status |
 |--------|--------|-----------|--------|
-| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Finals week — Essay 4 + Final Portfolio |
-| ENGL 325 | Online async | Upper-level | Finals week — WK16 oral defense |
+| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Finals done — grades due May 11 |
+| ENGL 325 | Online async | Upper-level | Complete — WK16 oral defenses done |
 
-**Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8 (NOW)
+**Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8 (DONE) | Grades due May 11
 
 ---
 
@@ -64,9 +64,9 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 - Meme Analysis (02) — Official name this semester; also called "Song Analysis" in some contexts. Status unknown.
 - Triangulation Paper (03) — Status unknown
 - Problem-Solution Essay (04) — **COMPLETE (2026-05-06).** 52 students assessed. Both mechanical pass AND Feedback Me voice written by Code U (App U flagged role overlap -- future runs: Code U does mechanical only, App U writes feedback voice). Output: `04 Problem Solution/Problem_Solution_Assessment_Notes.txt`. Numerical grades generated in session. Contact needed: Burdalic (203-word fragment), Sweet (submitted Assignment 3 instead, LATE), McGee + Strait (PDF submissions in _held/, not assessed). AI flags: Alkema + Westerman elevated; Gabalis/Moir/Piggar moderate.
-- Final Portfolio (05) — Submissions incoming. Due end of finals week.
+- Final Portfolio (05) — 52 submissions in hand. Easter egg scan complete (2026-05-11). **Mooney, Trenton flagged:** white text hiding sentence endings throughout doc -- likely AI padding camouflage, not accidental. Sentence endings all in GenAI register. Oral check warranted before finalizing grade. Kramer + McBride had leftover peer-review Word comments (not intentional, just sloppy). 40 clean. Script: `05 Portfolio/easter_egg_scan.py`. Grades due May 11 morning.
 
-**Grading commands ready for finals:**
+**Grading commands ready:**
 - `/150-essay` — covers assignments 01 through 04. Rubrics embedded.
 - `/150-portfolio` — Final Portfolio assessment. 5-criterion rubric. Completeness check + Feedback Me output.
 
@@ -267,7 +267,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ## Current Priorities (Post-Finals, May 10 2026)
 
-1. **ENGL 150** — Essay 4 DONE (assessed 2026-05-06, see ENGL 150 section for flags). Final Portfolio (05) remaining -- `/150-portfolio`. ENGL 325 oral defenses done. `/325-defense` orphaned -- Bill to decide: delete or keep.
+1. **ENGL 150** — Essay 4 DONE. Portfolio (05) scan done -- Mooney white text flagged (AI camouflage likely), 40 clean. `/150-portfolio` assessment still needed. **Grades due May 11.** ENGL 325 oral defenses done. `/325-defense` orphaned -- Bill to decide: delete or keep.
 2. **Skills overhaul** — COMPLETE as of May 5. 23 commands total. Audit log: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
 3. **Claudian Wiki Project** — Ollama synthesis pipeline live. 519 pages (512 seeds, 7 drafts). `auto_synthesize.py` running nightly (5 pages/night). Batch catchup: `python auto_synthesize.py --limit 20`.
 4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.

@@ -205,7 +205,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - `rubric-assess/` → references: `assessment-flags.md`
 - `325-pulse/` → references: `project-roster.md`
 
-**Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py
+**Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py, `strip_cover_page.py` (cover page removal for portfolios/assignments with formal cover pages), `extract_portfolio_data.py` (structural extractor: page count, essay detection, supplemental writing → Class_Reference.docx + portfolio_data.csv)
 
 **Overhaul phases complete:**
 - Phase 1: Audit (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)

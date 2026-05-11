@@ -33,25 +33,11 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 2. Strategic Proposal (due Week 8) — Complete
 3. AI Governance Group Project (Weeks 9-16) — WK13 + WK14 complete; WK15 (report compilation) incoming; WK16 oral defense
 
-**Current pipeline state (May 4, 2026):**
-- WK13 + WK14 — Complete. JSONs live on GitHub (`ENGL325-Pulse` | `data/project/`)
-- WK15 (report compilation) — Status unknown; may be complete or skipped
-- WK16 (oral defense) — This week, finals May 4-8. Harris decision needed before it starts.
-- Output folder pattern: `[project root]/Reporting/output/WK[XX]/`
+**Status: COMPLETE.** WK13–WK16 done. Oral defenses completed finals week. All grades submitted.
 
-**WK13 grades (Code You read):** Team X: B (83.75) | Team Y: estimated C | VitalHire: estimated (no deliverable text)
-**WK14 grades (Code You read):** Team X: B (85) | Team Y: C (72.5) | VitalHire: B (80)
-**WK14 recommendations:** Team X=Cancel | Team Y=Proceed with Conditions | VitalHire=Delay
+**Final grades (Code You rubric pass):** Team X: B (85, WK14) | Team Y: C (72.5, WK14) | VitalHire: B (80, WK14)
 
-**Persistent student flags (instructor action warranted):**
-- **Mekyle Harris (Team Y):** Week 4 of non-delivery on deliverable sections. WK14 SR officially states "Did not participate." Nathan Haygood covered his section. Pattern fully documented in status reports.
-- **Brennan Monarch (Team X):** Repeated coordination failures (claimed taken sections without reading discussion). Liz Ann Dumas absorbed double work WK13. Section misaligned with team recommendation WK14.
-- **Sam Baldwin (VitalHire):** WK12=absent, WK13=minimal, WK14=adequate. Improving trajectory -- note but no action yet.
-
-**AI concern flag:**
-- Team Y WK13 deliverable came back 100% AI. Disclosed ChatGPT in status report ("Formatting, Executive Language, Ideas") -- technically compliant. WK14 rationale section (Section 2) is assertion-driven with no prior-week evidence trace; voice mismatch with Section 5 (Helsel's conditions). Oral defense (WK16) is the acid test.
-
-**Infrastructure:** Dual-agent analytics (Code Claude parses submissions + scores rubric; App Claude assesses quality + writes JSON). `pdfplumber` installed April 29 (now available for PDF extraction).
+**Infrastructure:** Dual-agent analytics (Code Claude parses submissions + scores rubric; App Claude assesses quality + writes JSON). `pdfplumber` installed April 29.
 
 ---
 

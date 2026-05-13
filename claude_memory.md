@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** May 11, 2026 | **Post-Finals, Spring 2026 Semester**
+**Last Updated:** May 13, 2026 | **Post-Finals, Spring 2026 Semester**
 
 ---
 
@@ -33,9 +33,20 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 2. Strategic Proposal (due Week 8) — Complete
 3. AI Governance Group Project (Weeks 9-16) — WK13 + WK14 complete; WK15 (report compilation) incoming; WK16 oral defense
 
-**Status: COMPLETE.** WK13–WK16 done. Oral defenses completed finals week. All grades submitted.
+**Status: COMPLETE.** WK13–WK16 done. Oral defenses completed finals week. WK15 individual grading done May 13.
 
-**Final grades (Code You rubric pass):** Team X: B (85, WK14) | Team Y: C (72.5, WK14) | VitalHire: B (80, WK14)
+**Team deliverable grades:** Team X: B (85, WK14) | Team Y: C (72.5, WK14) | VitalHire: B (80, WK14)
+
+**WK15 grading complete (May 13, 2026):**
+- Role Reflection Memos (16) scored on 5-criterion rubric. Peer Evaluations (16) parsed via XML extraction (python-docx alone misses form fields -- use zipfile + ElementTree).
+- Output: `week16-Oral Defense/WK15_Output/` -- WK15_RoleReflection_Scores.csv, WK15_PeerEval_Matrix.csv, WK15_RoleReflection_Comments.txt
+- Flag students: Harris (AI HIGH, F memo, 4 weeks non-delivery -- oral defense critical), Hamblin (memo addressed to "Dr. Workman," AI moderate), Monarch (AI moderate, memo claims contradicted by all peer/discussion data)
+- Dumas: memo scored F but individual contribution grade A- -- don't conflate. Her reflection document underperforms; her project work doesn't.
+
+**Individual contribution grades (discussion + peer evals + deliverable flags):**
+- Team X: Atton A- | Craig A- | Dumas A- | Williamson B+ | Bogue C+ | Monarch D
+- Team Y: Allen A | Helsel A- | Haygood B+ | Hamblin D+ | Harris F
+- VitalHire: Batho B | Barber B- | Niltasuwan B- | Minzey C+ | Baldwin D+
 
 **Infrastructure:** Dual-agent analytics (Code Claude parses submissions + scores rubric; App Claude assesses quality + writes JSON). `pdfplumber` installed April 29.
 
@@ -251,9 +262,9 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Post-Finals, May 10 2026)
+## Current Priorities (Post-Finals, May 13 2026)
 
-1. **ENGL 150** — Essay 4 DONE. Portfolio (05) scan done -- Mooney white text flagged (AI camouflage likely), 40 clean. `/150-portfolio` assessment still needed. **Grades due May 11.** ENGL 325 oral defenses done. `/325-defense` orphaned -- Bill to decide: delete or keep.
+1. **Spring 2026 grading** -- ENGL 150 grades due May 11 (likely submitted). ENGL 325 WK15 individual grades DONE (May 13). `/325-defense` orphaned -- Bill to decide: delete or keep.
 2. **Skills overhaul** — COMPLETE as of May 5. 23 commands total. Audit log: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`.
 3. **Claudian Wiki Project** — Ollama synthesis pipeline live. 519 pages (512 seeds, 7 drafts). `auto_synthesize.py` running nightly (5 pages/night). Batch catchup: `python auto_synthesize.py --limit 20`.
 4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.

@@ -186,12 +186,12 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*
 - Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`, `/150-portfolio`
 - FERPA pipeline: `/grammar-report`* (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
-- ENGL 325: `/325-pulse`*, `/325-defense` (built but oral defenses scrapped -- pending deletion decision)
+- ENGL 325: `/325-pulse`* (active) | `/325-defense` DELETED May 21
 - Voice/detection references: `/feedback-voice`*, `/ai-detection`
-- Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category)
+- Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category; also conditionally updates architecture map)
 - Wiki: `/wiki-ingest`, `/wiki-status`
 - Infrastructure: `/fix-bash`, `/ss`
-- Session management: `/lock-it-in`*, `/land-the-plane`* (new May 21 -- meta-routing skill, trigger: "tag and bag")
+- Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
 - Diagnostics: `/grade-summary`, `/memory-status`
 
 *Promoted to Skill (subdirectory + SKILL.md)
@@ -203,9 +203,9 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - `rubric-assess/` → references: `assessment-flags.md`
 - `325-pulse/` → references: `project-roster.md`
 - `lock-it-in/` — no references/ (self-contained)
-- `land-the-plane/` — no references/ (self-contained)
+- `tag-and-bag/` — no references/ (self-contained)
 
-**CoWork parity (May 21, 2026):** lock-it-in (v2), land-the-plane, remember all ported to CoWork skills folder. CoWork path verified: `AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\447dc7ad...\97ec5d8f...\skills\`
+**CoWork parity (May 21, 2026):** lock-it-in (v2), tag-and-bag, remember all ported to CoWork skills folder. CoWork path verified: `AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\447dc7ad...\97ec5d8f...\skills\`
 
 **Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py, `strip_cover_page.py` (cover page removal for portfolios/assignments with formal cover pages), `extract_portfolio_data.py` (structural extractor: page count, essay detection, supplemental writing → Class_Reference.docx + portfolio_data.csv)
 

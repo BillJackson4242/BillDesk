@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** May 13, 2026 | **Post-Finals, Spring 2026 Semester**
+**Last Updated:** May 21, 2026 | **Post-Finals, Spring 2026 Semester**
 
 ---
 
@@ -237,7 +237,8 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Git push hook syncs local edits to GitHub Pages for web-facing instances
 
 **Access by instance:**
-- App Claude / CoWork Claude / Chat: Fetch from GitHub Pages URL (read-only)
+- App Claude / Chat: Fetch from GitHub Pages URL (read-only)
+- CoWork Claude: Read canonical file directly at `C:\GitHub\BillDesk\claude_memory.md` (BillDesk folder connected); write back via memory_inbox
 - Code Claude: Read and write canonical file; auto-push hook keeps Pages in sync within ~60 sec
 
 **Writing back to memory (App/CoWork/Chat Claude):**

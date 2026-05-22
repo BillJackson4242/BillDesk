@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -68,7 +68,7 @@ jobs:
           # Simple index page
           echo '<html><body><h1>BillDesk Memory</h1><p><a href="memory.txt">Full memory file</a></p></body></html>' > _site/index.html
 
-      - uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
       - uses: actions/deploy-pages@v4
         id: deployment

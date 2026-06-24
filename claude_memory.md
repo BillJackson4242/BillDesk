@@ -280,37 +280,30 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Claudian Wiki Project — Status (April 16, 2026)
+## Claudian Wiki / Semantic Memory — Status (June 24, 2026)
 
-**Purpose:** Karpathy LLM Wiki pattern. Bill says "show me everything about X" → system responds in <10s. Full corpus = entire `C:\Users\Bill's Dell of Death\Dropbox\00 AI\` (8,684+ files).
+**Purpose:** Karpathy LLM Wiki pattern + semantic memory. Bill asks anything reaching past this file -> semantic search returns sourced answers in seconds. Corpus = entire `00 AI/` folder.
 
-**Architecture:**
-- `raw/` — immutable sources (READ ONLY)
-- `wiki/` — compiled knowledge pages (Code Claude maintains)
-- `CLAUDE.md` — librarian schema (vault root)
-- `index.md` + `log.md` — navigation and ops log
+**Two layers. RAW IS TRUTH:**
+- **Source layer (canonical):** actual corpus files, embedded directly. 3,584 source embeddings, 11.7M words indexed. This is the authority. Default query target.
+- **Wiki layer (overlay):** 1,716 Ollama-synthesized pages, 7 domains (vessels 684, memory 362, meta 331, conversations 277, tools 32, books 29, teaching 1). 729 wiki embeddings. A convenience map, NOT the source of truth. Query only with `--wiki`.
 
-**Current state (May 8, 2026):**
-- **519 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
-- 7 draft pages (synthesized by Ollama); 512 seed pages remaining
-- Graph view color-coded by domain path in Obsidian
+**Retrieval -- `wiki_query.py` is THE tool.**
+Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-text (Ollama, local, free).
+- `python wiki_query.py "your question"` -- searches SOURCE files, returns excerpts + scores
+- `--for-claude` -- injects 3,000 chars of real source per hit (use when feeding an instance)
+- `--top N` | `--domain X` | `--show-content` | `--wiki` (summaries) | `--stats` | `--list-domains`
+- `/recall` wraps this for in-session use.
 
-**Automation pipeline (runs 2 AM nightly via Task Scheduler):**
-1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/`. Unicode-safe as of May 8, 2026.
-2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content. Zero Claude tokens.
-3. `auto_synthesize.py` — sends new seed pages to Ollama (qwen2.5:7b), writes back draft wiki pages. 5 pages/night default. Zero Claude API cost.
-- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs all three scripts)
+**Scripts MOVED:** now at `OBSIDIAN_VAULT_raw/` -- NOT `OBSIDIAN_VAULT/raw/`. Any pre-June memory citing the old path is wrong.
 
-**Scripts location:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\`
-- `convert_docs.py` — binary converter
-- `auto_seed.py` — wiki seeder
-- `auto_synthesize.py` — Ollama synthesis (qwen2.5:7b at localhost:11434)
-- `run_convert_docs.bat` — launcher for all three (Task Scheduler entry point)
+**Charter:** `OBSIDIAN_VAULT/Claudian_Wiki_Project_Charter.md`
+**Schema:** `OBSIDIAN_VAULT/CLAUDE.md`
 
-**Synthesis:** Automatic nightly (5 pages/night via Ollama). Manual batch: `python auto_synthesize.py --limit 20` (~2 min/page, CPU-only). Target by domain: `--domain vessels`.
-
-**Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
-**Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
+**Open gaps (June 2026 audit):**
+- Multi-source intake NOT built. ChatGPT/Claude/Gemini/Maya exports embed as one blob, not per-conversation. Need format-aware splitters. This is the real open work item.
+- Retrieval is whole-file, not chunked -- returns the right file, not the right paragraph.
+- 19 conversion failures in last nightly run; root junk (Untitled.canvas x6) uncleaned (`cleanup_junk_pages.py` exists, not scheduled).
 
 ---
 

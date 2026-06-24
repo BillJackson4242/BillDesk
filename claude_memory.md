@@ -272,7 +272,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 1. **Spring 2026 grading** -- ENGL 150 grades due May 11 (likely submitted). ENGL 325 WK15 individual grades DONE (May 13). `/325-defense` orphaned -- Bill to decide: delete or keep.
 2. **Skills infrastructure** — Overhaul COMPLETE May 5. Phase 3 additions May 21: `/land-the-plane` (meta-routing, trigger "tag and bag"), `/remember` updated (wiki inbox write), CoWork parity achieved (lock-it-in v2 + land-the-plane + remember all ported). 23 commands total.
-3. **Claudian Wiki Project** — Ollama synthesis pipeline live. 519 pages (512 seeds, 7 drafts). `auto_synthesize.py` running nightly (5 pages/night). Batch catchup: `python auto_synthesize.py --limit 20`.
+3. **Claudian Wiki / Semantic Memory** — LIVE and working. 3,584 source embeddings (11.7M words), 1,716 wiki overlay pages. Retrieval via `wiki_query.py` / `/recall`. Open work: multi-source intake splitters (ChatGPT/Claude/Gemini/Maya), source chunking, fix dead session-capture hook path. Full section below.
 4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.
 5. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
 6. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.

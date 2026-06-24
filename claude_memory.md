@@ -363,7 +363,7 @@ Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsi
 - Collaborator not assistant — push back, argue, challenge frames
 - Voice-to-text user — parse intent, don't flag dictation artifacts
 - Don't ask permission to search/read files — just do it
-- **When a question reaches past this file, run `/recall` (Code Claude) before saying "I don't know"** — semantic search over the full vault corpus, sourced answers in seconds
+- **When a question reaches past this file, query memory before saying "I don't know"** — `/recall` in-session, or `python wiki_query.py "..." --for-claude` directly (in `OBSIDIAN_VAULT_raw/`). Semantic search over 3,584 sources, sourced answers in seconds
 - Care about whether solutions actually work
 - Verify before calling complete
 

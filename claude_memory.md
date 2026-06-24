@@ -307,30 +307,31 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 ---
 
-## Vault Intake Pipeline — Active (April 29, 2026)
+## Vault Intake Pipeline — 6-Stage Nightly (June 24, 2026)
 
-**Session capture (replaces claude-mem):**
-- Script: `C:\BillHome\.claude-stop-hook\session_capture.py`
-- Hook: Stop hook in `C:\Users\BillsDellOfDeath\.claude\settings.json`
-- Output: `OBSIDIAN_VAULT/raw/inbox/session_YYYY-MM-DD_HHMMSS.md` — files touched, commands run, domain tag
-- No AI calls, no worker process, no external dependencies
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily. Confirmed alive -- ran all 6 stages 00:31 on 06/23/2026.
 
-**File conversion (nightly, 2AM via Task Scheduler):**
-- Script: `OBSIDIAN_VAULT/raw/convert_docs.py`
-- Handles: `.docx`, `.pdf` (pdfplumber), `.txt`, `.html/.htm`, `.pptx` (python-pptx), images (metadata stub)
-- Output: `OBSIDIAN_VAULT/raw/converted/` — preserves folder structure, `.md` output
-- auto_seed.py runs after, creates wiki seed pages for new content
+**Stages:**
+1. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown.
+2. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
+3. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
+4. `auto_link.py` -- embedding-based linking across wiki pages.
+5. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
+6. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
 
-**Synthesis (automatic + on-demand):**
-- `auto_synthesize.py` — Ollama (qwen2.5:7b) synthesizes new seeds nightly, 5 pages/night. Zero tokens.
-- `/wiki-ingest [slug]` — higher-quality Claude synthesis for important pages
-- Manual batch: `python auto_synthesize.py --limit 20`
+**Inbox paths -- GET THIS RIGHT:**
+- LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.
+- DEAD: `OBSIDIAN_VAULT/raw/inbox/` -- 0 files, dead-letter. Do NOT write here. Pre-June session_capture pointed here; 64 orphans archived 2026-06-10.
 
-**What to do with files:**
-- Drop anything into `00 AI/` → converted overnight → seeded overnight → synthesized overnight by Ollama
-- Transcripts / PDFs / PPTs / HTML exports all handled automatically
+**Session capture -- CURRENTLY BROKEN (hook misconfigured):**
+- Real script: `C:\BillHome\.claude\hooks\session_capture.py` -- writes to the LIVE inbox (correct).
+- BUG: Stop hook in `C:\Users\BillsDellOfDeath\.claude\settings.json` points to `C:\BillHome\.claude-stop-hook\session_capture.py` -- that path does NOT exist. Hook fires Python at a missing file, so capture is silently dead (same failure mode that killed claude-mem). FIX: repoint the Stop hook command to `.claude\hooks\session_capture.py`.
 
-**claude-mem: REMOVED April 29, 2026** — never wrote observations (hooks silently failed); replaced by session_capture.py. Task Scheduler task `claude-mem-worker` deleted.
+**Drop-anything (current reality):** drop into `00 AI/` -> converted/seeded/embedded/synthesized overnight. Works for docs/PDF/PPT/HTML. Does NOT yet split chat exports.
+
+**Synthesis (on-demand):** `/wiki-ingest [slug]` for higher-quality Claude synthesis of important pages.
+
+**claude-mem: REMOVED April 29, 2026** -- replaced by session_capture.py.
 
 ---
 

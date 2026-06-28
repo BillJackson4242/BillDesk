@@ -322,7 +322,7 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 **Stages:**
 1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown in `<zip_dir>/_notion_extracted/` (one searchable note per page, not one blob). Added June 28. Idempotent.
-2. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown. Skips browser `_files/` folders; salvages text from corrupt/mislabeled OOXML + zip bundles.
+2. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown. Skips browser `_files/` folders; salvages text from corrupt/mislabeled OOXML + zip bundles. Re-converts a file when the source is NEWER than its converted copy (mtime check, June 28) -- without this, rewritten files like session transcripts get converted once from their first version and skipped forever.
 3. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
 4. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
 5. `auto_link.py` -- embedding-based linking across wiki pages.

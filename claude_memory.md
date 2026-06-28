@@ -301,10 +301,14 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 **Charter:** `OBSIDIAN_VAULT/Claudian_Wiki_Project_Charter.md`
 **Schema:** `OBSIDIAN_VAULT/CLAUDE.md`
 
-**Open gaps (June 2026 audit):**
-- Multi-source intake NOT built. ChatGPT/Claude/Gemini/Maya exports embed as one blob, not per-conversation. Need format-aware splitters. This is the real open work item.
-- Retrieval is whole-file, not chunked -- returns the right file, not the right paragraph.
-- 19 conversion failures in last nightly run; root junk (Untitled.canvas x6) uncleaned (`cleanup_junk_pages.py` exists, not scheduled).
+**Fixed (June 28, 2026 audit pass):**
+- Converter resilience: `convert_docs.py` skips browser `_files/` sidecar folders (empty saved_resource.html noise) and salvages text from corrupt/mislabeled OOXML + zip-bundle "vessel archives" (`_salvage_ooxml_text`). Rescued Full_Signal/Memory-test (xlsx-as-md) and selvara archive. Two tiny truly-corrupt files now fail gracefully, not noisily.
+- Junk cleaned: 3 image-stub wiki pages removed + cache entries (1725 -> 1722); empty root scratch deleted (Untitled.*, empty dailies).
+- Chunking shipped as `wiki_query.py --passages` (opt-in best-passage retrieval).
+
+**Open gaps:**
+- Multi-source intake NOT built. ChatGPT/Claude/Gemini/Maya exports embed as one blob, not per-conversation. Need format-aware splitters. BLOCKED: no sample export files in corpus yet -- Bill to drop one of each to build against. The real open work item.
+- Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
 
 ---
 

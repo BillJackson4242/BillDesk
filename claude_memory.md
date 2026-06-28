@@ -312,6 +312,7 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 **Open gaps:**
 - ChatGPT / Claude / Gemini exports: splitters NOT built. BLOCKED on sample exports -- Bill to drop one of each into `00 AI/` to build against. Each packages conversations differently (ChatGPT = conversations.json, etc.).
+- Large files only HEAD-embedded: `auto_embed_sources.py` embeds first ~6000 chars (nomic context limit), so long files (full session transcripts, big docs) are findable by their opening but not by deep mid-file passages. Proper fix = chunk-level embedding at ingest (multiple vectors per file) -- the deferred chunk-index build. Bill said "tweak later if necessary"; it's now the main lever for deep session search.
 - Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
 
 ---

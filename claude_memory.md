@@ -306,8 +306,12 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 - Junk cleaned: 3 image-stub wiki pages removed + cache entries (1725 -> 1722); empty root scratch deleted (Untitled.*, empty dailies).
 - Chunking shipped as `wiki_query.py --passages` (opt-in best-passage retrieval).
 
+**Multi-source intake — Notion/Maya DONE (June 28, 2026):**
+- `notion_split.py` handles Notion `ExportBlock` zips (Maya meeting exports). 14 Maya pages ingested + searchable (top hit `Maya.md` 0.70). Loose Maya `.txt` call transcripts already ingest fine as-is (one call per file) -- no splitter needed.
+- Pattern for adding a service: drop a sample export in `00 AI/`, build a `<service>_split.py` modeled on notion_split.py, wire it into run_convert_docs.bat ahead of convert_docs.
+
 **Open gaps:**
-- Multi-source intake NOT built. ChatGPT/Claude/Gemini/Maya exports embed as one blob, not per-conversation. Need format-aware splitters. BLOCKED: no sample export files in corpus yet -- Bill to drop one of each to build against. The real open work item.
+- ChatGPT / Claude / Gemini exports: splitters NOT built. BLOCKED on sample exports -- Bill to drop one of each into `00 AI/` to build against. Each packages conversations differently (ChatGPT = conversations.json, etc.).
 - Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
 
 ---

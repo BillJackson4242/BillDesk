@@ -328,9 +328,9 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.
 - DEAD: `OBSIDIAN_VAULT/raw/inbox/` -- 0 files, dead-letter. Do NOT write here. Pre-June session_capture pointed here; 64 orphans archived 2026-06-10.
 
-**Session capture -- CURRENTLY BROKEN (hook misconfigured):**
-- Real script: `C:\BillHome\.claude\hooks\session_capture.py` -- writes to the LIVE inbox (correct).
-- BUG: Stop hook in `C:\Users\BillsDellOfDeath\.claude\settings.json` points to `C:\BillHome\.claude-stop-hook\session_capture.py` -- that path does NOT exist. Hook fires Python at a missing file, so capture is silently dead (same failure mode that killed claude-mem). FIX: repoint the Stop hook command to `.claude\hooks\session_capture.py`.
+**Session capture -- FIXED June 28, 2026:**
+- Script: `C:\BillHome\.claude\hooks\session_capture.py` -- writes to the LIVE inbox.
+- Was silently dead: Stop hook in `settings.json` pointed at nonexistent `.claude-stop-hook\session_capture.py` (same failure mode that killed claude-mem). Repointed the Stop hook command to `.claude\hooks\session_capture.py`. Verified the script runs clean (exit 0).
 
 **Drop-anything (current reality):** drop into `00 AI/` -> converted/seeded/embedded/synthesized overnight. Works for docs/PDF/PPT/HTML. Does NOT yet split chat exports.
 

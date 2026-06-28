@@ -333,9 +333,13 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.
 - DEAD: `OBSIDIAN_VAULT/raw/inbox/` -- 0 files, dead-letter. Do NOT write here. Pre-June session_capture pointed here; 64 orphans archived 2026-06-10.
 
-**Session capture -- FIXED June 28, 2026:**
-- Script: `C:\BillHome\.claude\hooks\session_capture.py` -- writes to the LIVE inbox.
-- Was silently dead: Stop hook in `settings.json` pointed at nonexistent `.claude-stop-hook\session_capture.py` (same failure mode that killed claude-mem). Repointed the Stop hook command to `.claude\hooks\session_capture.py`. Verified the script runs clean (exit 0).
+**Session capture -- FULL TRANSCRIPT, June 28, 2026:**
+- Script: `C:\BillHome\.claude\hooks\session_capture.py` (Stop hook). Rewrites one complete markdown record per Code Claude session into the LIVE inbox on every turn; final write = full session.
+- Captures en toto: full Bill prompts, full Claude replies, every tool call WITH its code/commands, and tool results (results capped at 8000 chars each; code at 24000). Strips harness noise (slash-command echoes, system-reminders, task-notifications, local-command output) so the record is what was actually said.
+- Extended-thinking text is NOT recoverable -- Claude Code stores it as an encrypted signature, not plaintext. Can't be logged.
+- Earlier bug history: hook pointed at nonexistent `.claude-stop-hook\` path (silently dead, like claude-mem); repointed to `.claude\hooks\`. Old version only saved a metadata receipt; now saves the whole conversation.
+
+**Inject protocol (sessions -> Claudian):** Stop hook writes transcript to `OBSIDIAN_VAULT_raw/inbox/` -> nightly pipeline (convert/seed/embed) ingests it -> searchable via `/recall` / `wiki_query.py`. Verified end-to-end June 28 (this session ranks #3 for its own topic).
 
 **Drop-anything (current reality):** drop into `00 AI/` -> converted/seeded/embedded/synthesized overnight. Works for docs/PDF/PPT/HTML. Does NOT yet split chat exports.
 

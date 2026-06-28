@@ -312,17 +312,18 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 ---
 
-## Vault Intake Pipeline — 6-Stage Nightly (June 24, 2026)
+## Vault Intake Pipeline — 7-Stage Nightly (June 28, 2026)
 
-**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily. Confirmed alive -- ran all 6 stages 00:31 on 06/23/2026.
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
 
 **Stages:**
-1. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown.
-2. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
-3. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
-4. `auto_link.py` -- embedding-based linking across wiki pages.
-5. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
-6. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
+1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown in `<zip_dir>/_notion_extracted/` (one searchable note per page, not one blob). Added June 28. Idempotent.
+2. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown. Skips browser `_files/` folders; salvages text from corrupt/mislabeled OOXML + zip bundles.
+3. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
+4. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
+5. `auto_link.py` -- embedding-based linking across wiki pages.
+6. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
+7. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
 
 **Inbox paths -- GET THIS RIGHT:**
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.

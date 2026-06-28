@@ -293,6 +293,7 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 - `python wiki_query.py "your question"` -- searches SOURCE files, returns excerpts + scores
 - `--for-claude` -- injects 3,000 chars of real source per hit (use when feeding an instance)
 - `--top N` | `--domain X` | `--show-content` | `--wiki` (summaries) | `--stats` | `--list-domains`
+- `--passages` -- deep mode: chunks the top hits, returns the matching paragraph instead of the file head. ~3-6s on long docs. Opt-in; default path unchanged.
 - `/recall` wraps this for in-session use.
 
 **Scripts MOVED:** now at `OBSIDIAN_VAULT_raw/` -- NOT `OBSIDIAN_VAULT/raw/`. Any pre-June memory citing the old path is wrong.

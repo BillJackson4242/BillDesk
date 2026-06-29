@@ -317,7 +317,7 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 ---
 
-## Vault Intake Pipeline — 7-Stage Nightly (June 28, 2026)
+## Vault Intake Pipeline — 8-Stage Nightly (June 29, 2026)
 
 **Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
 

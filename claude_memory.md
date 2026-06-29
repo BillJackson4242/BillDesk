@@ -312,7 +312,9 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 
 **Open gaps:**
 - ChatGPT / Claude / Gemini exports: splitters NOT built. BLOCKED on sample exports -- Bill to drop one of each into `00 AI/` to build against. Each packages conversations differently (ChatGPT = conversations.json, etc.).
-- Large files only HEAD-embedded: `auto_embed_sources.py` embeds first ~6000 chars (nomic context limit), so long files (full session transcripts, big docs) are findable by their opening but not by deep mid-file passages. Proper fix = chunk-level embedding at ingest (multiple vectors per file) -- the deferred chunk-index build. Bill said "tweak later if necessary"; it's now the main lever for deep session search.
+- Paragraph-level search BUILT June 29 (`auto_embed_chunks.py` + `wiki_query.py` chunk path). Proven: deep buried passages retrieve correctly (e.g. a Stop-hook bug paragraph in a 33k-word session scored 0.79). wiki_query prefers the chunk index (`source_chunks.npy`) when present, falls back to the whole-file cache otherwise.
+- CONSTRAINT: no GPU (Intel UHD only; Ollama runs nomic-embed-text 100% CPU at ~3s/chunk). Full corpus ~55k chunks = ~48 hrs one-time. So the build is newest-first + 90-min/night budget + resumable: session transcripts and recent/active files index first (hours), deep archive backfills over ~weeks. Not a blocker -- until a file is chunk-indexed, it's still searchable via its whole-file embedding (graceful).
+- To accelerate manually: `python auto_embed_chunks.py --newest-first` (no budget) overnight, or `--force` to rebuild. Index is incremental by mtime.
 - Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
 
 ---

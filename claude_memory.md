@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** June 24, 2026 | Wiki/memory section reconciled to reality (semantic search LIVE, raw-is-truth, 3,584 source embeddings). Prior: June 10 Audit 1+2 — settings consolidated, hooks pruned, memory chain repaired, auto-push hook live
+**Last Updated:** June 29, 2026 | Memory-pipeline overhaul: full-transcript session capture, Notion-export splitter, paragraph-level (chunk) search, converter salvage + staleness fix. Prior: June 24 wiki/memory reconciled to reality (semantic search LIVE, raw-is-truth)
 
 ---
 

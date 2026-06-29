@@ -326,9 +326,10 @@ Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-te
 2. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown. Skips browser `_files/` folders; salvages text from corrupt/mislabeled OOXML + zip bundles. Re-converts a file when the source is NEWER than its converted copy (mtime check, June 28) -- without this, rewritten files like session transcripts get converted once from their first version and skipped forever.
 3. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
 4. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
-5. `auto_link.py` -- embedding-based linking across wiki pages.
-6. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
-7. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
+5. `auto_embed_chunks.py` -- paragraph-level index for deep passage search. Newest-first, 90-min/night budget, checkpointed/resumable. Writes `source_chunks.npy` (float32 matrix) + `source_chunks_meta.json` (char offsets). Added June 29.
+6. `auto_link.py` -- embedding-based linking across wiki pages.
+7. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
+8. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
 
 **Inbox paths -- GET THIS RIGHT:**
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.

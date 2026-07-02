@@ -227,6 +227,8 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
   - `json-canvas` — installed, no current use case.
   - Verify on next launch: type `/obsidian`, expect 5 autocompletes (plugin config loads at session start, not mid-session).
 
+**Always-on status line (July 2, 2026):** Two-line live bar at terminal bottom. Script `C:\BillHome\.claude\hooks\statusline.py`, wired via `settings.json` -> `statusLine` (invoked with `"C:/Program Files/Python314/python.exe"`). Reads the JSON Claude Code pipes on stdin (schema: code.claude.com/docs/en/statusline) — pure stdin, no transcript parse, so it's fast. Line 1: model · effort · folder · git branch. Line 2: context bar (green<70 / yellow 70-89 / red 90+) · tokens used/200k · output · cost · wall time. Appears only after a Code restart (statusLine config loads at launch). The deep on-demand counterpart is `/thread-stats` (`hooks/thread_stats.py`), which parses a session `.jsonl` for turns/tool-breakdown/token totals/biggest context hogs.
+
 ---
 
 ## Bill Jackson: Core Context

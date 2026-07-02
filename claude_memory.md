@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** July 2, 2026 | Vault noise cleanup: 58 binary-as-`.md` files relocated to attachments, 60 stale embed-cache entries + 5 empty stubs purged. Prior July 1: obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter)
+**Last Updated:** July 2, 2026 | Built always-on status line + `/thread-stats` (24th command); vault noise cleanup (58 binary-as-`.md` files relocated, 60 stale cache entries + 5 stubs purged); obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter)
 
 ---
 

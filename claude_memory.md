@@ -192,7 +192,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval over vault corpus — added June 12, 2026)
 - Infrastructure: `/fix-bash`, `/ss`
 - Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
-- Diagnostics: `/grade-summary`, `/memory-status`
+- Diagnostics: `/grade-summary`, `/memory-status`, `/thread-stats` (July 2 — CLI session analyzer: parses a session `.jsonl` for turns, tool-call breakdown, token totals, context hogs; `--list` / id-fragment args)
 
 *Promoted to Skill (subdirectory + SKILL.md)
 

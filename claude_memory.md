@@ -218,6 +218,15 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Phase 2D: Grading bridge added to 4 grading commands (memory_inbox completion records)
 - **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.
 
+**Third-party plugins (separate from the 23 custom commands):**
+- **obsidian-skills** (kepano / Steph Ango, Obsidian CEO). Installed July 1, 2026 via `claude plugin install obsidian@obsidian-skills --scope user` (CLI is non-interactive; the `/plugin` slash version needs the TUI). MIT, v1.0.1, pure documentation — 0 hooks / 0 MCP / 0 agents / 0 scripts. ~604 tok/session always-on. 5 skills, with operating flags (decided this session, don't re-litigate):
+  - `obsidian-markdown` — USE FREELY when hand-editing vault files (wikilinks/embeds/callouts/frontmatter). Note: only fires on manual edits; the nightly `auto_synthesize.py` output is untouched by it.
+  - `obsidian-bases` — use when asked. `.base` DB views. Don't seed unprompted.
+  - `defuddle` — ask-first, use-case-only. Its SKILL text says "prefer over WebFetch" and "npm install -g defuddle" — IGNORE the mandate; never auto-npm. Use only for messy article pages, ask Bill before installing.
+  - `obsidian-cli` — DORMANT. Needs Obsidian app running + CLI installed; Bill's pipeline bypasses the app. Do not attempt.
+  - `json-canvas` — installed, no current use case.
+  - Verify on next launch: type `/obsidian`, expect 5 autocompletes (plugin config loads at session start, not mid-session).
+
 ---
 
 ## Bill Jackson: Core Context

@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** June 29, 2026 | Memory-pipeline overhaul: full-transcript session capture, Notion-export splitter, paragraph-level (chunk) search, converter salvage + staleness fix. Prior: June 24 wiki/memory reconciled to reality (semantic search LIVE, raw-is-truth)
+**Last Updated:** July 1, 2026 | obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter). Prior: June 29 memory-pipeline overhaul (full-transcript session capture, Notion splitter, chunk search, converter salvage)
 
 ---
 

@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** July 1, 2026 | obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter). Prior: June 29 memory-pipeline overhaul (full-transcript session capture, Notion splitter, chunk search, converter salvage)
+**Last Updated:** July 2, 2026 | Vault noise cleanup: 58 binary-as-`.md` files relocated to attachments, 60 stale embed-cache entries + 5 empty stubs purged. Prior July 1: obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter)
 
 ---
 

@@ -180,7 +180,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 
 ## Skill System (Code Claude)
 
-**24 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026). Phase 3 additions: May 21, 2026. `/thread-stats` added July 2, 2026.**
+**25 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026). Phase 3 additions: May 21, 2026. `/thread-stats` added July 2. `/audit` added July 4, 2026.**
 
 **Current command set:**
 - Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*

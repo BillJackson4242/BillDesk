@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** July 2, 2026 | Built always-on status line + `/thread-stats` (24th command); vault noise cleanup (58 binary-as-`.md` files relocated, 60 stale cache entries + 5 stubs purged); obsidian-skills plugin installed (kepano, user scope, 5 skills); ChatGPT export landed in `00 AI/` (unblocks ChatGPT splitter)
+**Last Updated:** July 4, 2026 | MAJOR BUILD: corpus expanded to teaching + resume + consulting roots (FERPA-fenced); domain brains live (`--domain` scoping from wiki_pages citation); wiki map published to Pages; MCP connector for App/iOS deep search; Track A honesty layer (/audit + voice_check + voice_guard hook); two artifacts (system-of-record + instructional). Wave 2 (consulting, 8,467 docs) converting.
 
 ---
 

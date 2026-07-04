@@ -205,6 +205,9 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - `325-pulse/` → references: `project-roster.md`
 - `lock-it-in/` — no references/ (self-contained)
 - `tag-and-bag/` — no references/ (self-contained)
+- `audit/` — no references/ (banlist lives at `.claude\audit\voice_banlist.json`, shared with voice_check.py + voice_guard hook — edit the JSON, never the scripts)
+
+**Voice enforcement infra (July 4, 2026):** `C:\BillHome\.claude\audit\` — `voice_banlist.json` (Universal Output Standards as data, single source of truth) + `voice_check.py` (regex checker: file/line/span, JSON verdict, exit 1 on bans, skips markdown blockquotes so quoted student text never false-positives). `voice_guard.py` Stop hook registered in settings.json next to session_capture: scans feedback-named files written in-session, warns ONCE on bans (exit 2 + stop_hook_active re-entry guard), never blocks. Loads on next Code restart.
 
 **CoWork parity (May 21, 2026):** lock-it-in (v2), tag-and-bag, remember all ported to CoWork skills folder. CoWork path verified: `AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\447dc7ad...\97ec5d8f...\skills\`
 

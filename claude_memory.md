@@ -377,6 +377,9 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 **Synthesis (on-demand):** `/wiki-ingest [slug]` for higher-quality Claude synthesis of important pages.
 
+**CoWork chat-export system (July 4, 2026 -- CoWork-built, Code-integrated):** CoWork scheduled task `chat-export-to-wiki`, nightly 12:30 AM (before the 2 AM pipeline), exports new/updated threads into `00 AI/Chat_Exports_Auto/` -- lanes: `chatgpt/` (internal JSON API), `claude_web/` (internal API), `cowork/` (native tools; fills the gap session_capture never covered -- 144 CoWork sessions backfilling at 25/night). Plus `manifest.json` ledger + `run_log.md`. Files are already markdown, so the pipeline ingests as-is; Code-side integration added July 4: FOLDER_RULE `chat_exports_auto/ -> conversations` (was falling to meta) + grading tokens added to publish contamination fence (speedgrader/gradebook/canvas_ready/peer eval/Canvas filename signature -- chat threads discuss named students; conversations domain publishes).
+**SPLITTER CONTRACT (binding on chatgpt_split.py + future claude splitter):** emit `<platform>_<conversation_id>.md` INTO the matching `Chat_Exports_Auto/` lane (NOT a separate folder) -- filename IS the dedup; official exports overwrite scraped files and heal drift; dedup by conversation ID only, never title/date; upsert into manifest.json so the scraper doesn't re-export. Validated: current_node parent-walk linearization works; strip `citeturn` markers + private-use unicode wrappers (U+E000-F8FF); frontmatter schema: platform, conversation_id, title, created, updated, exported, exporter. Claude splitter UNBLOCKED once Bill's claude.ai official export (triggered 7/4) lands in 00 AI/. Gemini still blocked on sample.
+
 **claude-mem: REMOVED April 29, 2026** -- replaced by session_capture.py.
 
 ---

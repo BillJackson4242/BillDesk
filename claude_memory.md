@@ -283,12 +283,13 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Post-Finals, May 13 2026)
+## Current Priorities (July 4, 2026)
 
-1. **Spring 2026 grading** -- ENGL 150 grades due May 11 (likely submitted). ENGL 325 WK15 individual grades DONE (May 13). `/325-defense` orphaned -- Bill to decide: delete or keep.
-2. **Skills infrastructure** — Overhaul COMPLETE May 5. Phase 3 additions May 21: `/land-the-plane` (meta-routing, trigger "tag and bag"), `/remember` updated (wiki inbox write), CoWork parity achieved (lock-it-in v2 + land-the-plane + remember all ported). 23 commands total.
-3. **Claudian Wiki / Semantic Memory** — LIVE. 3,584 source embeddings (11.7M words), ~1,722 wiki overlay pages. Retrieval via `wiki_query.py` / `/recall`. June 29: full-transcript session auto-capture, Notion splitter (`notion_split.py`), paragraph-level chunk index (`auto_embed_chunks.py` -> `source_chunks.npy`; wiki_query merges chunk + whole-file). Open work: chunk-index backfill (newest-first, ~weeks on CPU, no GPU); `chatgpt_split.py` (UNBLOCKED — sample export landed `00 AI/Chat download 6-30-26/`, scoped, build next thread); Claude/Gemini splitters still blocked on samples; Bill has more Obsidian ideas to explore. Full section below.
-4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.
+1. **Bill's action items from the July 4 build:** (a) ROTATE the OpenAI key found in vault plaintext, if live -- only urgent item; (b) register MCP connector on claude.ai + iOS (URL = tunnel host + mcp_secret.txt + /mcp); (c) decide tunnel permanence (named tunnel needs Cloudflare login + domain ~$10/yr, else re-issue quick tunnels); (d) restart Code Claude so voice_guard hook loads; (e) name ~a dozen perennial themes for /wiki-ingest concept pages; (f) optional: test whether CoWork can run wiki_query.py.
+2. **Claudian Wiki** — corpus expansion DONE (wave 1 verified: EPOCH query returns 5 teaching docs 0.65-0.72 that scored nothing before). Wave 2 (consulting) converting via detached process; nightly embeds it with checkpoints over coming nights. Open work: chunk backfill for new roots (accelerate: overnight `auto_embed_chunks.py --newest-first`); consulting near-dup collapse AFTER wave 2 (25 yrs of deck versions will pollute top-5s); `chatgpt_split.py` (unblocked, scoped, not built); Claude/Gemini splitters blocked on samples; legacy .doc conversion (pandoc can't read them -- oldest consulting years invisible; LibreOffice headless pre-pass would recover).
+3. **Tuning queue (proposed July 4, in the system-of-record artifact):** retrieval regression harness (10 golden queries -- retrieval has zero tests today); nightly backfill_domains refresh after stage 3; query-time reranking (--rerank, biggest semantic gain available); semantic-centroid realm brains + auto-routing (only if domain sets prove coarse); one-time frontier re-embed (voyage-class) when wave 2 settles.
+4. **Skills infrastructure** — 25 commands. /audit added July 4; /recall updated for brains. CoWork parity current as of May 21.
+5. **Three-Tier Router** — Tier 2 LIVE (Ollama). Tier 1 wrap + Tier 3 wiring still open.
 5. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
 6. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
 7. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.

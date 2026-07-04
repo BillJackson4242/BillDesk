@@ -189,7 +189,8 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - ENGL 325: `/325-pulse`* (active) | `/325-defense` DELETED May 21
 - Voice/detection references: `/feedback-voice`*, `/ai-detection`
 - Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category; also conditionally updates architecture map)
-- Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval over vault corpus — added June 12, 2026)
+- Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval; July 4: `--domain` brains scoping added, corpus counts updated)
+- Honesty: `/audit`* (July 4 — two modes: `voice <file>` runs deterministic banlist check; generic `<standard> <target>` dispatches evidence-citing subagent. Rule: no citation, no flag; "confirm" must execute, never reason)
 - Infrastructure: `/fix-bash`, `/ss`
 - Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
 - Diagnostics: `/grade-summary`, `/memory-status`, `/thread-stats` (July 2 — CLI session analyzer: parses a session `.jsonl` for turns, tool-call breakdown, token totals, context hogs; `--list` / id-fragment args)

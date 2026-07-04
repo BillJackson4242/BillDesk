@@ -345,19 +345,20 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Vault Intake Pipeline — 8-Stage Nightly (June 29, 2026)
+## Vault Intake Pipeline — 9-Stage Nightly (July 4, 2026)
 
 **Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
 
 **Stages:**
-1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown in `<zip_dir>/_notion_extracted/` (one searchable note per page, not one blob). Added June 28. Idempotent.
-2. `convert_docs.py` -- scans `00 AI/`, converts .docx/.pdf(pdfplumber)/.txt/.html/.pptx/images -> markdown. Skips browser `_files/` folders; salvages text from corrupt/mislabeled OOXML + zip bundles. Re-converts a file when the source is NEWER than its converted copy (mtime check, June 28) -- without this, rewritten files like session transcripts get converted once from their first version and skipped forever.
-3. `auto_seed.py` -- maps converted files to wiki domain/slug, creates seed pages.
-4. `auto_embed_sources.py` -- embeds source files (nomic-embed-text) -> `source_embed_cache.json`. Caches; only new/changed re-embed.
-5. `auto_embed_chunks.py` -- paragraph-level index for deep passage search. Newest-first, 90-min/night budget, checkpointed/resumable. Writes `source_chunks.npy` (float32 matrix) + `source_chunks_meta.json` (char offsets). Added June 29.
+1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.
+2. `convert_docs.py` -- MULTI-ROOT (July 4): scans the ROOTS list (00 AI + teaching + resume + consulting), each into its own converted/ subfolder. FERPA fence at the walk. `--root LABEL` runs one root manually. mtime-incremental; salvages corrupt OOXML; skips `_files/` sidecars.
+3. `auto_seed.py` -- maps converted files to domain/slug (8 domains incl. `work`), creates seed pages. FERPA belt two runs BEFORE topic rules (a Submissions path containing "ENGL150" would otherwise topic-match into teaching).
+4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. **Checkpoints every 100 embeds (July 4 -- an end-only save lost ~2,000 embeds to a killed run; never again).**
+5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other.
 6. `auto_link.py` -- embedding-based linking across wiki pages.
-7. `auto_synthesize.py` -- Ollama qwen2.5:7b synthesizes seeds -> draft wiki pages. Runs until 08:00.
-8. `nightly_health_check.py` -- writes report to `OBSIDIAN_VAULT_raw/inbox/nightly_health_*.md`.
+7. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00.
+8. `publish_wiki.py` (July 4) -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
+9. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`.
 
 **Inbox paths -- GET THIS RIGHT:**
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.

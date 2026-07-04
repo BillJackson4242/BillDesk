@@ -295,21 +295,30 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Claudian Wiki / Semantic Memory — Status (June 24, 2026)
+## Claudian Wiki / Semantic Memory — Status (July 4, 2026)
 
-**Purpose:** Karpathy LLM Wiki pattern + semantic memory. Bill asks anything reaching past this file -> semantic search returns sourced answers in seconds. Corpus = entire `00 AI/` folder.
+**Purpose:** Karpathy LLM Wiki pattern + semantic memory. Bill asks anything reaching past this file -> semantic search returns sourced answers in seconds.
+
+**Corpus = FOUR roots now (July 4 expansion, `convert_docs.py -> ROOTS`):**
+- `00 AI/` (original) | `00 Bill Ferris Teaching/` -> `converted/_teaching/` (1,162 embedded) | `00 Bill Resume/` -> `converted/_work/resume/` (110) | `00 Bill's Work/00 Consulting/` -> `converted/_work/consulting/` (wave 2, 8,467 docs converting; images skipped per SKIP_IMAGES_ROOTS -- stubs only, not worth the Dropbox download)
 
 **Two layers. RAW IS TRUTH:**
-- **Source layer (canonical):** actual corpus files, embedded directly. 3,584 source embeddings, 11.7M words indexed. This is the authority. Default query target.
-- **Wiki layer (overlay):** 1,716 Ollama-synthesized pages, 7 domains (vessels 684, memory 362, meta 331, conversations 277, tools 32, books 29, teaching 1). 729 wiki embeddings. A convenience map, NOT the source of truth. Query only with `--wiki`.
+- **Source layer (canonical):** ~4,900 source embeddings post-expansion. This is the authority. Default query target.
+- **Wiki layer (overlay):** ~2,230 pages (498 seeds added July 4), 8 domains -- `work` added for consulting/resume. A convenience map, NOT the source of truth. Query only with `--wiki`.
 
-**Retrieval -- `wiki_query.py` is THE tool.**
-Location: `OBSIDIAN_VAULT_raw/wiki_query.py`. Semantic search via nomic-embed-text (Ollama, local, free).
-- `python wiki_query.py "your question"` -- searches SOURCE files, returns excerpts + scores
-- `--for-claude` -- injects 3,000 chars of real source per hit (use when feeding an instance)
-- `--top N` | `--domain X` | `--show-content` | `--wiki` (summaries) | `--stats` | `--list-domains`
-- `--passages` -- deep mode: chunks the top hits, returns the matching paragraph instead of the file head. ~3-6s on long docs. Opt-in; default path unchanged.
-- `/recall` wraps this for in-session use.
+**Domain brains (July 4):** every embedding carries a `domains` LIST stamped from wiki_pages CITATION (which wiki/<domain>/ pages cite the file) -- NEVER from filename regex (three-lens review killed that: guesses disagree with citation, silent recall loss). 532 slugs live in >1 domain, so list not scalar. Source-domain histogram: vessels 1,833 | memory 1,307 | teaching 1,167 | conversations 804 | meta 633 | books 509 | tools 502 | work 112+. `backfill_domains.py` re-stamps both caches from current wiki state (re-runnable, no re-embed, asserts row alignment). Scoping = recall cut: thin scoped result -> retry unscoped before saying archive is silent.
+
+**Retrieval -- `wiki_query.py` is THE tool. FOUR DOORS now:**
+1. Code U: `/recall` / CLI direct. `--domain teaching` / `--domain work,teaching` (comma-multi, source mode, cuts before ranking) | `--for-claude` | `--passages` | `--stats`
+2. App U / iOS U: MCP connector -- `wiki_mcp_server.py` (port 8787, one tool: search_memory) + Cloudflare tunnel (`C:\BillHome\tools\cloudflared.exe`). Secret path segment in `OBSIDIAN_VAULT_raw/mcp_secret.txt`. Quick-tunnel URL dies on restart; runbook: `MCP_CONNECTOR_RUNBOOK.md`. Verified end-to-end from public internet.
+3. Any fetch-capable instance: Pages map -- `https://raw.githubusercontent.com/BillJackson4242/BillDesk/main/wiki/index.md` (1,728 pages, always on)
+4. CoWork U: untested -- if it can run Python, it gets full search free. Test + record.
+
+**FERPA fences (two belts, keep in sync BY HAND):** `convert_docs.py` walk filter + `auto_seed.py` pre-classification guard. Block: dir names containing submission/_held/roster/attendance/final grades/grade report/peer review/self assessment/discussion groups; Canvas filenames `name_(LATE_)12345_1234567_` (the _LATE_ variant slipped v1); FERPA_CASE_DIRS person-folders (dakota rahe, alexis plank -- append new cases there) + their names as file tokens. IN on purpose: Bill's materials, anonymized `student_0NN` sets, Bill's feedback compilations naming students (instructor records, local-only). Verified: 0 leaks in embed cache; 88 pre-fence conversions purged retroactively.
+
+**Secrets fence:** `publish_wiki.py` refuses pages matching sk-/gh*_/AKIA/xox/key= shapes. Born in battle July 4: GitHub push protection caught an OpenAI key qwen synthesized into a wiki page; family fence then caught 8 more pages GitHub missed. **OPEN RISK: that OpenAI key sits in plaintext in vault source (secret-key-for-dev-bootcamp) -- Bill to rotate if live.**
+
+**Artifacts (July 4):** system-of-record `claude.ai/code/artifact/24bf3ea1-a9f6-4be5-8c73-371e2e0a0f78` (architecture/inventory/invariants/tuning) + instructional `claude.ai/code/artifact/c7629fbd-426f-4ab7-a07e-8f0bc2c413b7` (generalized teach-it version, faculty/LinkedIn-ready). Both passed voice_check.
 
 **Scripts MOVED:** now at `OBSIDIAN_VAULT_raw/` -- NOT `OBSIDIAN_VAULT/raw/`. Any pre-June memory citing the old path is wrong.
 

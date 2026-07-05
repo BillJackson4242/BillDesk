@@ -311,7 +311,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 **Retrieval -- `wiki_query.py` is THE tool. FOUR DOORS now:**
 1. Code U: `/recall` / CLI direct. `--domain teaching` / `--domain work,teaching` (comma-multi, source mode, cuts before ranking) | `--for-claude` | `--passages` | `--stats`
-2. App U / iOS U: MCP connector -- `wiki_mcp_server.py` (port 8787, one tool: search_memory) + Cloudflare tunnel (`C:\BillHome\tools\cloudflared.exe`). Secret path segment in `OBSIDIAN_VAULT_raw/mcp_secret.txt`. Quick-tunnel URL dies on restart; runbook: `MCP_CONNECTOR_RUNBOOK.md`. Verified end-to-end from public internet.
+2. App U / iOS U / CoWork U: MCP connector -- **PERMANENT since July 5**: `https://wiki.billjacksonwiki.us/<secret>/mcp` (secret in `OBSIDIAN_VAULT_raw/mcp_secret.txt` -- NEVER paste the full URL into this file, it publishes to public Pages). Named Cloudflare tunnel `claudian` on Bill-owned domain billjacksonwiki.us; config `C:\BillHome\.cloudflared\`. Survives reboots via Startup-folder script `claudian_stack.vbs` (Task Scheduler needed admin, denied). Server headless under pythonw -- None-stdout bug fixed July 5 (was 502ing per request); log: `wiki_mcp_server.log`. Verified end-to-end. Register once in claude.ai (web+iOS) AND the desktop app (desktop registration = CoWork gets native search_memory, bypassing her sandbox egress block). Runbook: `MCP_CONNECTOR_RUNBOOK.md`.
 3. Any fetch-capable instance: Pages map -- `https://raw.githubusercontent.com/BillJackson4242/BillDesk/main/wiki/index.md` (1,728 pages, always on)
 4. CoWork U: untested -- if it can run Python, it gets full search free. Test + record.
 

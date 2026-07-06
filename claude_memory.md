@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** July 4, 2026 | MAJOR BUILD: corpus expanded to teaching + resume + consulting roots (FERPA-fenced); domain brains live (`--domain` scoping from wiki_pages citation); wiki map published to Pages; MCP connector for App/iOS deep search; Track A honesty layer (/audit + voice_check + voice_guard hook); two artifacts (system-of-record + instructional). Wave 2 (consulting, 8,467 docs) converting.
+**Last Updated:** July 5, 2026 | ALL-GREEN: permanent connector live on billjacksonwiki.us (named tunnel, reboot-proof) -- all four instances have memory access, CoWork search_memory VERIFIED; OpenAI key revoked after 8-copy scrub + capture-layer hardening; capture-era gap established (pre-June-28 sessions mostly unrecoverable, 5 backfilled); /multi-lens locked in (26th command). Wave 2 consulting still converting; tonight = first full 9-stage nightly + CoWork export run #2.
 
 ---
 

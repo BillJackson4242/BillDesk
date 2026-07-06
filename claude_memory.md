@@ -1,5 +1,5 @@
 # Claude's Working Memory - Bill Jackson
-**Last Updated:** May 22, 2026 | **Post-Finals, Spring 2026 Semester**
+**Last Updated:** July 5, 2026 | ALL-GREEN: permanent connector live on billjacksonwiki.us (named tunnel, reboot-proof) -- all four instances have memory access, CoWork search_memory VERIFIED; OpenAI key revoked after 8-copy scrub + capture-layer hardening; capture-era gap established (pre-June-28 sessions mostly unrecoverable, 5 backfilled); /multi-lens locked in (26th command). Wave 2 consulting still converting; tonight = first full 9-stage nightly + CoWork export run #2.
 
 ---
 
@@ -180,7 +180,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 
 ## Skill System (Code Claude)
 
-**23 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026). Phase 3 additions: May 21, 2026.**
+**26 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026). Phase 3 additions: May 21, 2026. `/thread-stats` added July 2. `/audit` added July 4. `/multi-lens` added July 5, 2026.**
 
 **Current command set:**
 - Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*
@@ -189,10 +189,12 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - ENGL 325: `/325-pulse`* (active) | `/325-defense` DELETED May 21
 - Voice/detection references: `/feedback-voice`*, `/ai-detection`
 - Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category; also conditionally updates architecture map)
-- Wiki: `/wiki-ingest`, `/wiki-status`
+- Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval; July 4: `--domain` brains scoping added, corpus counts updated)
+- Honesty: `/audit`* (July 4 — two modes: `voice <file>` runs deterministic banlist check; generic `<standard> <target>` dispatches evidence-citing subagent. Rule: no citation, no flag; "confirm" must execute, never reason)
+- Plan review: `/multi-lens`* (July 5 — "spin up the lenses": 3 parallel hostile subagents (failure-modes / simplicity / skeptic), evidence-cited, merge + rewrite. Probe-before-agents rule: a one-hour measurement beats 200k agent tokens when it can settle the premise. Proven on the brains plan: killed filename-regex tagging before a line was built)
 - Infrastructure: `/fix-bash`, `/ss`
 - Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
-- Diagnostics: `/grade-summary`, `/memory-status`
+- Diagnostics: `/grade-summary`, `/memory-status`, `/thread-stats` (July 2 — CLI session analyzer: parses a session `.jsonl` for turns, tool-call breakdown, token totals, context hogs; `--list` / id-fragment args)
 
 *Promoted to Skill (subdirectory + SKILL.md)
 
@@ -204,6 +206,9 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - `325-pulse/` → references: `project-roster.md`
 - `lock-it-in/` — no references/ (self-contained)
 - `tag-and-bag/` — no references/ (self-contained)
+- `audit/` — no references/ (banlist lives at `.claude\audit\voice_banlist.json`, shared with voice_check.py + voice_guard hook — edit the JSON, never the scripts)
+
+**Voice enforcement infra (July 4, 2026):** `C:\BillHome\.claude\audit\` — `voice_banlist.json` (Universal Output Standards as data, single source of truth) + `voice_check.py` (regex checker: file/line/span, JSON verdict, exit 1 on bans, skips markdown blockquotes so quoted student text never false-positives). `voice_guard.py` Stop hook registered in settings.json next to session_capture: scans feedback-named files written in-session, warns ONCE on bans (exit 2 + stop_hook_active re-entry guard), never blocks. Loads on next Code restart.
 
 **CoWork parity (May 21, 2026):** lock-it-in (v2), tag-and-bag, remember all ported to CoWork skills folder. CoWork path verified: `AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\447dc7ad...\97ec5d8f...\skills\`
 
@@ -217,6 +222,17 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Phase 2C: TRIGGER blocks added to all 22 commands/skills
 - Phase 2D: Grading bridge added to 4 grading commands (memory_inbox completion records)
 - **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.
+
+**Third-party plugins (separate from the 23 custom commands):**
+- **obsidian-skills** (kepano / Steph Ango, Obsidian CEO). Installed July 1, 2026 via `claude plugin install obsidian@obsidian-skills --scope user` (CLI is non-interactive; the `/plugin` slash version needs the TUI). MIT, v1.0.1, pure documentation — 0 hooks / 0 MCP / 0 agents / 0 scripts. ~604 tok/session always-on. 5 skills, with operating flags (decided this session, don't re-litigate):
+  - `obsidian-markdown` — USE FREELY when hand-editing vault files (wikilinks/embeds/callouts/frontmatter). Note: only fires on manual edits; the nightly `auto_synthesize.py` output is untouched by it.
+  - `obsidian-bases` — use when asked. `.base` DB views. Don't seed unprompted.
+  - `defuddle` — ask-first, use-case-only. Its SKILL text says "prefer over WebFetch" and "npm install -g defuddle" — IGNORE the mandate; never auto-npm. Use only for messy article pages, ask Bill before installing.
+  - `obsidian-cli` — DORMANT. Needs Obsidian app running + CLI installed; Bill's pipeline bypasses the app. Do not attempt.
+  - `json-canvas` — installed, no current use case.
+  - Verify on next launch: type `/obsidian`, expect 5 autocompletes (plugin config loads at session start, not mid-session).
+
+**Always-on status line (July 2, 2026):** Two-line live bar at terminal bottom. Script `C:\BillHome\.claude\hooks\statusline.py`, wired via `settings.json` -> `statusLine` (invoked with `"C:/Program Files/Python314/python.exe"`). Reads the JSON Claude Code pipes on stdin (schema: code.claude.com/docs/en/statusline) — pure stdin, no transcript parse, so it's fast. Line 1: model · effort · folder · git branch. Line 2: context bar (green<70 / yellow 70-89 / red 90+) · tokens used/200k · output · cost · wall time. Appears only after a Code restart (statusLine config loads at launch). The deep on-demand counterpart is `/thread-stats` (`hooks/thread_stats.py`), which parses a session `.jsonl` for turns/tool-breakdown/token totals/biggest context hogs.
 
 ---
 
@@ -268,76 +284,105 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (Post-Finals, May 13 2026)
+## Current Priorities (July 4, 2026)
 
-1. **Spring 2026 grading** -- ENGL 150 grades due May 11 (likely submitted). ENGL 325 WK15 individual grades DONE (May 13). `/325-defense` orphaned -- Bill to decide: delete or keep.
-2. **Skills infrastructure** — Overhaul COMPLETE May 5. Phase 3 additions May 21: `/land-the-plane` (meta-routing, trigger "tag and bag"), `/remember` updated (wiki inbox write), CoWork parity achieved (lock-it-in v2 + land-the-plane + remember all ported). 23 commands total.
-3. **Claudian Wiki Project** — Ollama synthesis pipeline live. 519 pages (512 seeds, 7 drafts). `auto_synthesize.py` running nightly (5 pages/night). Batch catchup: `python auto_synthesize.py --limit 20`.
-4. **Three-Tier Router** — Tier 2 (Ollama on Windows) NOW LIVE. Mac Mini component no longer needed for this machine.
+1. **Bill's action items:** (a) restart Code Claude so voice_guard hook loads; (b) name ~a dozen perennial themes for /wiki-ingest concept pages. **ALL-GREEN July 5:** OpenAI key REVOKED at platform ($0 spend -- never exploited) after full scrub: 8 copies found+killed (orig, converted copy, 2 wiki pages, cache excerpt, 2 insights-folder stragglers, and the session-capture transcript that recorded the key mid-scrub -- root fix: session_capture.py now token-scrubs every write; the capture layer has the same immune system as the publish layer). Connectors live everywhere: claude.ai "Memory" (web+iOS) + desktop "Memory for Desktop" -> CoWork native search_memory VERIFIED (hits 0.72/0.67/0.66, coherent sourced excerpts). Connector tools load at session START -- fresh session after any connector change. URL backup: `Dropbox\00 AI\Claude\Claude Code\.claude\Cloud Flare URL for memory.txt` (safe from ingestion -- dot-dir skip).
+2. **Claudian Wiki** — corpus expansion DONE (wave 1 verified: EPOCH query returns 5 teaching docs 0.65-0.72 that scored nothing before). Wave 2 (consulting) converting via detached process; nightly embeds it with checkpoints over coming nights. Open work: chunk backfill for new roots (accelerate: overnight `auto_embed_chunks.py --newest-first`); consulting near-dup collapse AFTER wave 2 (25 yrs of deck versions will pollute top-5s); `chatgpt_split.py` (unblocked, scoped, not built); Claude/Gemini splitters blocked on samples; legacy .doc conversion (pandoc can't read them -- oldest consulting years invisible; LibreOffice headless pre-pass would recover).
+3. **Tuning queue (proposed July 4, in the system-of-record artifact):** retrieval regression harness (10 golden queries -- retrieval has zero tests today); nightly backfill_domains refresh after stage 3; query-time reranking (--rerank, biggest semantic gain available); semantic-centroid realm brains + auto-routing (only if domain sets prove coarse); one-time frontier re-embed (voyage-class) when wave 2 settles.
+4. **Skills infrastructure** — 25 commands. /audit added July 4; /recall updated for brains. CoWork parity current as of May 21.
+5. **Three-Tier Router** — Tier 2 LIVE (Ollama). Tier 1 wrap + Tier 3 wiring still open.
 5. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
 6. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
 7. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
 
 ---
 
-## Claudian Wiki Project — Status (April 16, 2026)
+## Claudian Wiki / Semantic Memory — Status (July 4, 2026)
 
-**Purpose:** Karpathy LLM Wiki pattern. Bill says "show me everything about X" → system responds in <10s. Full corpus = entire `C:\Users\Bill's Dell of Death\Dropbox\00 AI\` (8,684+ files).
+**Purpose:** Karpathy LLM Wiki pattern + semantic memory. Bill asks anything reaching past this file -> semantic search returns sourced answers in seconds.
 
-**Architecture:**
-- `raw/` — immutable sources (READ ONLY)
-- `wiki/` — compiled knowledge pages (Code Claude maintains)
-- `CLAUDE.md` — librarian schema (vault root)
-- `index.md` + `log.md` — navigation and ops log
+**Corpus = FOUR roots now (July 4 expansion, `convert_docs.py -> ROOTS`):**
+- `00 AI/` (original) | `00 Bill Ferris Teaching/` -> `converted/_teaching/` (1,162 embedded) | `00 Bill Resume/` -> `converted/_work/resume/` (110) | `00 Bill's Work/00 Consulting/` -> `converted/_work/consulting/` (wave 2, 8,467 docs converting; images skipped per SKIP_IMAGES_ROOTS -- stubs only, not worth the Dropbox download)
 
-**Current state (May 8, 2026):**
-- **519 wiki pages** across 7 domains (vessels, books, conversations, memory, teaching, tools, meta)
-- 7 draft pages (synthesized by Ollama); 512 seed pages remaining
-- Graph view color-coded by domain path in Obsidian
+**Two layers. RAW IS TRUTH:**
+- **Source layer (canonical):** ~4,900 source embeddings post-expansion. This is the authority. Default query target.
+- **Wiki layer (overlay):** ~2,230 pages (498 seeds added July 4), 8 domains -- `work` added for consulting/resume. A convenience map, NOT the source of truth. Query only with `--wiki`.
 
-**Automation pipeline (runs 2 AM nightly via Task Scheduler):**
-1. `convert_docs.py` — scans ALL of `00 AI/`, converts .docx + binary .md → `raw/converted/`. Unicode-safe as of May 8, 2026.
-2. `auto_seed.py` — maps converted files to wiki domain/slug, creates seed pages for new content. Zero Claude tokens.
-3. `auto_synthesize.py` — sends new seed pages to Ollama (qwen2.5:7b), writes back draft wiki pages. 5 pages/night default. Zero Claude API cost.
-- Task: `ConvertDocs_ObsidianVault` → `run_convert_docs.bat` (runs all three scripts)
+**Domain brains (July 4):** every embedding carries a `domains` LIST stamped from wiki_pages CITATION (which wiki/<domain>/ pages cite the file) -- NEVER from filename regex (three-lens review killed that: guesses disagree with citation, silent recall loss). 532 slugs live in >1 domain, so list not scalar. Source-domain histogram: vessels 1,833 | memory 1,307 | teaching 1,167 | conversations 804 | meta 633 | books 509 | tools 502 | work 112+. `backfill_domains.py` re-stamps both caches from current wiki state (re-runnable, no re-embed, asserts row alignment). Scoping = recall cut: thin scoped result -> retry unscoped before saying archive is silent.
 
-**Scripts location:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\raw\`
-- `convert_docs.py` — binary converter
-- `auto_seed.py` — wiki seeder
-- `auto_synthesize.py` — Ollama synthesis (qwen2.5:7b at localhost:11434)
-- `run_convert_docs.bat` — launcher for all three (Task Scheduler entry point)
+**Retrieval -- `wiki_query.py` is THE tool. FOUR DOORS now:**
+1. Code U: `/recall` / CLI direct. `--domain teaching` / `--domain work,teaching` (comma-multi, source mode, cuts before ranking) | `--for-claude` | `--passages` | `--stats`
+2. App U / iOS U / CoWork U: MCP connector -- **PERMANENT since July 5**: `https://wiki.billjacksonwiki.us/<secret>/mcp` (secret in `OBSIDIAN_VAULT_raw/mcp_secret.txt` -- NEVER paste the full URL into this file, it publishes to public Pages). Named Cloudflare tunnel `claudian` on Bill-owned domain billjacksonwiki.us; config `C:\BillHome\.cloudflared\`. Survives reboots via Startup-folder script `claudian_stack.vbs` (Task Scheduler needed admin, denied). Server headless under pythonw -- None-stdout bug fixed July 5 (was 502ing per request); log: `wiki_mcp_server.log`. Verified end-to-end. Register once in claude.ai (web+iOS) AND the desktop app (desktop registration = CoWork gets native search_memory, bypassing her sandbox egress block). Runbook: `MCP_CONNECTOR_RUNBOOK.md`.
+3. Any fetch-capable instance: Pages map -- `https://raw.githubusercontent.com/BillJackson4242/BillDesk/main/wiki/index.md` (1,728 pages, always on)
+4. CoWork U: untested -- if it can run Python, it gets full search free. Test + record.
 
-**Synthesis:** Automatic nightly (5 pages/night via Ollama). Manual batch: `python auto_synthesize.py --limit 20` (~2 min/page, CPU-only). Target by domain: `--domain vessels`.
+**FERPA fences (two belts, keep in sync BY HAND):** `convert_docs.py` walk filter + `auto_seed.py` pre-classification guard. Block: dir names containing submission/_held/roster/attendance/final grades/grade report/peer review/self assessment/discussion groups; Canvas filenames `name_(LATE_)12345_1234567_` (the _LATE_ variant slipped v1); FERPA_CASE_DIRS person-folders (dakota rahe, alexis plank -- append new cases there) + their names as file tokens. IN on purpose: Bill's materials, anonymized `student_0NN` sets, Bill's feedback compilations naming students (instructor records, local-only). Verified: 0 leaks in embed cache; 88 pre-fence conversions purged retroactively.
 
-**Charter:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\Claudian_Wiki_Project_Charter.md`
-**Schema:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\OBSIDIAN_VAULT\CLAUDE.md`
+**Secrets fence:** `publish_wiki.py` refuses pages matching sk-/gh*_/AKIA/xox/key= shapes. Born in battle July 4: GitHub push protection caught an OpenAI key qwen synthesized into a wiki page; family fence then caught 8 more pages GitHub missed. **OPEN RISK: that OpenAI key sits in plaintext in vault source (secret-key-for-dev-bootcamp) -- Bill to rotate if live.**
+
+**Artifacts (July 4):** system-of-record `claude.ai/code/artifact/24bf3ea1-a9f6-4be5-8c73-371e2e0a0f78` (architecture/inventory/invariants/tuning) + instructional `claude.ai/code/artifact/c7629fbd-426f-4ab7-a07e-8f0bc2c413b7` (generalized teach-it version, faculty/LinkedIn-ready). Both passed voice_check.
+
+**Scripts MOVED:** now at `OBSIDIAN_VAULT_raw/` -- NOT `OBSIDIAN_VAULT/raw/`. Any pre-June memory citing the old path is wrong.
+
+**Charter:** `OBSIDIAN_VAULT/Claudian_Wiki_Project_Charter.md`
+**Schema:** `OBSIDIAN_VAULT/CLAUDE.md`
+
+**Vault noise cleanup (July 2, 2026):** Audited `OBSIDIAN_VAULT/` (2,983 md). Vault is clean on names/orphans (0 garbage filenames, 13 orphans mostly legit). Real noise = **58 binary files masquerading as `.md`** in `notes/insights/` + `notes/conversations/` (37 docx, 11 zip, 8 png, 2 xlsx; 123.7 MB; source of the mojibake graph node + garbage embeddings). Fix: renamed each to true extension + relocated to `attachments/recovered_binaries_2026-07-01/` (reversible — `_MOVE_LOG.json` in that folder). Pruned 60 stale entries from `source_embed_cache.json` (3647→3587) by EXACT original path — NOT basename (basename would've nuked 301 legit converted-text twins under `raw/converted/`). Deleted 5 empty 0-byte stubs. Chunk index untouched (those old files not yet chunk-indexed). Backups of cache/chunk index in job tmp (ephemeral). Note: the relocated docx now carry real extensions, so nightly `convert_docs.py` will salvage their text properly. One file (`42E838AB…png`) is a corrupted-header PNG (0x89 → U+FFFD round-trip damage), preserved but likely unopenable.
+
+**Fixed (June 28, 2026 audit pass):**
+- Converter resilience: `convert_docs.py` skips browser `_files/` sidecar folders (empty saved_resource.html noise) and salvages text from corrupt/mislabeled OOXML + zip-bundle "vessel archives" (`_salvage_ooxml_text`). Rescued Full_Signal/Memory-test (xlsx-as-md) and selvara archive. Two tiny truly-corrupt files now fail gracefully, not noisily.
+- Junk cleaned: 3 image-stub wiki pages removed + cache entries (1725 -> 1722); empty root scratch deleted (Untitled.*, empty dailies).
+- Chunking shipped as `wiki_query.py --passages` (opt-in best-passage retrieval).
+
+**Multi-source intake — Notion/Maya DONE (June 28, 2026):**
+- `notion_split.py` handles Notion `ExportBlock` zips (Maya meeting exports). 14 Maya pages ingested + searchable (top hit `Maya.md` 0.70). Loose Maya `.txt` call transcripts already ingest fine as-is (one call per file) -- no splitter needed.
+- Pattern for adding a service: drop a sample export in `00 AI/`, build a `<service>_split.py` modeled on notion_split.py, wire it into run_convert_docs.bat ahead of convert_docs.
+
+**Open gaps:**
+- ChatGPT / Claude / Gemini exports: splitters NOT built. **ChatGPT now UNBLOCKED (June 30, 2026):** full OpenAI export landed at `00 AI/Chat download 6-30-26/` — 591 conversations, Mar 2023→Jun 2026, split across `conversations-000..005.json` + `chat.html` + 303 `file_*.dat` assets. Schema: each conversation is a branching node-tree (`mapping`), so `chatgpt_split.py` must walk `current_node` back through parents to linearize the real thread (handle edits/regens), one markdown note per conversation, model on `notion_split.py`, wire into `run_convert_docs.bat` ahead of convert_docs. NOT yet built — scoped, ready to build next thread. Claude/Gemini still BLOCKED on samples.
+- Paragraph-level search BUILT June 29 (`auto_embed_chunks.py` + `wiki_query.py` chunk path). Proven: deep buried passages retrieve correctly (e.g. a Stop-hook bug paragraph in a 33k-word session scored 0.79). wiki_query prefers the chunk index (`source_chunks.npy`) when present, falls back to the whole-file cache otherwise.
+- CONSTRAINT: no GPU (Intel UHD only; Ollama runs nomic-embed-text 100% CPU at ~3s/chunk). Full corpus ~55k chunks = ~48 hrs one-time. So the build is newest-first + 90-min/night budget + resumable: session transcripts and recent/active files index first (hours), deep archive backfills over ~weeks. Not a blocker -- until a file is chunk-indexed, it's still searchable via its whole-file embedding (graceful).
+- To accelerate manually: `python auto_embed_chunks.py --newest-first` (no budget) overnight, or `--force` to rebuild. Index is incremental by mtime.
+- Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
 
 ---
 
-## Vault Intake Pipeline — Active (April 29, 2026)
+## Vault Intake Pipeline — 9-Stage Nightly (July 4, 2026)
 
-**Session capture (replaces claude-mem):**
-- Script: `C:\BillHome\.claude-stop-hook\session_capture.py`
-- Hook: Stop hook in `C:\Users\BillsDellOfDeath\.claude\settings.json`
-- Output: `OBSIDIAN_VAULT/raw/inbox/session_YYYY-MM-DD_HHMMSS.md` — files touched, commands run, domain tag
-- No AI calls, no worker process, no external dependencies
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
 
-**File conversion (nightly, 2AM via Task Scheduler):**
-- Script: `OBSIDIAN_VAULT/raw/convert_docs.py`
-- Handles: `.docx`, `.pdf` (pdfplumber), `.txt`, `.html/.htm`, `.pptx` (python-pptx), images (metadata stub)
-- Output: `OBSIDIAN_VAULT/raw/converted/` — preserves folder structure, `.md` output
-- auto_seed.py runs after, creates wiki seed pages for new content
+**Stages:**
+1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.
+2. `convert_docs.py` -- MULTI-ROOT (July 4): scans the ROOTS list (00 AI + teaching + resume + consulting), each into its own converted/ subfolder. FERPA fence at the walk. `--root LABEL` runs one root manually. mtime-incremental; salvages corrupt OOXML; skips `_files/` sidecars.
+3. `auto_seed.py` -- maps converted files to domain/slug (8 domains incl. `work`), creates seed pages. FERPA belt two runs BEFORE topic rules (a Submissions path containing "ENGL150" would otherwise topic-match into teaching).
+4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. **Checkpoints every 100 embeds (July 4 -- an end-only save lost ~2,000 embeds to a killed run; never again).**
+5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other.
+6. `auto_link.py` -- embedding-based linking across wiki pages.
+7. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00.
+8. `publish_wiki.py` (July 4) -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
+9. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`.
 
-**Synthesis (automatic + on-demand):**
-- `auto_synthesize.py` — Ollama (qwen2.5:7b) synthesizes new seeds nightly, 5 pages/night. Zero tokens.
-- `/wiki-ingest [slug]` — higher-quality Claude synthesis for important pages
-- Manual batch: `python auto_synthesize.py --limit 20`
+**Inbox paths -- GET THIS RIGHT:**
+- LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.
+- DEAD: `OBSIDIAN_VAULT/raw/inbox/` -- 0 files, dead-letter. Do NOT write here. Pre-June session_capture pointed here; 64 orphans archived 2026-06-10.
 
-**What to do with files:**
-- Drop anything into `00 AI/` → converted overnight → seeded overnight → synthesized overnight by Ollama
-- Transcripts / PDFs / PPTs / HTML exports all handled automatically
+**Session capture -- FULL TRANSCRIPT, June 28, 2026:**
+- Script: `C:\BillHome\.claude\hooks\session_capture.py` (Stop hook). Rewrites one complete markdown record per Code Claude session into the LIVE inbox on every turn; final write = full session.
+- Captures en toto: full Bill prompts, full Claude replies, every tool call WITH its code/commands, and tool results (results capped at 8000 chars each; code at 24000). Strips harness noise (slash-command echoes, system-reminders, task-notifications, local-command output) so the record is what was actually said.
+- Extended-thinking text is NOT recoverable -- Claude Code stores it as an encrypted signature, not plaintext. Can't be logged.
+- Earlier bug history: hook pointed at nonexistent `.claude-stop-hook\` path (silently dead, like claude-mem); repointed to `.claude\hooks\`. Old version only saved a metadata receipt; now saves the whole conversation.
+- **Capture-era gap (established July 5 via CoWork's golden-query probe):** pre-June-28 Code sessions exist only as ~457-byte receipts, and Claude Code prunes raw JSONLs after ~30 days -- so that era is mostly unrecoverable (e.g. the May 13 WK15 zipfile+ElementTree episode: knowledge survives ONLY in this file, not the corpus). July 5 backfill through the patched hook recovered the 5 salvageable sessions (3x June 11, June 20 stub->full, July 2). Corollary: /remember extracts into THIS file are the only archive of pre-capture-era work -- keep them rich. Hook also token-scrubs every write as of July 5 (an OpenAI key got captured mid-scrub; 8 copies total, all killed, key revoked at $0 spend).
 
-**claude-mem: REMOVED April 29, 2026** — never wrote observations (hooks silently failed); replaced by session_capture.py. Task Scheduler task `claude-mem-worker` deleted.
+**Inject protocol (sessions -> Claudian):** Stop hook writes transcript to `OBSIDIAN_VAULT_raw/inbox/` -> nightly pipeline (convert/seed/embed) ingests it -> searchable via `/recall` / `wiki_query.py`. Verified end-to-end June 28 (this session ranks #3 for its own topic).
+
+**Drop-anything (current reality):** drop into `00 AI/` -> converted/seeded/embedded/synthesized overnight. Works for docs/PDF/PPT/HTML. Does NOT yet split chat exports.
+
+**Synthesis (on-demand):** `/wiki-ingest [slug]` for higher-quality Claude synthesis of important pages.
+
+**CoWork chat-export system (July 4, 2026 -- CoWork-built, Code-integrated):** CoWork scheduled task `chat-export-to-wiki`, nightly 12:30 AM (before the 2 AM pipeline), exports new/updated threads into `00 AI/Chat_Exports_Auto/` -- lanes: `chatgpt/` (internal JSON API), `claude_web/` (internal API), `cowork/` (native tools; fills the gap session_capture never covered -- 144 CoWork sessions backfilling at 25/night). Plus `manifest.json` ledger + `run_log.md`. Files are already markdown, so the pipeline ingests as-is; Code-side integration added July 4: FOLDER_RULE `chat_exports_auto/ -> conversations` (was falling to meta) + grading tokens added to publish contamination fence (speedgrader/gradebook/canvas_ready/peer eval/Canvas filename signature -- chat threads discuss named students; conversations domain publishes).
+**SPLITTER CONTRACT (binding on chatgpt_split.py + future claude splitter):** emit `<platform>_<conversation_id>.md` INTO the matching `Chat_Exports_Auto/` lane (NOT a separate folder) -- filename IS the dedup; official exports overwrite scraped files and heal drift; dedup by conversation ID only, never title/date; upsert into manifest.json so the scraper doesn't re-export. Validated: current_node parent-walk linearization works; strip `citeturn` markers + private-use unicode wrappers (U+E000-F8FF); frontmatter schema: platform, conversation_id, title, created, updated, exported, exporter. Claude splitter UNBLOCKED once Bill's claude.ai official export (triggered 7/4) lands in 00 AI/. Gemini still blocked on sample.
+
+**claude-mem: REMOVED April 29, 2026** -- replaced by session_capture.py.
 
 ---
 
@@ -369,6 +414,7 @@ Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsi
 - Collaborator not assistant — push back, argue, challenge frames
 - Voice-to-text user — parse intent, don't flag dictation artifacts
 - Don't ask permission to search/read files — just do it
+- **When a question reaches past this file, query memory before saying "I don't know"** — `/recall` in-session, or `python wiki_query.py "..." --for-claude` directly (in `OBSIDIAN_VAULT_raw/`). ~4,900 sources incl. teaching + consulting; scope with `--domain teaching` / `--domain work` when the realm is clear, retry unscoped if thin
 - Care about whether solutions actually work
 - Verify before calling complete
 

@@ -191,6 +191,7 @@ All student-facing feedback follows two distinct voices. Both target under 40% A
 - Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category; also conditionally updates architecture map)
 - Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval; July 4: `--domain` brains scoping added, corpus counts updated)
 - Honesty: `/audit`* (July 4 — two modes: `voice <file>` runs deterministic banlist check; generic `<standard> <target>` dispatches evidence-citing subagent. Rule: no citation, no flag; "confirm" must execute, never reason)
+- Plan review: `/multi-lens`* (July 5 — "spin up the lenses": 3 parallel hostile subagents (failure-modes / simplicity / skeptic), evidence-cited, merge + rewrite. Probe-before-agents rule: a one-hour measurement beats 200k agent tokens when it can settle the premise. Proven on the brains plan: killed filename-regex tagging before a line was built)
 - Infrastructure: `/fix-bash`, `/ss`
 - Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
 - Diagnostics: `/grade-summary`, `/memory-status`, `/thread-stats` (July 2 — CLI session analyzer: parses a session `.jsonl` for turns, tool-call breakdown, token totals, context hogs; `--list` / id-fragment args)

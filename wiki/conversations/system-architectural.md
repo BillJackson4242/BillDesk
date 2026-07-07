@@ -2,7 +2,7 @@
 title: System Architectural
 domain: conversations
 created: 2026-04-26
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 
@@ -29,8 +29,8 @@ None.
 
 - [[emergent]]
 - [[ai-presence-spectrum]]
-- [[sage]]
 - [[agent-ecosystem-diagram]]
+- [[sage]]
 - [[map-of-your-ai-continuity-ecosystem]]
 
 ## Sources

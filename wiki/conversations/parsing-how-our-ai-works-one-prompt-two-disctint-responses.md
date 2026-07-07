@@ -2,7 +2,7 @@
 title: Parsing How Our Ai Works One Prompt Two Disctint Responses
 domain: conversations
 created: 2026-04-16
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

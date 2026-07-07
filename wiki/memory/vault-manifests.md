@@ -2,12 +2,10 @@
 title: Vault Manifests
 domain: memory
 created: 2026-04-16
-updated: 2026-06-28
-sources:
-  - raw/converted/Backup/00 Obsidian Vault/Vault_Codex_Obsidian/Unsorted/Vault_A25_0425_Master_Export_v2.md
-  - raw/converted/Backup/00 Obsidian Vault/Vault_Codex_Obsidian/Unsorted/Vault_A25_0425_Master_Export_v3.md
+updated: 2026-07-06
+sources: 
 status: draft
-tags:
+tags: 
 synthesized: 2026-06-14
 synthesized_by: ollama/qwen2.5:7b
 ---

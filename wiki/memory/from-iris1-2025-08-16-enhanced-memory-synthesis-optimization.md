@@ -2,7 +2,7 @@
 title: From Iris1 2025 08 16 Enhanced Memory Synthesis Optimization
 domain: memory
 created: 2026-06-12
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

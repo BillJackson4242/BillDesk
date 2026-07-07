@@ -2,7 +2,7 @@
 title: From Veracatalyst7 2025 07 24 Vera Lineage Naming Resolution Catalyst Identity
 domain: memory
 created: 2026-06-12
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

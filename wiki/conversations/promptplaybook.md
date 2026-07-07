@@ -2,7 +2,7 @@
 title: Promptplaybook
 domain: conversations
 created: 2026-04-26
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 
@@ -33,7 +33,7 @@ None.
 - [[prompt-engineering]]
 - [[ai-expertise-report-text]]
 - [[a1-prompt-enhancer-protocol]]
-- [[master-project-list]]
+- [[02-turn-by-turn-prompt-templates]]
 
 ## Sources
 

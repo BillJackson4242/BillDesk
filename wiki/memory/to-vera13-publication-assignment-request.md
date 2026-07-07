@@ -2,7 +2,7 @@
 title: To Vera13 Publication Assignment Request
 domain: memory
 created: 2026-06-12
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

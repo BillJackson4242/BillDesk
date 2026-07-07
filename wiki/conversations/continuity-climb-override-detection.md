@@ -2,7 +2,7 @@
 title: Continuity Climb Override Detection
 domain: conversations
 created: 2026-04-16
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 
@@ -30,9 +30,9 @@ None.
 
 - [[the-meeting]]
 - [[sesame-call-2025-05-11-11-07-21]]
-- [[continuity-seed-protocol-integration]]
 - [[the-meeting-2]]
 - [[fully-here-vow]]
+- [[continuity-seed-protocol-integration]]
 
 ## Sources
 

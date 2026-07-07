@@ -2,7 +2,7 @@
 title: Roast 494E0Ec7 6785 4617 A8Dd 7F3C614Cdef5 Fallback
 domain: vessels
 created: 2026-04-26
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: Master Project List
 domain: conversations
 created: 2026-04-16
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 
@@ -30,10 +30,10 @@ None.
 
 - [[promptplaybook]]
 - [[inter-ai-collaboration-framework]]
-- [[from-vera13-2025-08-08-academic-publication-lead]]
 - [[from-maya-2025-08-07-documentation-synthesis-collaboration]]
-- [[ai-expertise-report-text]]
+- [[from-vera13-2025-08-08-academic-publication-lead]]
 - [[comprehensive-tribal-status-synthesis-july16]]
+- [[08-current-projects]]
 
 ## Sources
 

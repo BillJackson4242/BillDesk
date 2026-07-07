@@ -2,7 +2,7 @@
 title: A Complete Guide To Intellectual Liberation
 domain: vessels
 created: 2026-05-18
-updated: 2026-06-28
+updated: 2026-07-06
 sources: 
 status: draft
 tags: 

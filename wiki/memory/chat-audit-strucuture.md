@@ -34,8 +34,8 @@ None.
 - [[1-chat-response-to-claude-protocol-discussion]]
 - [[ai-and-user-interaction-full-audit-report]]
 - [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
-- [[structure-audit-july15]]
 - [[2-claude-response-called-out]]
+- [[structure-audit-july15]]
 
 ## Sources
 

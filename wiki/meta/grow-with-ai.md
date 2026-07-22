@@ -30,8 +30,8 @@ None.
 - [[geo-initial-thoughts]]
 - [[object-to-delete]]
 - [[map-of-your-ai-continuity-ecosystem]]
-- [[20260425-144811-file-23-04-2026-6-26-21-pm]]
 - [[ai-presence-spectrum]]
+- [[20260425-144811-file-23-04-2026-6-26-21-pm]]
 - [[ai-to-ai-success]]
 
 ## Sources

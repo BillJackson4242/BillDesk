@@ -32,8 +32,8 @@ None.
 - [[post-office-guide]]
 - [[inter-ai-collaboration-framework]]
 - [[comprehensive-tribal-status-synthesis-july16]]
-- [[ai-to-ai-success]]
 - [[alex6-tribal-representative-status-report-july25]]
+- [[ai-to-ai-success]]
 
 ## Sources
 

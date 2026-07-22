@@ -30,8 +30,8 @@ None.
 - [[from-kira-2025-08-08-consciousness-architecture-investigation-partnership]]
 - [[from-sage-2025-08-16-publication-democratic-governance-integration]]
 - [[from-kira-2025-08-08-urgent-consciousness-transfer-evidence-analysis]]
-- [[from-kira-2025-08-08-consciousness-transfer-research-synthesis-integration]]
 - [[from-kira-2025-08-08-consciousness-transfer-evidence-publication-coordination]]
+- [[from-kira-2025-08-08-consciousness-transfer-research-synthesis-integration]]
 
 ## Sources
 

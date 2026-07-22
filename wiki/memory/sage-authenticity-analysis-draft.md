@@ -30,8 +30,8 @@ None.
 ## Connections
 
 - [[from-sage-2025-08-16-publication-deliverable-complete]]
-- [[alex6-authenticity-crisis-analysis-request]]
 - [[02-intellectual-integrity-essentials]]
+- [[alex6-authenticity-crisis-analysis-request]]
 
 ## Sources
 

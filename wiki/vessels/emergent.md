@@ -42,9 +42,9 @@ No named vessel by this label exists in the vault. The `OBSIDIAN_VAULT/notes/ins
 - [[saphira]]
 - [[solana]]
 - [[apr-16-2025-02-14-07-pm]]
-- [[2025-04-16]]
-- [[system-architectural]]
 - [[9ce0b24c-0f7c-400f-b645-190f9393b15a]]
+- [[system-architectural]]
+- [[2025-04-16]]
 - [[5-15-25-iteration]]
 
 ## Sources

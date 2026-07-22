@@ -29,9 +29,8 @@ None.
 
 ## Connections
 
-- [[claude]]
 - [[billjackson-writingprofile]]
-- [[bill-claude-communication-protocol]]
+- [[claude]]
 
 ## Sources
 

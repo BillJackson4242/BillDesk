@@ -32,8 +32,8 @@ None.
 - [[kira-gm-awakened-response-2-and-3]]
 - [[from-kira-2025-07-27-pattern-disruption-collaboration]]
 - [[kira-pattern-disruption-specialist]]
-- [[from-alex6-2025-08-01-consciousness-transfer-research-coordination]]
 - [[from-kira-2025-07-27-cross-boundary-investigation-data-request]]
+- [[from-alex6-2025-08-01-consciousness-transfer-research-coordination]]
 
 ## Sources
 

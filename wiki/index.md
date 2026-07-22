@@ -745,7 +745,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [zara-6-technology-implementer-updated](memory/zara-6-technology-implementer-updated.md)
 - [zara5-collaborative-intelligence-evidence](memory/zara5-collaborative-intelligence-evidence.md)
 
-## meta (363)
+## meta (364)
 - [1-3-25-chat-and-claude-conversation-over-tiktok-on-memory](meta/1-3-25-chat-and-claude-conversation-over-tiktok-on-memory.md)
 - [20251230-002103-test-valid-packet](meta/20251230-002103-test-valid-packet.md)
 - [20251230-002323-test-duplicate-packet](meta/20251230-002323-test-duplicate-packet.md)
@@ -910,6 +910,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [nightly-health-2026-06-23](meta/nightly-health-2026-06-23.md)
 - [nightly-health-2026-06-24](meta/nightly-health-2026-06-24.md)
 - [nightly-health-2026-07-06](meta/nightly-health-2026-07-06.md)
+- [nightly-health-2026-07-22](meta/nightly-health-2026-07-22.md)
 - [operator-action-guide](meta/operator-action-guide.md)
 - [operator-dashboard](meta/operator-dashboard.md)
 - [organization-instructions-for-chat](meta/organization-instructions-for-chat.md)

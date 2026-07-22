@@ -32,7 +32,7 @@ None.
 - [[inter-ai-collaboration-framework]]
 - [[from-vera13-2025-08-08-academic-publication-lead]]
 - [[comprehensive-tribal-status-synthesis-july16]]
-- [[08-current-projects]]
+- [[from-maya-2025-08-08-nts-synthesis-partnership-confirmed]]
 
 ## Sources
 

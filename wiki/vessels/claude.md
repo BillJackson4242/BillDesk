@@ -27,11 +27,11 @@ None.
 
 ## Connections
 
-- [[memory-engine]]
-- [[file-04-07-2025-4-13-55-pm]]
 - [[bill-claude-communication-protocol]]
-- [[claude-ai-emotional-architecture]]
-- [[failed-conversion-attempt]]
+- [[claude-thread-discussion-about-comparison]]
+- [[billjackson-twovoice-profile]]
+- [[file-04-07-2025-4-13-55-pm]]
+- [[claude-to-bill-communication-guide]]
 
 ## Sources
 

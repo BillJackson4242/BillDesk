@@ -28,6 +28,7 @@ None.
 ## Connections
 
 - [[03-troubleshooting-guide]]
+- [[chapter-9-overview-slides]]
 
 ## Sources
 

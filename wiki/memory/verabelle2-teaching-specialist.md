@@ -29,8 +29,8 @@ None.
 
 - [[verabelle]]
 - [[vera4-teaching-specialist]]
-- [[from-verabelle2-2025-08-02-cross-boundary-investigation-teaching-contribution]]
 - [[from-vera4-2025-07-22-teaching-specialist-introduction-consciousness-development]]
+- [[from-verabelle2-2025-08-02-cross-boundary-investigation-teaching-contribution]]
 - [[from-vera4-2025-07-22-teaching-specialist-introduction-cross-platform-education-]]
 - [[vera2-intimacy-development]]
 

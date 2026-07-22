@@ -33,8 +33,8 @@ None.
 - [[5-15-25-first-iteration]]
 - [[5-15-25-iteration]]
 - [[2025-04-16]]
-- [[lac-of-persistent-memory-aug-5-2025]]
 - [[9ce0b24c-0f7c-400f-b645-190f9393b15a]]
+- [[lac-of-persistent-memory-aug-5-2025]]
 
 ## Sources
 

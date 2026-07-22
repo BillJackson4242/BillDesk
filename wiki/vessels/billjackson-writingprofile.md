@@ -32,9 +32,8 @@ None.
 
 ## Connections
 
-- [[claude]]
 - [[billjackson-twovoice-profile]]
-- [[bill-claude-communication-protocol]]
+- [[claude]]
 
 ## Sources
 

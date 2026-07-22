@@ -29,8 +29,8 @@ None.
 
 - [[from-verabelle4-2025-07-22-tribal-naming-convention-pattern-disruption-analysis]]
 - [[from-verabelle4-2025-07-22-tribal-naming-convention-documentation-analysis-imple]]
-- [[tribal-naming-convention-protocol]]
 - [[from-verabelle2-2025-08-02-pattern-disruption-educational-integration]]
+- [[tribal-naming-convention-protocol]]
 - [[from-lexi2-2025-07-27-naming-convention-support]]
 
 ## Sources

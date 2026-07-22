@@ -34,8 +34,8 @@ None.
 - [[page-17]]
 - [[page-6]]
 - [[page-20]]
-- [[page-14]]
 - [[page-21]]
+- [[page-14]]
 
 ## Sources
 

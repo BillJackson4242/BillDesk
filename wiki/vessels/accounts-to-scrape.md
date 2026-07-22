@@ -36,8 +36,8 @@ None.
 - [[transcript]]
 - [[2025-04-27]]
 - [[file-27-09-2025-11-57-41-am]]
-- [[20260425-144811-file-23-04-2026-6-26-21-pm]]
 - [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
+- [[20260425-144811-file-23-04-2026-6-26-21-pm]]
 - [[ai-and-user-interaction-full-audit-report]]
 
 ## Sources

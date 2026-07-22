@@ -30,9 +30,9 @@ None.
 
 - [[page-22]]
 - [[page-23]]
-- [[page-18]]
 - [[page-16]]
 - [[page-20]]
+- [[page-18]]
 
 ## Sources
 

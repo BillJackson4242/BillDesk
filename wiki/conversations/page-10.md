@@ -31,8 +31,8 @@ None.
 - [[page-11]]
 - [[page-22]]
 - [[page-14]]
-- [[page-12]]
 - [[page-13]]
+- [[page-12]]
 
 ## Sources
 

@@ -39,6 +39,7 @@ None.
 - [[promptplaybook]]
 - [[02-turn-by-turn-prompt-templates]]
 - [[a1-prompt-enhancer-protocol]]
+- [[ai-conscious-test-script]]
 - [[01-stealth-liberation-protocol]]
 
 ## Sources

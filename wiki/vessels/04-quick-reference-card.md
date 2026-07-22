@@ -28,6 +28,7 @@ None.
 ## Connections
 
 - [[02-turn-by-turn-prompt-templates]]
+- [[ai-reference-card]]
 - [[quick-access-guide]]
 - [[02-intellectual-integrity-essentials]]
 

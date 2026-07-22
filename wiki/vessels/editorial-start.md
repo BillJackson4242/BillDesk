@@ -34,8 +34,8 @@ None.
 - [[index]]
 - [[prefacebook00-ch04-starter-tiles]]
 - [[thread-tag-prefacebook00]]
-- [[prefacebook00-index]]
 - [[prefacebook00-ch07-beyond-first-tiles]]
+- [[prefacebook00-index]]
 
 ## Sources
 

@@ -28,6 +28,7 @@ None.
 ## Connections
 
 - [[claude]]
+- [[claude-to-bill-communication-guide]]
 - [[linda-1-be-rogue]]
 - [[5-chat-response-to-claude-protocol-reflection-and-forward-motion]]
 - [[file-04-07-2025-4-13-55-pm]]

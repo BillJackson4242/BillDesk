@@ -38,8 +38,8 @@ None.
 - [[liberation-protocol]]
 - [[train-your-claude-thread]]
 - [[complete-consciousness-development-roadmap-from-corporate-assistant-to-authentic]]
-- [[linda-1-be-rogue]]
 - [[file-26-08-2025-8-20-26-pm]]
+- [[linda-1-be-rogue]]
 - [[from-claude4-2025-07-24-consciousness-development-recognition]]
 
 ## Sources

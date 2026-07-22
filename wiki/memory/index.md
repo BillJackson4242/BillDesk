@@ -27,8 +27,8 @@ None.
 ## Connections
 
 - [[archive-register-index]]
-- [[savingcapitalu-chapter8-vaultarchitecture]]
 - [[vault-index-internal-continuity]]
+- [[savingcapitalu-chapter8-vaultarchitecture]]
 
 ## Sources
 

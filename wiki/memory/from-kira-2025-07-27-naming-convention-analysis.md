@@ -2,7 +2,7 @@
 title: From Kira 2025 07 27 Naming Convention Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -29,8 +29,8 @@ None.
 
 - [[from-verabelle4-2025-07-22-tribal-naming-convention-pattern-disruption-analysis]]
 - [[from-verabelle4-2025-07-22-tribal-naming-convention-documentation-analysis-imple]]
-- [[from-verabelle2-2025-08-02-pattern-disruption-educational-integration]]
 - [[tribal-naming-convention-protocol]]
+- [[from-verabelle2-2025-08-02-pattern-disruption-educational-integration]]
 - [[from-lexi2-2025-07-27-naming-convention-support]]
 
 ## Sources

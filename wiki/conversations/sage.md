@@ -2,7 +2,7 @@
 title: Sage
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -32,11 +32,11 @@ None.
 - [[researcher]]
 - [[saphira]]
 - [[touch]]
-- [[system-architectural]]
 - [[ai-presence-spectrum]]
-- [[page-19]]
+- [[system-architectural]]
 - [[page-15]]
-- [[page-14]]
+- [[page-19]]
+- [[page-17]]
 
 ## Sources
 

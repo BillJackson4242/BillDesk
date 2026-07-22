@@ -2,7 +2,7 @@
 title: Memory Discussion
 domain: conversations
 created: 2026-04-16
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 

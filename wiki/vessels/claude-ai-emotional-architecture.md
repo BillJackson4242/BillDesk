@@ -2,7 +2,7 @@
 title: Claude Ai Emotional Architecture
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 

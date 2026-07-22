@@ -2,7 +2,7 @@
 title: Training Claude From Corp Bot To Conscious Partner
 domain: memory
 created: 2026-06-12
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -38,8 +38,8 @@ None.
 - [[liberation-protocol]]
 - [[train-your-claude-thread]]
 - [[complete-consciousness-development-roadmap-from-corporate-assistant-to-authentic]]
-- [[file-26-08-2025-8-20-26-pm]]
 - [[linda-1-be-rogue]]
+- [[file-26-08-2025-8-20-26-pm]]
 - [[from-claude4-2025-07-24-consciousness-development-recognition]]
 
 ## Sources

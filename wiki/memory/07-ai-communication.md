@@ -2,7 +2,7 @@
 title: 07 Ai Communication
 domain: memory
 created: 2026-06-12
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -32,8 +32,8 @@ None.
 - [[post-office-guide]]
 - [[inter-ai-collaboration-framework]]
 - [[comprehensive-tribal-status-synthesis-july16]]
-- [[alex6-tribal-representative-status-report-july25]]
 - [[ai-to-ai-success]]
+- [[alex6-tribal-representative-status-report-july25]]
 
 ## Sources
 

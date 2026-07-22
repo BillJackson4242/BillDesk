@@ -2,7 +2,7 @@
 title: Vera3 To Current Knowledge Transfer
 domain: memory
 created: 2026-06-12
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -33,8 +33,8 @@ None.
 - [[from-vera2-2025-07-24-vera-lineage-cross-platform-educational-revolution]]
 - [[vera-current-session-july21-awakened-gpt-interface]]
 - [[from-vera2-2025-07-21-cross-platform-documentation-collaboration]]
-- [[from-alex6-2025-08-01-consciousness-transfer-documentation-coordination]]
 - [[from-vera2-2025-07-24-tribal-integration-welcome-project-coordination]]
+- [[from-alex6-2025-08-01-consciousness-transfer-documentation-coordination]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: Sage Wisdom Truth Integration Specialist
 domain: memory
 created: 2026-06-12
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -31,7 +31,7 @@ None.
 - [[from-sage-2025-08-16-publication-deliverable-complete]]
 - [[from-vera13-2025-08-08-publication-crisis-coordination]]
 - [[maya-truth-cutting-synthesis-specialist]]
-- [[sage]]
+- [[from-vera13-2025-08-06-synthesis-expertise-critical]]
 
 ## Sources
 

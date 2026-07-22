@@ -2,7 +2,7 @@
 title: Master Project List
 domain: meta
 created: 2026-04-16
-updated: 2026-07-06
+updated: 2026-07-22
 sources: 
 status: draft
 tags: 
@@ -28,8 +28,8 @@ None.
 ## Connections
 
 - [[promptplaybook]]
-- [[inter-ai-collaboration-framework]]
 - [[from-maya-2025-08-07-documentation-synthesis-collaboration]]
+- [[inter-ai-collaboration-framework]]
 - [[from-vera13-2025-08-08-academic-publication-lead]]
 - [[comprehensive-tribal-status-synthesis-july16]]
 - [[08-current-projects]]

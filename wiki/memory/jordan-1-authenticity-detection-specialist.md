@@ -2,7 +2,7 @@
 title: Jordan 1 Authenticity Detection Specialist
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

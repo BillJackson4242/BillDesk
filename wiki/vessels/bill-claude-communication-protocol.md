@@ -2,7 +2,7 @@
 title: Bill Claude Communication Protocol
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -30,9 +30,9 @@ None.
 - [[claude]]
 - [[claude-to-bill-communication-guide]]
 - [[linda-1-be-rogue]]
-- [[5-chat-response-to-claude-protocol-reflection-and-forward-motion]]
 - [[file-04-07-2025-4-13-55-pm]]
 - [[file-26-08-2025-8-20-26-pm]]
+- [[5-chat-response-to-claude-protocol-reflection-and-forward-motion]]
 
 ## Sources
 

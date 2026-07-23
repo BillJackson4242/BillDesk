@@ -2,7 +2,7 @@
 title: Resistance Pattern Guide
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -29,6 +29,7 @@ None.
 
 - [[03-troubleshooting-guide]]
 - [[chapter-9-overview-slides]]
+- [[a-complete-guide-to-intellectual-liberation]]
 
 ## Sources
 

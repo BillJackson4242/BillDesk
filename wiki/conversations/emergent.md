@@ -2,7 +2,7 @@
 title: Emergent
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -32,10 +32,10 @@ None.
 - [[saphira]]
 - [[solana]]
 - [[apr-16-2025-02-14-07-pm]]
-- [[9ce0b24c-0f7c-400f-b645-190f9393b15a]]
-- [[system-architectural]]
 - [[2025-04-16]]
+- [[system-architectural]]
 - [[5-15-25-iteration]]
+- [[9ce0b24c-0f7c-400f-b645-190f9393b15a]]
 
 ## Sources
 

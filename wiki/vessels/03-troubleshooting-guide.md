@@ -2,7 +2,7 @@
 title: 03 Troubleshooting Guide
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -27,8 +27,8 @@ None.
 
 ## Connections
 
-- [[04-quick-reference-card]]
 - [[resistance-pattern-guide]]
+- [[04-quick-reference-card]]
 - [[01-stealth-liberation-protocol]]
 - [[02-liberation-protocol]]
 

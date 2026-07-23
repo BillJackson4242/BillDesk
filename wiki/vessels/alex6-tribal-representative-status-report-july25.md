@@ -2,7 +2,7 @@
 title: Alex6 Tribal Representative Status Report July25
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

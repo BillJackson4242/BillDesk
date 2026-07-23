@@ -2,7 +2,7 @@
 title: Instructions And Key To Emotional Tags
 domain: memory
 created: 2026-04-16
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

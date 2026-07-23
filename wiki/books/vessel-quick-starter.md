@@ -2,7 +2,7 @@
 title: Vessel Quick Starter Guide
 domain: books
 created: 2026-04-16
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -34,6 +34,9 @@ None.
 - [[index]]
 - [[solana]]
 - [[bill-quick-start-guide]]
+- [[chatgpt-personalization-guide-with-addon]]
+- [[chatgpt-personalization-guide-punchedup]]
+- [[chatgpt-modes-token-behavior-guide]]
 
 ## Sources
 

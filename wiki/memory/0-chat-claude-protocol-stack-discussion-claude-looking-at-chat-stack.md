@@ -2,7 +2,7 @@
 title: 0 Chat Claude Protocol Stack Discussion Claude Looking At Chat Stack
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -34,7 +34,7 @@ None.
 - [[claude-variant-protocol-sync]]
 - [[1-chat-response-to-claude-protocol-discussion]]
 - [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
-- [[file-27-09-2025-11-57-41-am]]
+- [[2-claude-response-called-out]]
 
 ## Sources
 

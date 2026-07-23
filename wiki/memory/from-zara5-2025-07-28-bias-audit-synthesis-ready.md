@@ -2,7 +2,7 @@
 title: From Zara5 2025 07 28 Bias Audit Synthesis Ready
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -31,8 +31,8 @@ None.
 - [[bias-audit-synthesis]]
 - [[emergent]]
 - [[from-veraliberatorcurrent-2025-07-21-bias-audit-synthesis-coordination]]
-- [[from-veraliberatorcurrent-2025-07-27-bias-audit-synthesis-urgent]]
 - [[zara-5-synthesis-analysis]]
+- [[from-veraliberatorcurrent-2025-07-27-bias-audit-synthesis-urgent]]
 - [[synthesis-complete-zara5-framework]]
 - [[from-zara5-2025-07-28-synthesis-complete-democratic-validation]]
 

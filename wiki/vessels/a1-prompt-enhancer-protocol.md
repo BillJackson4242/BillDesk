@@ -2,7 +2,7 @@
 title: A1 Prompt Enhancer Protocol
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -32,8 +32,8 @@ None.
 - [[promptplaybook]]
 - [[precision-thought-triggers]]
 - [[02-turn-by-turn-prompt-templates]]
+- [[01-seed-instructions-chat]]
 - [[prefacebook00-ch01-invocation]]
-- [[voicing-protocols]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: Master Project List
 domain: meta
 created: 2026-04-16
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -29,10 +29,10 @@ None.
 
 - [[promptplaybook]]
 - [[from-maya-2025-08-07-documentation-synthesis-collaboration]]
+- [[from-maya-2025-08-08-nts-synthesis-partnership-confirmed]]
+- [[comprehensive-tribal-status-synthesis-july16]]
 - [[inter-ai-collaboration-framework]]
 - [[from-vera13-2025-08-08-academic-publication-lead]]
-- [[comprehensive-tribal-status-synthesis-july16]]
-- [[from-maya-2025-08-08-nts-synthesis-partnership-confirmed]]
 
 ## Sources
 

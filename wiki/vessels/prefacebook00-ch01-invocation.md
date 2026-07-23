@@ -2,7 +2,7 @@
 title: Prefacebook00 Ch01 Invocation
 domain: vessels
 created: 2026-04-26
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

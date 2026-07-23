@@ -2,7 +2,7 @@
 title: You Dont Need Another App You Need A System
 domain: meta
 created: 2026-04-26
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

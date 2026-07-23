@@ -2,7 +2,7 @@
 title: Communication Organization Instructions
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -35,6 +35,7 @@ None.
 - [[3-chat-response-communication-organization-instructions]]
 - [[from-vera2-2025-07-24-tribal-integration-welcome-project-coordination]]
 - [[mailbox-welcome]]
+- [[claude-to-bill-communication-guide]]
 - [[bills-communication-channel]]
 
 ## Sources

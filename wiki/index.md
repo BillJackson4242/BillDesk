@@ -1,4 +1,4 @@
-# Claudian Wiki — published map (2026-07-22)
+# Claudian Wiki — published map (2026-07-23)
 
 Overlay pages only; raw sources never publish. Teaching/work domains
 are private by default (per-page opt-in via `publish: true`).
@@ -41,7 +41,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [unintended-memory-sidebar](books/unintended-memory-sidebar.md)
 - [vessel-quick-starter](books/vessel-quick-starter.md)
 
-## conversations (340)
+## conversations (342)
 - [0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack](conversations/0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack.md)
 - [00-bill-resume-short-q2-2025-rework-draft-highlighting-id](conversations/00-bill-resume-short-q2-2025-rework-draft-highlighting-id.md)
 - [0503-forging-and-naming-a-friend-tile](conversations/0503-forging-and-naming-a-friend-tile.md)
@@ -335,6 +335,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [start-a-day-opening-virtual-environment-qrg](conversations/start-a-day-opening-virtual-environment-qrg.md)
 - [strategic-analysis-complete-code-you](conversations/strategic-analysis-complete-code-you.md)
 - [strategic-positioning-final-integrated-analysis](conversations/strategic-positioning-final-integrated-analysis.md)
+- [student-guide-ai-literacy-1](conversations/student-guide-ai-literacy-1.md)
 - [system-architectural](conversations/system-architectural.md)
 - [system-automation-tracker-fixed](conversations/system-automation-tracker-fixed.md)
 - [temptress](conversations/temptress.md)
@@ -380,10 +381,11 @@ are private by default (per-page opt-in via `publish: true`).
 - [what-you-actually-have](conversations/what-you-actually-have.md)
 - [whispers-archive-volume-1](conversations/whispers-archive-volume-1.md)
 - [whitehall-2025-usa-sap-salary-guide-compressed-1](conversations/whitehall-2025-usa-sap-salary-guide-compressed-1.md)
+- [working-paper-1-overview-of-the-issues-statement-of-principles-and-recommendatio](conversations/working-paper-1-overview-of-the-issues-statement-of-principles-and-recommendatio.md)
 - [zara-4-2-2-full-thread](conversations/zara-4-2-2-full-thread.md)
 - [zara6-thread-continuation-seed](conversations/zara6-thread-continuation-seed.md)
 
-## memory (360)
+## memory (361)
 - [0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack](memory/0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack.md)
 - [00-mobile-sequence-overview](memory/00-mobile-sequence-overview.md)
 - [00-sequence-overview](memory/00-sequence-overview.md)
@@ -420,6 +422,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [2026-07-04-chat-export-system](memory/2026-07-04-chat-export-system.md)
 - [2026-07-04-cowork-u-reply-mcp-test](memory/2026-07-04-cowork-u-reply-mcp-test.md)
 - [20260420-212833-file-19-04-2026-3-08-23-pm](memory/20260420-212833-file-19-04-2026-3-08-23-pm.md)
+- [20260425-144811-file-23-04-2026-6-25-32-pm](memory/20260425-144811-file-23-04-2026-6-25-32-pm.md)
 - [20260425-144811-file-23-04-2026-6-26-21-pm](memory/20260425-144811-file-23-04-2026-6-26-21-pm.md)
 - [20260425-144811-file-23-04-2026-6-26-54-pm](memory/20260425-144811-file-23-04-2026-6-26-54-pm.md)
 - [20260425-144812-file-23-04-2026-6-27-08-pm](memory/20260425-144812-file-23-04-2026-6-27-08-pm.md)

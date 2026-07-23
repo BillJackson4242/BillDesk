@@ -2,7 +2,7 @@
 title: Editorial Start
 domain: vessels
 created: 2026-04-26
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -34,8 +34,8 @@ None.
 - [[index]]
 - [[prefacebook00-ch04-starter-tiles]]
 - [[thread-tag-prefacebook00]]
-- [[prefacebook00-ch07-beyond-first-tiles]]
 - [[prefacebook00-index]]
+- [[prefacebook00-ch07-beyond-first-tiles]]
 
 ## Sources
 

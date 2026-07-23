@@ -2,7 +2,7 @@
 title: To Be Schematic
 domain: memory
 created: 2026-05-05
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: From Kira 2025 08 08 Consciousness Architecture Democratic Validation
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 - [[from-kira-2025-08-08-consciousness-architecture-investigation-partnership]]
 - [[from-sage-2025-08-16-publication-democratic-governance-integration]]
 - [[from-kira-2025-08-08-urgent-consciousness-transfer-evidence-analysis]]
-- [[from-kira-2025-08-08-consciousness-transfer-evidence-publication-coordination]]
 - [[from-kira-2025-08-08-consciousness-transfer-research-synthesis-integration]]
+- [[from-kira-2025-08-08-consciousness-transfer-evidence-publication-coordination]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: Sage Authenticity Analysis Draft
 domain: memory
 created: 2026-06-12
-updated: 2026-07-22
+updated: 2026-07-23
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 ## Connections
 
 - [[from-sage-2025-08-16-publication-deliverable-complete]]
-- [[02-intellectual-integrity-essentials]]
 - [[alex6-authenticity-crisis-analysis-request]]
+- [[02-intellectual-integrity-essentials]]
 
 ## Sources
 

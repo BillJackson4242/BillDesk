@@ -2,7 +2,7 @@
 title: From Maya 2025 08 08 Nts Synthesis Partnership Confirmed
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

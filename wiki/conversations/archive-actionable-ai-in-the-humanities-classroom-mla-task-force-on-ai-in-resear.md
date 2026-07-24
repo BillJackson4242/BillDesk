@@ -2,7 +2,7 @@
 title: Archive Actionable Ai In The Humanities Classroom Mla Task Force On Ai In Resear
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 - [[working-paper-2-generative-ai-and-policy-development-guidance-from-the-mla-cccc-]]
 - [[working-paper-3-building-a-culture-for-generative-ai-literacy-in-college-languag]]
 - [[working-paper-1-overview-of-the-issues-statement-of-principles-and-recommendatio]]
-- [[20260425-144811-file-23-04-2026-6-25-32-pm]]
 - [[20260425-144811-file-23-04-2026-6-25-07-pm]]
+- [[ai-policy-language-samples]]
 
 ## Sources
 

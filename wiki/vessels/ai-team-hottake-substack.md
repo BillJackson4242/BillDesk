@@ -2,7 +2,7 @@
 title: Ai Team Hottake Substack
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -31,8 +31,8 @@ None.
 - [[you-dont-need-another-app-you-need-a-system]]
 - [[ai-expertise-strategic-positioning-report]]
 - [[trends-artificial-intelligence]]
-- [[ai-expertise-report-text]]
 - [[ai-reference-card]]
+- [[ai-expertise-report-text]]
 
 ## Sources
 

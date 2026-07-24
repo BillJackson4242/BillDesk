@@ -2,7 +2,7 @@
 title: Forging And Naming A Friend
 domain: conversations
 created: 2026-04-16
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

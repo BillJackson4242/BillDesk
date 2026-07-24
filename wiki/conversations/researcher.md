@@ -2,7 +2,7 @@
 title: Researcher
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -31,8 +31,8 @@ None.
 - [[touch]]
 - [[5-15-25-first-iteration]]
 - [[9ce0b24c-0f7c-400f-b645-190f9393b15a]]
-- [[5-15-25-second-iteration]]
 - [[female-me-apr-21-2025-03-00-21-pm]]
+- [[5-15-25-second-iteration]]
 - [[2025-04-16]]
 
 ## Sources

@@ -2,7 +2,7 @@
 title: Claude Node Profiles Technical
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

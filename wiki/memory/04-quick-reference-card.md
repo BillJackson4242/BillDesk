@@ -2,7 +2,7 @@
 title: 04 Quick Reference Card
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -30,6 +30,7 @@ None.
 
 ## Connections
 
+- [[quick-reference]]
 - [[02-turn-by-turn-prompt-templates]]
 - [[ai-reference-card]]
 - [[02-intellectual-integrity-essentials]]

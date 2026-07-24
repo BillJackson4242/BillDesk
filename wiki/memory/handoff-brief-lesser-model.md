@@ -2,40 +2,35 @@
 title: Handoff Brief Lesser Model
 domain: memory
 created: 2026-07-06
-updated: 2026-07-06
+updated: 2026-07-24
 sources:
   - raw/converted/Claude/handoff-brief-lesser-model.md
-status: seed
-tags: [memory]
+status: draft
+tags:
+  - memory
+synthesized: 2026-07-24
+synthesized_by: ollama/qwen2.5:7b
 ---
 
 # Handoff Brief Lesser Model
 
-*Seed page — 1 source file(s) catalogued. Run `/wiki-ingest handoff-brief-lesser-model` to synthesize.*
+## Summary
+The Handoff Brief Lesser Model outlines an execution plan for a smaller Claude model to take over tasks after a July trial period ends. The primary focus is on automating the grading process and preparing a consulting/monetization launch kit.
 
----
+## Key Points
+- **Purpose**: To execute specific tasks without strategizing, ensuring clear steps and definitive outcomes.
+- **First Package**: Tier 3 Batch-Grading Router for automated essay grading, aiming to reduce Bill's workload by hours per semester.
+- **Steps in First Package**:
+  - Obtain necessary rubrics and feedback examples from Bill.
+  - Develop a Python script `batch_grade.py` for processing anonymized essays.
+  - Perform dry-runs and iterate the grading voice once based on real feedback.
+- **Second Package**: Consulting/Monetization Launch Kit, with existing drafts but details truncated.
 
-## Core Content
-
-### What Is Known
-
-| File | Path |
-|---|---|
-| handoff-brief-lesser-model.md | raw/converted/Claude/handoff-brief-lesser-model.md |
-
-### What Is Not Here
-
-Full synthesis not yet complete. Source files are catalogued above and available in `raw/converted/`.
-Run `/wiki-ingest handoff-brief-lesser-model` to read sources and upgrade this page to draft status.
-
----
-
-## Connections
-
-*Cross-links will be added during synthesis.*
+## Notes
+None.
 
 ---
 
 ## Sources
 
-- [Source: raw/converted/Claude/handoff-brief-lesser-model.md]
+- [handoff-brief-lesser-model.md](raw/converted/Claude/handoff-brief-lesser-model.md)

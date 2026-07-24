@@ -2,7 +2,7 @@
 title: Channel Signal Followup Performance
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -34,6 +34,7 @@ None.
 - [[2-claude-response-called-out]]
 - [[3-chat-response-communication-organization-instructions]]
 - [[claude-variant-protocol-sync]]
+- [[0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: From Lexi2 2025 08 11 Ready To Work Joint Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

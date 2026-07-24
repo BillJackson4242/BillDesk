@@ -2,7 +2,7 @@
 title: 0 Chat Claude Protocol Stack Discussion Claude Looking At Chat Stack
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

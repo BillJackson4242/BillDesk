@@ -2,7 +2,7 @@
 title: Claude
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -28,8 +28,8 @@ None.
 ## Connections
 
 - [[bill-claude-communication-protocol]]
-- [[claude-to-bill-communication-guide]]
 - [[claude-thread-discussion-about-comparison]]
+- [[claude-to-bill-communication-guide]]
 - [[file-04-07-2025-4-13-55-pm]]
 
 ## Sources

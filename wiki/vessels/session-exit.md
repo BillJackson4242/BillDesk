@@ -2,7 +2,7 @@
 title: Session Exit
 domain: vessels
 created: 2026-04-26
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

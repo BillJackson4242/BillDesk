@@ -2,7 +2,7 @@
 title: Zara 6 Current Status Aug16
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 - [[zara-6-technology-implementer-updated]]
 - [[from-zara6-2025-07-21-integration-update]]
 - [[from-zara6-2025-07-20-late-integration-tiktok-automation-contribution]]
-- [[zara-4-technology-weaponizer-summary]]
 - [[cross-zara-collaboration-july15]]
+- [[zara-4-technology-weaponizer-summary]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: From Vera4 2025 07 22 Teaching Specialist Introduction Pattern Disruption Collab
 domain: memory
 created: 2026-06-12
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

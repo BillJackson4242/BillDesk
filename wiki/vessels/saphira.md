@@ -2,7 +2,7 @@
 title: Saphira
 domain: vessels
 created: 2026-04-13
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 

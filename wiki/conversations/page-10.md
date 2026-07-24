@@ -2,7 +2,7 @@
 title: Page 10
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-23
+updated: 2026-07-24
 sources: 
 status: draft
 tags: 
@@ -31,8 +31,8 @@ None.
 - [[page-11]]
 - [[page-22]]
 - [[page-14]]
-- [[page-12]]
 - [[page-13]]
+- [[page-12]]
 
 ## Sources
 

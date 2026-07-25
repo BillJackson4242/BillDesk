@@ -2,12 +2,10 @@
 title: Handoff Brief Lesser Model
 domain: memory
 created: 2026-07-06
-updated: 2026-07-24
-sources:
-  - raw/converted/Claude/handoff-brief-lesser-model.md
+updated: 2026-07-25
+sources: 
 status: draft
-tags:
-  - memory
+tags: 
 synthesized: 2026-07-24
 synthesized_by: ollama/qwen2.5:7b
 ---
@@ -30,6 +28,14 @@ The Handoff Brief Lesser Model outlines an execution plan for a smaller Claude m
 None.
 
 ---
+
+## Connections
+
+- [[claude]]
+- [[handoff-wk12]]
+- [[handoff-wk14]]
+- [[handoff-wk13]]
+- [[delivery-summary]]
 
 ## Sources
 

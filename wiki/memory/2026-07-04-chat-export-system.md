@@ -2,12 +2,10 @@
 title: 2026 07 04 Chat Export System
 domain: memory
 created: 2026-07-06
-updated: 2026-07-24
-sources:
-  - raw/converted/Claude/Enhanced_Memory_System/memory_inbox/2026-07-04_chat_export_system.md
+updated: 2026-07-25
+sources: 
 status: draft
-tags:
-  - memory
+tags: 
 synthesized: 2026-07-24
 synthesized_by: ollama/qwen2.5:7b
 ---
@@ -26,6 +24,10 @@ The 2026-07-04 Chat Export System automates the export of new and updated chat t
 None.
 
 ---
+
+## Connections
+
+- [[bulk-export-pipeline-feasibility-analysis]]
 
 ## Sources
 

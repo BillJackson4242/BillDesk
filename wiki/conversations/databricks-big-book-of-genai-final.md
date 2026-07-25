@@ -2,7 +2,7 @@
 title: Databricks Big Book Of Genai Final
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 

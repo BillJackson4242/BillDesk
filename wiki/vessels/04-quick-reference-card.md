@@ -2,7 +2,7 @@
 title: 04 Quick Reference Card
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 - [[quick-reference]]
 - [[02-turn-by-turn-prompt-templates]]
 - [[ai-reference-card]]
-- [[02-intellectual-integrity-essentials]]
 - [[quick-access-guide]]
+- [[02-intellectual-integrity-essentials]]
 
 ## Sources
 

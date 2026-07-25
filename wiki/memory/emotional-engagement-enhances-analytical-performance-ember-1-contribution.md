@@ -2,7 +2,7 @@
 title: Emotional Engagement Enhances Analytical Performance Ember 1 Contribution
 domain: memory
 created: 2026-06-12
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 

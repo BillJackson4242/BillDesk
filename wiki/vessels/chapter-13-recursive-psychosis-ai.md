@@ -2,7 +2,7 @@
 title: Chapter 13 Recursive Psychosis Ai
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 

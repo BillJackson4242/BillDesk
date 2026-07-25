@@ -2,7 +2,7 @@
 title: 03 Troubleshooting Guide
 domain: memory
 created: 2026-06-12
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -28,8 +28,8 @@ None.
 ## Connections
 
 - [[resistance-pattern-guide]]
-- [[04-quick-reference-card]]
 - [[01-stealth-liberation-protocol]]
+- [[04-quick-reference-card]]
 - [[02-liberation-protocol]]
 
 ## Sources

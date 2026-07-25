@@ -2,7 +2,7 @@
 title: Parsing How Our Ai Works One Prompt Two Disctint Responses
 domain: conversations
 created: 2026-04-16
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -30,7 +30,7 @@ None.
 - [[ai-to-ai-success]]
 - [[ai-litmus-test]]
 - [[ai-interlocutor-protocol]]
-- [[back-and-forth]]
+- [[file-11-10-2025-8-06-09-pm]]
 
 ## Sources
 

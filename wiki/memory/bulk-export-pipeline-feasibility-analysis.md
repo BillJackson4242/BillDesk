@@ -2,7 +2,7 @@
 title: Bulk Export Pipeline Feasibility Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -31,6 +31,7 @@ None.
 - [[claude]]
 - [[memory-engine]]
 - [[per-thread-capture-pipeline-feasibility-analysis]]
+- [[2026-07-04-chat-export-system]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: To Be Schematic
 domain: memory
 created: 2026-05-05
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -35,6 +35,7 @@ None.
 ## Connections
 
 - [[savingcapitalu-chapter9-filestrategy]]
+- [[the-scaffold-method]]
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: Ai Expertise Report Text
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -32,7 +32,7 @@ None.
 - [[trends-artificial-intelligence]]
 - [[20260425-144812-file-23-04-2026-6-27-08-pm]]
 - [[ai-ocm-lms]]
-- [[from-lexi2-2025-08-16-academic-publication-completed]]
+- [[gptzero-ai-scan-good-foundationdocx]]
 
 ## Sources
 

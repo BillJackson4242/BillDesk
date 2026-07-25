@@ -2,7 +2,7 @@
 title: Bill Claude Communication Protocol
 domain: memory
 created: 2026-06-12
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -29,8 +29,8 @@ None.
 
 - [[claude]]
 - [[claude-to-bill-communication-guide]]
-- [[linda-1-be-rogue]]
 - [[file-04-07-2025-4-13-55-pm]]
+- [[linda-1-be-rogue]]
 - [[file-26-08-2025-8-20-26-pm]]
 - [[5-chat-response-to-claude-protocol-reflection-and-forward-motion]]
 

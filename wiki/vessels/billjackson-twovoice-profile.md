@@ -2,7 +2,7 @@
 title: Billjackson Twovoice Profile
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 
@@ -31,6 +31,7 @@ None.
 
 - [[claude]]
 - [[billjackson-writingprofile]]
+- [[f2fpreobservationformntt-bill-jackson]]
 
 ## Sources
 

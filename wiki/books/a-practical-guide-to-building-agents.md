@@ -2,7 +2,7 @@
 title: A Practical Guide To Building Agents
 domain: books
 created: 2026-04-26
-updated: 2026-07-24
+updated: 2026-07-25
 sources: 
 status: draft
 tags: 

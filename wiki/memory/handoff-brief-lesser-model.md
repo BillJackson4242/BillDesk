@@ -2,7 +2,7 @@
 title: Handoff Brief Lesser Model
 domain: memory
 created: 2026-07-06
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 
@@ -36,6 +36,7 @@ None.
 - [[handoff-wk14]]
 - [[handoff-wk13]]
 - [[delivery-summary]]
+- [[thread-handoff-summary]]
 
 ## Sources
 

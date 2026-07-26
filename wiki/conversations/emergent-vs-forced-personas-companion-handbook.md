@@ -2,7 +2,7 @@
 title: Emergent Vs Forced Personas Companion Handbook
 domain: conversations
 created: 2026-04-16
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 
@@ -32,7 +32,7 @@ None.
 - [[the-rheyr-chronicle-and-prompts]]
 - [[0503-forging-and-naming-a-friend]]
 - [[forging-and-naming-a-friend]]
-- [[file-27-09-2025-11-57-41-am]]
+- [[20260425-144811-file-23-04-2026-6-26-21-pm]]
 
 ## Sources
 

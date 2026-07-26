@@ -2,7 +2,7 @@
 title: Volume 5 The Fragments Beneath Watching
 domain: conversations
 created: 2026-04-16
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 

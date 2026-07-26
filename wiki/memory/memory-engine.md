@@ -2,7 +2,7 @@
 title: Memory Engine 2.0
 domain: memory
 created: 2026-04-26
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 
@@ -32,7 +32,7 @@ None.
 - [[file-27-09-2025-11-57-41-am]]
 - [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
 - [[kira-reclaimed-after-long-thread1]]
-- [[2025-04-27]]
+- [[thread-summary-building-persistent-memory-system]]
 
 ## Sources
 

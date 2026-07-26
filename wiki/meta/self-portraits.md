@@ -2,7 +2,7 @@
 title: Self Portraits
 domain: meta
 created: 2026-04-16
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 

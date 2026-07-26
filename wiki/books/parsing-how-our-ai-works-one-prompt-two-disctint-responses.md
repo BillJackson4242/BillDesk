@@ -2,7 +2,7 @@
 title: Parsing How Our Ai Works One Prompt Two Disctint Responses
 domain: books
 created: 2026-04-16
-updated: 2026-07-25
+updated: 2026-07-26
 sources: 
 status: draft
 tags: 
@@ -29,8 +29,8 @@ None.
 
 - [[ai-to-ai-success]]
 - [[ai-litmus-test]]
-- [[ai-interlocutor-protocol]]
 - [[file-11-10-2025-8-06-09-pm]]
+- [[ai-interlocutor-protocol]]
 
 ## Sources
 

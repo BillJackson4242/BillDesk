@@ -349,20 +349,22 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Vault Intake Pipeline — 9-Stage Nightly (July 4, 2026)
+## Vault Intake Pipeline — 11-Stage Nightly (updated July 26, 2026)
 
 **Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
 
 **Stages:**
 1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.
-2. `convert_docs.py` -- MULTI-ROOT (July 4): scans the ROOTS list (00 AI + teaching + resume + consulting), each into its own converted/ subfolder. FERPA fence at the walk. `--root LABEL` runs one root manually. mtime-incremental; salvages corrupt OOXML; skips `_files/` sidecars.
+2. `convert_docs.py` -- MULTI-ROOT: scans the ROOTS list (00 AI + teaching + resume + consulting), each into its own converted/ subfolder. FERPA fence + secrets fence (SECRET_RE, added July 26) both run at the walk -- a matched file never reaches converted/. `--root LABEL` runs one root manually. mtime-incremental; salvages corrupt OOXML; skips `_files/` sidecars.
 3. `auto_seed.py` -- maps converted files to domain/slug (8 domains incl. `work`), creates seed pages. FERPA belt two runs BEFORE topic rules (a Submissions path containing "ENGL150" would otherwise topic-match into teaching).
-4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. **Checkpoints every 100 embeds (July 4 -- an end-only save lost ~2,000 embeds to a killed run; never again).**
-5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other.
+4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. Checkpoints every 100 embeds.
+5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other. **Dropbox file-lock crash fixed July 25**: the checkpoint swap can collide with Dropbox holding the target file open mid-sync; now retries with backoff (`_atomic_replace`, 6 attempts) instead of crashing the run.
 6. `auto_link.py` -- embedding-based linking across wiki pages.
-7. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00.
-8. `publish_wiki.py` (July 4) -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
-9. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`.
+7. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00. **Ollama-hang crash fixed July 25**: pre-flight health check and generation calls now shell out to `curl.exe` via `subprocess.run(timeout=N)` instead of `urllib`, which let a slow/contended Ollama response stall past its nominal timeout with no exception raised (caused a 2+ hour silent hang July 22). Health-check timeout bumped 30s->60s (real cold-load variance observed).
+8. `publish_wiki.py` -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
+9. `retrieval_check.py` (NEW July 26) -- regression harness for retrieval quality, not ingestion. 7 checks: stable-content baseline, session-snapshot dedup regression, domain-scoping leak check, low-confidence-query signal, chunk-index wiring, source-cache wiring, ingestion-latency report. Fail-soft (exits 1 on failure, nothing downstream gates on it) -- same posture as the dashboard. Closes the "retrieval has zero tests today" gap from the July 4 tuning queue.
+10. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`. Still only checks ingestion (embed/synth/session-capture), not retrieval -- that's what stage 9 is for.
+11. `generate_pipeline_dashboard.py` -- ops dashboard, fail-soft.
 
 **Inbox paths -- GET THIS RIGHT:**
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.

@@ -284,16 +284,17 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (July 4, 2026)
+## Current Priorities (July 26, 2026)
 
-1. **Bill's action items:** (a) restart Code Claude so voice_guard hook loads; (b) name ~a dozen perennial themes for /wiki-ingest concept pages. **ALL-GREEN July 5:** OpenAI key REVOKED at platform ($0 spend -- never exploited) after full scrub: 8 copies found+killed (orig, converted copy, 2 wiki pages, cache excerpt, 2 insights-folder stragglers, and the session-capture transcript that recorded the key mid-scrub -- root fix: session_capture.py now token-scrubs every write; the capture layer has the same immune system as the publish layer). Connectors live everywhere: claude.ai "Memory" (web+iOS) + desktop "Memory for Desktop" -> CoWork native search_memory VERIFIED (hits 0.72/0.67/0.66, coherent sourced excerpts). Connector tools load at session START -- fresh session after any connector change. URL backup: `Dropbox\00 AI\Claude\Claude Code\.claude\Cloud Flare URL for memory.txt` (safe from ingestion -- dot-dir skip).
-2. **Claudian Wiki** — corpus expansion DONE (wave 1 verified: EPOCH query returns 5 teaching docs 0.65-0.72 that scored nothing before). Wave 2 (consulting) converting via detached process; nightly embeds it with checkpoints over coming nights. Open work: chunk backfill for new roots (accelerate: overnight `auto_embed_chunks.py --newest-first`); consulting near-dup collapse AFTER wave 2 (25 yrs of deck versions will pollute top-5s); `chatgpt_split.py` (unblocked, scoped, not built); Claude/Gemini splitters blocked on samples; legacy .doc conversion (pandoc can't read them -- oldest consulting years invisible; LibreOffice headless pre-pass would recover).
-3. **Tuning queue (proposed July 4, in the system-of-record artifact):** retrieval regression harness (10 golden queries -- retrieval has zero tests today); nightly backfill_domains refresh after stage 3; query-time reranking (--rerank, biggest semantic gain available); semantic-centroid realm brains + auto-routing (only if domain sets prove coarse); one-time frontier re-embed (voyage-class) when wave 2 settles.
-4. **Skills infrastructure** — 25 commands. /audit added July 4; /recall updated for brains. CoWork parity current as of May 21.
-5. **Three-Tier Router** — Tier 2 LIVE (Ollama). Tier 1 wrap + Tier 3 wiring still open.
-5. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
-6. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
-7. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
+1. **Bill's decisions pending:** (a) retroactive secrets sweep of the ~11,000 pre-existing converted files against the new `SECRET_RE` -- the ingestion fence only prevents NEW leaks, never asked/answered whether to also check what's already in the corpus; (b) whether `retrieval_check.py` results should feed into `nightly_health_check.py`'s own report/dashboard (offered, not taken up); (c) name ~a dozen perennial themes for /wiki-ingest concept pages (carried over, still open).
+2. **Verify tonight's 2 AM run** — first real execution of the 11-stage pipeline with `retrieval_check.py` actually wired in (was manually tested clean, never run inside the real batch script before tonight).
+3. **CoWork's open item:** oversize/MEGA chat-export threads (90k-176k chars) -- transport-budget limit, unrelated to the (now-resolved) content filter, still unsolved.
+4. **Claudian Wiki tuning queue (carried from July 4, mostly still open):** nightly backfill_domains refresh after stage 3; query-time reranking (--rerank); semantic-centroid realm brains + auto-routing (only if domain sets prove coarse); one-time frontier re-embed (voyage-class) -- now with a concrete example motivating it (nomic-embed-text's precision ceiling found via retrieval_check.py); consulting near-dup collapse (25 yrs of deck versions will pollute top-5s); `chatgpt_split.py` (unblocked, scoped, not built -- CoWork's browser-based chatgpt lane covers this need now, lower priority); Claude/Gemini splitters blocked on samples; legacy .doc conversion (pandoc can't read them, LibreOffice headless pre-pass would recover).
+5. **Skills infrastructure** — 26 commands, CoWork parity current as of May 21. No new Code Claude skills built this session; a secret-exposure-incident-response workflow was flagged as a lock-it-in candidate but not yet captured (needs Bill's input on scope/naming).
+6. **Three-Tier Router** — Tier 2 LIVE (Ollama). Tier 1 wrap + Tier 3 wiring still open.
+7. **CCCC 2026 AI position response** — Three-pronged argument mapped (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics). Drafting now semester is clear.
+8. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
+9. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
 
 ---
 

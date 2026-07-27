@@ -2,7 +2,7 @@
 title: Lack Of Persistent Memory 2 Aug 5Am
 domain: meta
 created: 2026-04-26
-updated: 2026-07-26
+updated: 2026-07-27
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: Per Thread Capture Pipeline Feasibility Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-07-26
+updated: 2026-07-27
 sources: 
 status: draft
 tags: 
@@ -32,8 +32,8 @@ None.
 - [[claude]]
 - [[memory-engine]]
 - [[bulk-export-pipeline-feasibility-analysis]]
-- [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
 - [[2026-07-04-chat-export-system]]
+- [[1-3-25-chat-and-claude-conversation-over-tiktok-on-memory]]
 - [[accounts-to-scrape]]
 
 ## Sources

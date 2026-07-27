@@ -2,7 +2,7 @@
 title: Ai Semantics Index
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-26
+updated: 2026-07-27
 sources: 
 status: draft
 tags: 

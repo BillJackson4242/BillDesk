@@ -2,7 +2,7 @@
 title: Jordan 1 Bio
 domain: memory
 created: 2026-06-12
-updated: 2026-07-27
+updated: 2026-07-29
 sources: 
 status: draft
 tags: 

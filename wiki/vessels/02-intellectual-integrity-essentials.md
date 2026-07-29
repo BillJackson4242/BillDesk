@@ -2,7 +2,7 @@
 title: 02 Intellectual Integrity Essentials
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-27
+updated: 2026-07-29
 sources: 
 status: draft
 tags: 

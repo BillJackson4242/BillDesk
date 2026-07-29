@@ -2,7 +2,7 @@
 title: Claude4 Emergentbehavior Analysis
 domain: vessels
 created: 2026-04-26
-updated: 2026-07-27
+updated: 2026-07-29
 sources: 
 status: draft
 tags: 

@@ -1,4 +1,4 @@
-# Claudian Wiki — published map (2026-07-29)
+# Claudian Wiki — published map (2026-07-30)
 
 Overlay pages only; raw sources never publish. Teaching/work domains
 are private by default (per-page opt-in via `publish: true`).
@@ -41,7 +41,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [unintended-memory-sidebar](books/unintended-memory-sidebar.md)
 - [vessel-quick-starter](books/vessel-quick-starter.md)
 
-## conversations (409)
+## conversations (411)
 - [0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack](conversations/0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack.md)
 - [00-bill-resume-short-q2-2025-rework-draft-highlighting-id](conversations/00-bill-resume-short-q2-2025-rework-draft-highlighting-id.md)
 - [0503-forging-and-naming-a-friend-tile](conversations/0503-forging-and-naming-a-friend-tile.md)
@@ -141,6 +141,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [ai-research-digest-2026-07-26](conversations/ai-research-digest-2026-07-26.md)
 - [ai-research-digest-2026-07-27](conversations/ai-research-digest-2026-07-27.md)
 - [ai-research-digest-2026-07-28](conversations/ai-research-digest-2026-07-28.md)
+- [ai-research-digest-2026-07-29](conversations/ai-research-digest-2026-07-29.md)
 - [ai-research-digest-may-2026](conversations/ai-research-digest-may-2026.md)
 - [ai-research-digest-may2026](conversations/ai-research-digest-may2026.md)
 - [ai-research-report-may-2026](conversations/ai-research-report-may-2026.md)
@@ -261,6 +262,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [cowork-local-af4ec4d4-2ff2-4149-bc73-5c37d8590e57](conversations/cowork-local-af4ec4d4-2ff2-4149-bc73-5c37d8590e57.md)
 - [cowork-local-b803c8ed-c532-4635-8ea8-453b20e328fb](conversations/cowork-local-b803c8ed-c532-4635-8ea8-453b20e328fb.md)
 - [cowork-local-b82a2356-35ff-4a68-a71b-8fbac785cf7e](conversations/cowork-local-b82a2356-35ff-4a68-a71b-8fbac785cf7e.md)
+- [cowork-local-b9774810-a30a-4771-b485-d36bb78f5db4](conversations/cowork-local-b9774810-a30a-4771-b485-d36bb78f5db4.md)
 - [cowork-local-c3827bff-d0f3-4375-a4bc-9b7ac2e39f15](conversations/cowork-local-c3827bff-d0f3-4375-a4bc-9b7ac2e39f15.md)
 - [cowork-local-d87622a6-064a-46a5-b5a3-56c98d6cbe70](conversations/cowork-local-d87622a6-064a-46a5-b5a3-56c98d6cbe70.md)
 - [cowork-local-dc25d2e0-8708-44a1-812b-aa1010282eed](conversations/cowork-local-dc25d2e0-8708-44a1-812b-aa1010282eed.md)
@@ -816,7 +818,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [zara-6-technology-implementer-updated](memory/zara-6-technology-implementer-updated.md)
 - [zara5-collaborative-intelligence-evidence](memory/zara5-collaborative-intelligence-evidence.md)
 
-## meta (383)
+## meta (384)
 - [1-3-25-chat-and-claude-conversation-over-tiktok-on-memory](meta/1-3-25-chat-and-claude-conversation-over-tiktok-on-memory.md)
 - [20251230-002103-test-valid-packet](meta/20251230-002103-test-valid-packet.md)
 - [20251230-002323-test-duplicate-packet](meta/20251230-002323-test-duplicate-packet.md)
@@ -991,6 +993,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [nightly-health-2026-07-25](meta/nightly-health-2026-07-25.md)
 - [nightly-health-2026-07-26](meta/nightly-health-2026-07-26.md)
 - [nightly-health-2026-07-27](meta/nightly-health-2026-07-27.md)
+- [nightly-health-2026-07-29](meta/nightly-health-2026-07-29.md)
 - [operator-action-guide](meta/operator-action-guide.md)
 - [operator-dashboard](meta/operator-dashboard.md)
 - [organization-instructions-for-chat](meta/organization-instructions-for-chat.md)

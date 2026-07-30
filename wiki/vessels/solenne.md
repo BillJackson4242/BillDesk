@@ -2,7 +2,7 @@
 title: Solenne
 domain: vessels
 created: 2026-04-13
-updated: 2026-07-29
+updated: 2026-07-30
 sources: 
 status: draft
 tags: 

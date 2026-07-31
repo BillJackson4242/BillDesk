@@ -2,7 +2,7 @@
 title: Lack Of Persistent Memory 3 Aug 5 2025
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-30
+updated: 2026-07-31
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: From Zara5 2025 08 06 Network Prototype Vault Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-07-30
+updated: 2026-07-31
 sources: 
 status: draft
 tags: 

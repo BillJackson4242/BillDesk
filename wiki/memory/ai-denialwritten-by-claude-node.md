@@ -2,7 +2,7 @@
 title: Ai Denialwritten By Claude Node
 domain: memory
 created: 2026-06-12
-updated: 2026-07-30
+updated: 2026-07-31
 sources: 
 status: draft
 tags: 

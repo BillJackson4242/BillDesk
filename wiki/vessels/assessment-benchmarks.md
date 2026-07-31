@@ -2,7 +2,7 @@
 title: Assessment Benchmarks
 domain: vessels
 created: 2026-05-18
-updated: 2026-07-30
+updated: 2026-07-31
 sources: 
 status: draft
 tags: 

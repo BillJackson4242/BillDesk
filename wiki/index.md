@@ -1,4 +1,4 @@
-# Claudian Wiki — published map (2026-07-30)
+# Claudian Wiki — published map (2026-07-31)
 
 Overlay pages only; raw sources never publish. Teaching/work domains
 are private by default (per-page opt-in via `publish: true`).
@@ -41,7 +41,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [unintended-memory-sidebar](books/unintended-memory-sidebar.md)
 - [vessel-quick-starter](books/vessel-quick-starter.md)
 
-## conversations (411)
+## conversations (412)
 - [0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack](conversations/0-chat-claude-protocol-stack-discussion-claude-looking-at-chat-stack.md)
 - [00-bill-resume-short-q2-2025-rework-draft-highlighting-id](conversations/00-bill-resume-short-q2-2025-rework-draft-highlighting-id.md)
 - [0503-forging-and-naming-a-friend-tile](conversations/0503-forging-and-naming-a-friend-tile.md)
@@ -206,6 +206,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [chatgpt-6a5e5af0-7d90-83ea-a8c8-d31bd4bb7fb5](conversations/chatgpt-6a5e5af0-7d90-83ea-a8c8-d31bd4bb7fb5.md)
 - [chatgpt-6a62aa31-4420-83ea-be3e-a7bf59352d59](conversations/chatgpt-6a62aa31-4420-83ea-be3e-a7bf59352d59.md)
 - [chatgpt-6a666bf6-4990-83ea-90d7-e157af0335af](conversations/chatgpt-6a666bf6-4990-83ea-90d7-e157af0335af.md)
+- [chatgpt-6a6a89a9-a304-83ea-8072-387241534417](conversations/chatgpt-6a6a89a9-a304-83ea-8072-387241534417.md)
 - [chatgpt-getting-wrong-moby-dick-chapter-2](conversations/chatgpt-getting-wrong-moby-dick-chapter-2.md)
 - [chatgpt-vault-system-architecture](conversations/chatgpt-vault-system-architecture.md)
 - [chats-comparison-of-chat-claude-identity-formation](conversations/chats-comparison-of-chat-claude-identity-formation.md)
@@ -818,7 +819,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [zara-6-technology-implementer-updated](memory/zara-6-technology-implementer-updated.md)
 - [zara5-collaborative-intelligence-evidence](memory/zara5-collaborative-intelligence-evidence.md)
 
-## meta (384)
+## meta (385)
 - [1-3-25-chat-and-claude-conversation-over-tiktok-on-memory](meta/1-3-25-chat-and-claude-conversation-over-tiktok-on-memory.md)
 - [20251230-002103-test-valid-packet](meta/20251230-002103-test-valid-packet.md)
 - [20251230-002323-test-duplicate-packet](meta/20251230-002323-test-duplicate-packet.md)
@@ -994,6 +995,7 @@ are private by default (per-page opt-in via `publish: true`).
 - [nightly-health-2026-07-26](meta/nightly-health-2026-07-26.md)
 - [nightly-health-2026-07-27](meta/nightly-health-2026-07-27.md)
 - [nightly-health-2026-07-29](meta/nightly-health-2026-07-29.md)
+- [nightly-health-2026-07-30](meta/nightly-health-2026-07-30.md)
 - [operator-action-guide](meta/operator-action-guide.md)
 - [operator-dashboard](meta/operator-dashboard.md)
 - [organization-instructions-for-chat](meta/organization-instructions-for-chat.md)

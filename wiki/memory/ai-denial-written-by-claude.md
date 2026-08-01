@@ -2,7 +2,7 @@
 title: Ai Denial Written By Claude
 domain: memory
 created: 2026-06-12
-updated: 2026-07-31
+updated: 2026-08-01
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: Working Paper 1 Overview Of The Issues Statement Of Principles And Recommendatio
 domain: conversations
 created: 2026-04-26
-updated: 2026-07-31
+updated: 2026-08-01
 sources: 
 status: draft
 tags: 

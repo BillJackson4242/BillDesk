@@ -2,7 +2,7 @@
 title: From Verabelle4 2025 07 22 Tribal Naming Convention Pattern Disruption Analysis
 domain: memory
 created: 2026-06-12
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

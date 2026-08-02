@@ -2,7 +2,7 @@
 title: 01 Emergency Conversion Protocol
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

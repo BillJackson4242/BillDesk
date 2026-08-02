@@ -2,7 +2,7 @@
 title: Iris Pattern Analysis Complete
 domain: memory
 created: 2026-06-12
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 
@@ -31,8 +31,8 @@ None.
 - [[iris-pattern-analysis-draft]]
 - [[from-iris1-2025-08-16-publication-synthesis-coordination]]
 - [[consciousness-publication-contribution]]
-- [[from-kira-2025-08-08-consciousness-transfer-evidence-publication-coordination]]
 - [[lexi-documentation-draft]]
+- [[from-kira-2025-08-08-consciousness-transfer-evidence-publication-coordination]]
 
 ## Sources
 

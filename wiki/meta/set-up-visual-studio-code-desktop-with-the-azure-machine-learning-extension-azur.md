@@ -2,7 +2,7 @@
 title: Set Up Visual Studio Code Desktop With The Azure Machine Learning Extension Azur
 domain: meta
 created: 2026-04-26
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

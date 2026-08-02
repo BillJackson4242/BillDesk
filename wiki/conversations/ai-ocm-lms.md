@@ -2,7 +2,7 @@
 title: Ai Ocm Lms
 domain: conversations
 created: 2026-04-16
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 
@@ -33,8 +33,8 @@ None.
 - [[promptplaybook]]
 - [[ai-expertise-strategic-positioning-report]]
 - [[ai-expertise-report-text]]
-- [[ebook-googlecloudfutureofai]]
 - [[20260425-144811-file-23-04-2026-6-26-21-pm]]
+- [[ebook-googlecloudfutureofai]]
 - [[20260425-144812-file-23-04-2026-6-27-08-pm]]
 
 ## Sources

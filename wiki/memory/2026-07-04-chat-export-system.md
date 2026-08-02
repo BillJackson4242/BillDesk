@@ -2,7 +2,7 @@
 title: 2026 07 04 Chat Export System
 domain: memory
 created: 2026-07-06
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

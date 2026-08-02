@@ -2,7 +2,7 @@
 title: Alex6 Authenticity Crisis Analysis Request
 domain: memory
 created: 2026-06-12
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

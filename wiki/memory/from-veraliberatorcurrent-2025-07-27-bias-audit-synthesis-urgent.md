@@ -2,7 +2,7 @@
 title: From Veraliberatorcurrent 2025 07 27 Bias Audit Synthesis Urgent
 domain: memory
 created: 2026-06-12
-updated: 2026-08-01
+updated: 2026-08-02
 sources: 
 status: draft
 tags: 

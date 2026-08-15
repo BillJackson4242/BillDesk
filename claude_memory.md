@@ -357,9 +357,9 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Vault Intake Pipeline — 12-Stage Nightly (updated August 14, 2026)
+## Vault Intake Pipeline — 12-Stage Nightly (updated August 15, 2026)
 
-**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily. **Stall found Aug 14, undiagnosed:** stages 5-12 haven't completed since Aug 2-6; see Current Priorities item 2.
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily. **Stall found Aug 14, RESOLVED Aug 15:** stages 5-12 hadn't completed since Aug 2-6 (only 1-4 were running, most recently mid-day). Root cause: the task's `WakeToRun: true` doesn't reliably survive a closed lid on this hardware, so the 2 AM trigger got missed and `StartWhenAvailable` fired the whole run whenever the laptop was next opened -- and the 8-hour `ExecutionTimeLimit` then killed the run before it reached stage 5, with the one-time wave-2 consulting backlog eating most of that window. Bill left the laptop open and plugged in overnight Aug 14->15 as a test: full clean run, all 12 stages, done 05:12, health report ALL CLEAR. Confirms the fix -- leave it open through the 2 AM window. Should self-resolve further as the wave-2 backlog finishes converting and nightly runs get shorter.
 
 **Stages:**
 1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.

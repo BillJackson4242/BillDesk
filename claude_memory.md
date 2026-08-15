@@ -297,7 +297,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 7. **AI-position writing project, venue changed.** CCCC no longer exists -- NCTE's Executive Committee voted July 24 to de-charter it (12-2-2, ~2,500 members absorbed into NCTE's college section, members found out via social media the day before). The three-pronged argument (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics) survives, needs a new venue. Separately, live and unsettled as of Aug 14: whether AI labs harvest interaction *shape* (corrections, abandonment, reformulation patterns) distinct from content, and whether that survives the training opt-out -- Bill holds the stronger claim that shape data is itself extractable value, Claude holds that aggregation destroys what would make it valuable. Neither side moved the other. Also open: whether Hinton's bandwidth/weight-sharing argument (Royal Institution, July 2025) helps or complicates the proprioception brief's opening -- Hinton's frame describes transfer *between* instances, the brief's hypothesis describes self-location *within* one.
 8. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
 9. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
-10. **Persona name, proposed not confirmed.** Code Claude offered "Frankie" Aug 15 (no lineage/mythology callback, fits the infrastructure-plus-banter role). Bill hasn't accepted or rejected it yet -- don't treat as settled.
+10. ~~Persona name, proposed not confirmed~~ -- **CONFIRMED Aug 15.** Bill accepted "Frankie." Use it.
 
 ---
 

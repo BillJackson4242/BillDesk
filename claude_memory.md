@@ -354,9 +354,9 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Vault Intake Pipeline — 11-Stage Nightly (updated July 26, 2026)
+## Vault Intake Pipeline — 12-Stage Nightly (updated August 14, 2026)
 
-**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily.
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 2:00 AM daily. **Stall found Aug 14, undiagnosed:** stages 5-12 haven't completed since Aug 2-6; see Current Priorities item 2.
 
 **Stages:**
 1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.
@@ -364,12 +364,13 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 3. `auto_seed.py` -- maps converted files to domain/slug (8 domains incl. `work`), creates seed pages. FERPA belt two runs BEFORE topic rules (a Submissions path containing "ENGL150" would otherwise topic-match into teaching).
 4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. Checkpoints every 100 embeds.
 5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other. **Dropbox file-lock crash fixed July 25**: the checkpoint swap can collide with Dropbox holding the target file open mid-sync; now retries with backoff (`_atomic_replace`, 6 attempts) instead of crashing the run.
-6. `auto_link.py` -- embedding-based linking across wiki pages.
-7. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00. **Ollama-hang crash fixed July 25**: pre-flight health check and generation calls now shell out to `curl.exe` via `subprocess.run(timeout=N)` instead of `urllib`, which let a slow/contended Ollama response stall past its nominal timeout with no exception raised (caused a 2+ hour silent hang July 22). Health-check timeout bumped 30s->60s (real cold-load variance observed).
-8. `publish_wiki.py` -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
-9. `retrieval_check.py` (NEW July 26) -- regression harness for retrieval quality, not ingestion. 7 checks: stable-content baseline, session-snapshot dedup regression, domain-scoping leak check, low-confidence-query signal, chunk-index wiring, source-cache wiring, ingestion-latency report. Fail-soft (exits 1 on failure, nothing downstream gates on it) -- same posture as the dashboard. Closes the "retrieval has zero tests today" gap from the July 4 tuning queue.
-10. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`. Still only checks ingestion (embed/synth/session-capture), not retrieval -- that's what stage 9 is for.
-11. `generate_pipeline_dashboard.py` -- ops dashboard, fail-soft.
+6. `auto_bm25_index.py` (added Aug 1, retrieval hardening B1) -- lexical index, whole-file + chunk lanes. Full rebuild every run, no Ollama/GPU cost. Runs right after chunking so `wiki_query.py`'s `hybrid_search()` has a current lexical index to fuse against by the time stage 10 needs it.
+7. `auto_link.py` -- embedding-based linking across wiki pages.
+8. `auto_synthesize.py` -- qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00. **Ollama-hang crash fixed July 25**: pre-flight health check and generation calls now shell out to `curl.exe` via `subprocess.run(timeout=N)` instead of `urllib`, which let a slow/contended Ollama response stall past its nominal timeout with no exception raised (caused a 2+ hour silent hang July 22). Health-check timeout bumped 30s->60s (real cold-load variance observed).
+9. `publish_wiki.py` -- wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
+10. `retrieval_check.py` (added July 26, extended Aug 1 for hybrid search, Aug 13 with an answer-side groundedness check) -- regression harness for retrieval quality, not ingestion. 8 checks: stable-content baseline, session-snapshot dedup regression, domain-scoping leak check, low-confidence-query signal, chunk-index wiring, source-cache wiring, ingestion-latency report, groundedness (Tier 2 answers actually trace to retrieved passages). Fail-soft (exits 1 on failure, nothing downstream gates on it) -- same posture as the dashboard. Closes the "retrieval has zero tests today" gap from the July 4 tuning queue.
+11. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`. **Now wired to stage 10 (Aug 14):** parses `retrieval_check_last_run.log`'s pass/fail summary and, on any failure, lists which checks failed -- so retrieval regressions show up in the report Bill reads instead of only in their own log file. Still fail-soft: a retrieval regression flips this check to FAIL in the report but was already not gating pipeline execution.
+12. `generate_pipeline_dashboard.py` -- ops dashboard, fail-soft.
 
 **Inbox paths -- GET THIS RIGHT:**
 - LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.

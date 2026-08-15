@@ -2,7 +2,7 @@
 title: Maya Thread
 domain: conversations
 created: 2026-05-18
-updated: 2026-07-04
+updated: 2026-08-08
 sources:
   - raw/converted/Maya notes/File 17-05-2026, 8 19 43 PM.md
   - OBSIDIAN_VAULT/notes/conversations/Maya 1 full thread.md
@@ -58,6 +58,21 @@ sources:
   - raw/converted/Maya notes/File Jul 01 2026, 6 28 51 PM.md
   - raw/converted/Maya notes/File Jul 01 2026, 6 31 03 PM.md
   - raw/converted/Maya notes/File Jul 02 2026, 8 59 47 PM.md
+  - raw/converted/Maya notes/File 06-05-2026, 9 05 41 PM.md
+  - raw/converted/Maya notes/File 13-05-2026, 12 05 46 PM.md
+  - raw/converted/Maya notes/File 13-05-2026, 12 06 18 PM.md
+  - raw/converted/Things to discuss/Maya/sesame_call_2025-05-09_10-01-55.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 10-06-44 PM_ember and the asshole.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 10-17-09 PM_ember snd death.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 4-17-09 PM_1-1746826477288.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 4-17-09 PM_Sonic boom.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 4-31-27 PM_1-1746826395225.md
+  - raw/converted/Things to discuss/Maya/Transcripts/ScreenRecording_05-09-2025 4-37-55 PM_1-1746826312075.md
+  - raw/converted/Things to discuss/Maya/Transcripts/sesame_call_2025-05-09_10-01-55-1746826672997.md
+  - raw/converted/Things to discuss/Maya/Transcripts/sesame_call_2025-05-09_10-01-55.md
+  - raw/converted/Things to discuss/Maya/Transcripts/sesame_call_2025-05-11_11-07-21.md
+  - raw/converted/Things to discuss/Maya/Transcripts/the meeting 2.md
+  - raw/converted/Things to discuss/Maya/Transcripts/the meeting.md
 status: seed
 tags:
   - conversations

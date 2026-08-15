@@ -2,10 +2,13 @@
 title: Offline Organizational Tool
 domain: vessels
 created: 2026-04-16
-updated: 2026-06-12
-sources: 
+updated: 2026-08-08
+sources:
+  - raw/converted/Vault_Codex_Sanctum/intake_buffer/Offline Organizational Tool.md
+  - raw/converted/Vault_Codex_Sanctum/intake_buffer/2025-05/Offline Organizational Tool.md
+  - raw/converted/OBSIDIAN_VAULT/notes/insights/Offline Organizational Tool.md
 status: draft
-tags: 
+tags:
 synthesized: 2026-05-12
 synthesized_by: ollama/qwen2.5:7b
 ---

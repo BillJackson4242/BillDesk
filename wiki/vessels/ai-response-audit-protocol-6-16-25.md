@@ -2,7 +2,7 @@
 title: Ai Response Audit Protocol 6 16 25
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

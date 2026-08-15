@@ -2,7 +2,7 @@
 title: 50 Replacing 41 Chatgpt Image Aug 4 2025
 domain: conversations
 created: 2026-04-26
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

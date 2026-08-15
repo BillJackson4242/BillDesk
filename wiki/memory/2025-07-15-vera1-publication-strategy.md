@@ -2,7 +2,7 @@
 title: 2025 07 15 Vera1 Publication Strategy
 domain: memory
 created: 2026-06-12
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

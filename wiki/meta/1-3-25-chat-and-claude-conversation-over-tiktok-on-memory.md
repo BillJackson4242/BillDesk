@@ -2,7 +2,7 @@
 title: 1 3 25 Chat And Claude Conversation Over Tiktok On Memory
 domain: meta
 created: 2026-04-26
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 
@@ -33,8 +33,8 @@ None.
 - [[claude]]
 - [[requirements]]
 - [[kira-reclaimed-after-long-thread1]]
-- [[thread-summary-building-persistent-memory-system]]
 - [[tiktok-video-response-consciousness-and-memory]]
+- [[thread-summary-building-persistent-memory-system]]
 - [[failed-conversion-attempt]]
 
 ## Sources

@@ -2,7 +2,7 @@
 title: Agent Profile Friend
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

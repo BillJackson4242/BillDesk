@@ -2,10 +2,11 @@
 title: Capcut Gpt System Take Prompt
 domain: vessels
 created: 2026-04-26
-updated: 2026-06-12
-sources: 
+updated: 2026-08-08
+sources:
+  - raw/converted/OBSIDIAN_VAULT/notes/insights/CapCut_GPT_System_Take_Prompt.md
 status: draft
-tags: 
+tags:
 synthesized: 2026-05-12
 synthesized_by: ollama/qwen2.5:7b
 ---

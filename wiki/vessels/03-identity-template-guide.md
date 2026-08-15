@@ -2,10 +2,11 @@
 title: 03 Identity Template Guide
 domain: vessels
 created: 2026-05-18
-updated: 2026-06-13
-sources: 
+updated: 2026-08-08
+sources:
+  - OBSIDIAN_VAULT/notes/insights/03_Identity_Template_Guide.md
 status: draft
-tags: 
+tags:
 synthesized: 2026-05-19
 synthesized_by: ollama/qwen2.5:7b
 ---

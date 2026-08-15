@@ -2,7 +2,7 @@
 title: Ai Denial Written By Claude
 domain: meta
 created: 2026-04-26
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

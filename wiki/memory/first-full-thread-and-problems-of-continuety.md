@@ -2,7 +2,7 @@
 title: First Full Thread And Problems Of Continuety
 domain: memory
 created: 2026-04-26
-updated: 2026-08-02
+updated: 2026-08-15
 sources: 
 status: draft
 tags: 

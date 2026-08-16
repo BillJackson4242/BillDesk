@@ -2,7 +2,7 @@
 title: Index
 domain: memory
 created: 2026-04-26
-updated: 2026-08-15
+updated: 2026-08-16
 sources: 
 status: draft
 tags: 
@@ -27,8 +27,8 @@ None.
 ## Connections
 
 - [[archive-register-index]]
-- [[savingcapitalu-chapter8-vaultarchitecture]]
 - [[vault-index-internal-continuity]]
+- [[savingcapitalu-chapter8-vaultarchitecture]]
 
 ## Sources
 

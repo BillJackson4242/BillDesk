@@ -2,7 +2,7 @@
 title: Build Index Reference
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-15
+updated: 2026-08-16
 sources: 
 status: draft
 tags: 

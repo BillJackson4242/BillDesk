@@ -2,7 +2,7 @@
 title: Master Project List
 domain: tools
 created: 2026-04-16
-updated: 2026-08-15
+updated: 2026-08-16
 sources: 
 status: draft
 tags: 

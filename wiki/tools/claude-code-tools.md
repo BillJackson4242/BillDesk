@@ -2,7 +2,7 @@
 title: Claude Code Tools & Skills
 domain: tools
 created: 2026-04-16
-updated: 2026-08-15
+updated: 2026-08-16
 sources:
   - raw/converted/Claude/Claude Code/Skills feedback to Code You.md
   - raw/converted/Claude/Claude Code/Boris Claude Code.md
@@ -21,6 +21,10 @@ sources:
   - raw/converted/Claude/AI Post Office -- Tribal Branch/Lexi_CrossAccount_Mailbox/Inbox/Roast Generator -- model 5 code.md
   - raw/converted/Claude/Claude Code/From Bill/BUILD PROMPT digest layer.md
   - raw/converted/Claude/Claude Code/From Bill/NOTEBOOKLM PROMPT memory infographic.md
+  - raw/converted/Claude/Claude Code/From Bill/2026-08-14_session_findings_retrieval_and_training_signal.md
+  - raw/converted/Claude/Claude Code/From Bill/BUILD_PROMPT_digest_layer.md
+  - raw/converted/Claude/Claude Code/From Bill/drift-audit-SKILL.md
+  - raw/converted/Claude/Claude Code/From Bill/NOTEBOOKLM_PROMPT_memory_infographic.md
 status: seed
 tags:
   - tools

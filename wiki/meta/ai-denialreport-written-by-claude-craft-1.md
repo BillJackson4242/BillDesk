@@ -2,7 +2,7 @@
 title: Ai Denialreport Written By Claude Craft 1
 domain: meta
 created: 2026-04-26
-updated: 2026-08-15
+updated: 2026-08-16
 sources: 
 status: draft
 tags: 

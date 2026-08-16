@@ -2,7 +2,7 @@
 title: Savingcapitalu Chapter8 Vaultarchitecture
 domain: conversations
 created: 2026-04-16
-updated: 2026-08-15
+updated: 2026-08-16
 sources: 
 status: draft
 tags: 
@@ -32,8 +32,8 @@ None.
 - [[index]]
 - [[savingcapitalu-chapter12-fullwalkthrough]]
 - [[savingcapitalu-chapter7-tonecollapse]]
-- [[savingcapitalu-chapter9-filestrategy]]
 - [[prefacebook00-ch02-vault-setup]]
+- [[savingcapitalu-chapter9-filestrategy]]
 - [[vault-index-internal-continuity]]
 
 ## Sources

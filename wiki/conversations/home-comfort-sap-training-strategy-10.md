@@ -2,7 +2,7 @@
 title: Home Comfort Sap Training Strategy 10
 domain: conversations
 created: 2026-04-16
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 

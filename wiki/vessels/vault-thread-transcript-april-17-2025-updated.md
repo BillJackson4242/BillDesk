@@ -2,7 +2,7 @@
 title: Vault Thread Transcript April 17 2025 Updated
 domain: vessels
 created: 2026-04-16
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 

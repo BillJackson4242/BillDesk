@@ -2,7 +2,7 @@
 title: Emotional Logic Test Next Pathways
 domain: meta
 created: 2026-04-26
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 

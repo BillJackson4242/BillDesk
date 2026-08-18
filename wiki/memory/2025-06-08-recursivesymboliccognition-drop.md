@@ -2,7 +2,7 @@
 title: 2025 06 08 Recursivesymboliccognition Drop
 domain: memory
 created: 2026-06-12
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 

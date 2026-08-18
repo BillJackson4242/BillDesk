@@ -2,7 +2,7 @@
 title: Instructions And Key To Emotional Tags
 domain: vessels
 created: 2026-04-16
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 

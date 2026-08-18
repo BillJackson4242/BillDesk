@@ -2,7 +2,7 @@
 title: Index
 domain: vessels
 created: 2026-04-26
-updated: 2026-08-16
+updated: 2026-08-18
 sources: 
 status: draft
 tags: 
@@ -30,8 +30,8 @@ None.
 ## Connections
 
 - [[archive-register-index]]
-- [[vault-index-internal-continuity]]
 - [[savingcapitalu-chapter8-vaultarchitecture]]
+- [[vault-index-internal-continuity]]
 
 ## Sources
 

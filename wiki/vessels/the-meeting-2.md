@@ -2,7 +2,7 @@
 title: The Meeting 2
 domain: vessels
 created: 2026-04-26
-updated: 2026-08-18
+updated: 2026-08-19
 sources: 
 status: draft
 tags: 

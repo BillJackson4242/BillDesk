@@ -2,7 +2,7 @@
 title: Ready For Action
 domain: vessels
 created: 2026-04-16
-updated: 2026-08-18
+updated: 2026-08-19
 sources: 
 status: draft
 tags: 

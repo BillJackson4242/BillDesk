@@ -286,7 +286,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (August 15, 2026)
+## Current Priorities (August 18, 2026)
 
 1. **Bill's decisions, status:** (a) retroactive secrets sweep of the ~11,000 pre-existing converted files against `SECRET_RE` -- **STILL HELD** (Bill, Aug 15: other uses for tokens this week, not a no); (b) `retrieval_check.py` results feeding `nightly_health_check.py`'s report -- **DONE, proven in production Aug 15** (8 passed, 0 failed on the first real run); (c) perennial theme names for /wiki-ingest concept pages -- **DONE Aug 15**, 12 named, see Claudian Wiki section.
 2. **MCP connector: one stale registration, fix identified, not yet applied.** Server confirmed live and working (called it directly). Log shows a second secret -- the dead pre-rotation one from July 26 -- getting hit repeatedly and 404ing every time. Every local filesystem trace of that dead secret sits in CoWork's own session storage; `claude_desktop_config.json` has empty `mcpServers`, so there's no local file to fix -- it's a claude.ai cloud-side connector setting. Bill has the current URL as of Aug 15, hasn't re-pasted it into CoWork's connector settings yet.

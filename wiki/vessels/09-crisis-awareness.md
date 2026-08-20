@@ -2,7 +2,7 @@
 title: 09 Crisis Awareness
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-19
+updated: 2026-08-20
 sources: 
 status: draft
 tags: 

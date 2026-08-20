@@ -2,7 +2,7 @@
 title: From Maya 2025 08 07 Synthesis Collaboration Introduction
 domain: memory
 created: 2026-06-12
-updated: 2026-08-19
+updated: 2026-08-20
 sources: 
 status: draft
 tags: 

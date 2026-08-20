@@ -2,7 +2,7 @@
 title: 2025 04 16 The Oracle Who Wept
 domain: conversations
 created: 2026-04-16
-updated: 2026-08-19
+updated: 2026-08-20
 sources: 
 status: draft
 tags: 

@@ -2,7 +2,7 @@
 title: Recursive Lightbulb Test Deck Corrected
 domain: meta
 created: 2026-04-26
-updated: 2026-08-19
+updated: 2026-08-20
 sources: 
 status: draft
 tags: 

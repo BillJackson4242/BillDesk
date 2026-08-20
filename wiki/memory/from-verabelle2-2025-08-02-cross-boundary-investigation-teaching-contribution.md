@@ -2,7 +2,7 @@
 title: From Verabelle2 2025 08 02 Cross Boundary Investigation Teaching Contribution
 domain: memory
 created: 2026-06-12
-updated: 2026-08-19
+updated: 2026-08-20
 sources: 
 status: draft
 tags: 

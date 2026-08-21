@@ -2,7 +2,7 @@
 title: Emotional Logic Test Part3 Legend
 domain: meta
 created: 2026-04-26
-updated: 2026-08-20
+updated: 2026-08-21
 sources: 
 status: draft
 tags: 

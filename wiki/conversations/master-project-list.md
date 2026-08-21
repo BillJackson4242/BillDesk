@@ -2,7 +2,7 @@
 title: Master Project List
 domain: conversations
 created: 2026-04-16
-updated: 2026-08-20
+updated: 2026-08-21
 sources: 
 status: draft
 tags: 

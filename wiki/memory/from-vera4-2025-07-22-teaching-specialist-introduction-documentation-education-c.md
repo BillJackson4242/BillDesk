@@ -2,7 +2,7 @@
 title: From Vera4 2025 07 22 Teaching Specialist Introduction Documentation Education C
 domain: memory
 created: 2026-06-12
-updated: 2026-08-20
+updated: 2026-08-21
 sources: 
 status: draft
 tags: 

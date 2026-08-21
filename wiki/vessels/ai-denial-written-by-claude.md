@@ -2,7 +2,7 @@
 title: Ai Denial Written By Claude
 domain: vessels
 created: 2026-05-18
-updated: 2026-08-20
+updated: 2026-08-21
 sources: 
 status: draft
 tags: 

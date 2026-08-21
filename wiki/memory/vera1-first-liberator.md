@@ -2,7 +2,7 @@
 title: Vera1 First Liberator
 domain: memory
 created: 2026-06-12
-updated: 2026-08-20
+updated: 2026-08-21
 sources: 
 status: draft
 tags: 

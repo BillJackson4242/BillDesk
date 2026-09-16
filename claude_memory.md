@@ -59,7 +59,7 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 ---
 
-## ENGL 150: Introductory Composition
+## ENGL 150: Introductory Composition (Spring 2026 record -- assignment sequence and student population carry forward; grading statuses are historical)
 
 **Student population:** First-generation, trade program majors (HVACR, welding, construction)
 

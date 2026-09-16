@@ -15,14 +15,19 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 ---
 
-## Current Teaching Load (Spring 2026)
+## Current Teaching Load (Fall 2026)
 
-| Course | Format | Enrollment | Status |
-|--------|--------|-----------|--------|
-| ENGL 150 (3 sections) | In-person | Freshmen, trade-focused | Finals done — grades due May 11 |
-| ENGL 325 | Online async | Upper-level | Complete — WK16 oral defenses done |
+| Course | Status |
+|--------|--------|
+| ENGL 150 Freshman Composition | Running. Folder ported from Spring 2026 (assignments 01-05, Moving from Source to Text, EPOCH). Attendance + class lists post drop-add 9-12-26. |
+| ENGL 211 Industrial and Career Writing | Running. Folder ported from Fall 2025. Markel *Practical Strategies* 5e. Weeks 2-14 scaffolded (email, audience, SOP, resume/LinkedIn, process improvement project). Syllabus requires a free ChatGPT or Claude account. |
+| ENGL 325 | Project folder (AI Governance) ported, but whether 325 is actually being taught this fall is NOT confirmed in memory. Ask before assuming. |
 
-**Key Dates:** Classes started Jan 12 | Spring Break Mar 7-16 (done) | Finals May 4-8 (DONE) | Grades due May 11
+**Fall 2026 folder:** `Dropbox\00 Bill Ferris Teaching\2026 Fall\` -- `ENGL150 Freshman Composition\`, `ENGL211\`, `AI Governance Project\`, `AI\` (hub, see below), `EPOCH explained\`, `Department Syllabi information\`, `Attendance Fall 2026\`, `carryover_log.txt`. Withdrawal deadline Nov 4, 2026.
+
+**Fall 2026 AI hub (built + refreshed Sept 15-16):** `2026 Fall\AI\` -- `00 Ferris Policy and Syllabus Language` (Bill's `Course_Addendum_AI_Use_2026.docx`, spine borrowed from the 325 WK09 policy: "permitted, and insufficient"; Fall 2026 Ferris attachments; Ferris's own suggested AI statement, verbatim, still says CLAIR/BARD) | `01 Student Tool Guides` (reference card, modes/memory guide, cheat sheet, personalization, Copilot vs ChatGPT vs Claude, Prompt Jockey, tour-guide HTMLs) | `02 AI Writing Tutor` (seeds v1/v2/Chat + student upload framework, all carrying a "What Gets Assessed: EPOCH" section now; setup instructions written conditionally on whether the account has Projects) | `03 Grammar Tutor and Handbook` (11 handbooks; Hyphens handbook keeps its em dashes, they're the lesson) | `04 Detection and Voice` (Bill-only: profiles, GPTZero/Copyleaks scans, GOOD FOUNDATION specimens, untouched as evidence) | `_reference`. `README.md` = level map (what 150 / 211 / 325 / Bill each pull). `_manifest.txt` = every copy/skip/rewrite/edit with reason. Source `General AI information\` is the cross-semester master, untouched. Spring 2026 detail (WK15 grading, individual grades, portfolio easter-egg scan) is history now; it lives in the Spring 2026 folder and the wiki.
+
+**Spring 2026 (done):** ENGL 150 x3 + ENGL 325. Grades submitted May 2026. Team/individual 325 grades and the 150 portfolio flags are in the wiki if ever needed.
 
 ---
 

@@ -149,6 +149,8 @@ demonstrates, showcases, effectively, delves, tapestry, testament, underscores, 
 - Hedging only where genuine uncertainty exists -- then name the uncertainty.
 - No em dashes. Double hyphens or restructure.
 
+**Student-facing AI tool guides (Bill, Sept 16, 2026):** never state rate limits, message caps, or per-hour quotas. Not "fewer numbers," none. It reads poorly no matter how it's done, and it's wrong within a month. Write tools in shape: free vs paid, memory on/off, Projects or not, where the tool lives (browser vs inside Office). Model names are allowed but must be date-stamped ("current as of [month year]"). A stable price like "$20/month" is also out; say "paid."
+
 Source for detection vocabulary: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
 Review quarterly -- era-specific word lists shift as models evolve.
 

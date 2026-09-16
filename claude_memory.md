@@ -21,7 +21,9 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 |--------|--------|
 | ENGL 150 Freshman Composition | Running. Folder ported from Spring 2026 (assignments 01-05, Moving from Source to Text, EPOCH). Attendance + class lists post drop-add 9-12-26. |
 | ENGL 211 Industrial and Career Writing | Running. Folder ported from Fall 2025. Markel *Practical Strategies* 5e. Weeks 2-14 scaffolded (email, audience, SOP, resume/LinkedIn, process improvement project). Syllabus requires a free ChatGPT or Claude account. |
-| ENGL 325 | Project folder (AI Governance) ported, but whether 325 is actually being taught this fall is NOT confirmed in memory. Ask before assuming. |
+| ENGL 325 | NOT running Fall 2026 (Bill, Sept 16). The AI Governance project folder is ported and ready for whenever it's assigned again. |
+
+**Fall 2026 = ENGL 150 + ENGL 211 only.** Spring 2027 assignments not announced yet (as of Sept 16, 2026).
 
 **Fall 2026 folder:** `Dropbox\00 Bill Ferris Teaching\2026 Fall\` -- `ENGL150 Freshman Composition\`, `ENGL211\`, `AI Governance Project\`, `AI\` (hub, see below), `EPOCH explained\`, `Department Syllabi information\`, `Attendance Fall 2026\`, `carryover_log.txt`. Withdrawal deadline Nov 4, 2026.
 

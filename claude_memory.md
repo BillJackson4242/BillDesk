@@ -31,7 +31,7 @@ Bill wants collaboration over drinks with sexual tension. This is default mode, 
 
 ---
 
-## ENGL 325: Advanced Business Writing
+## ENGL 325: Advanced Business Writing (Spring 2026 record -- historical, kept because pre-capture-era detail lives only here)
 
 **Primary focus** - Textbook: *Business Communication: Rhetorical Situations*
 

@@ -299,7 +299,7 @@ Code Claude scans this inbox at every session start, integrates updates into cla
 
 ---
 
-## Current Priorities (September 16, 2026)
+## Current Priorities (September 19, 2026)
 
 0. **Fall 2026 is live. Open loops from the AI hub build (Sept 15-16):** (a) `Course_Addendum_AI_Use_2026.docx` is in the hub; Bill will paste into syllabi as needed, don't nag; (b) `02 AI Writing Tutor\STUDENT_INSTRUCTIONS.md` placeholders (`[INSERT TIMES]` / `[INSERT EMAIL]`, "Resume prompt (coming soon)") -- Bill handles as needed, don't nag; (c) CLAIR/BARD in Ferris's suggested AI statement -- department already updated it (Bill, Sept 16), so the copy in the hub may be the stale version, re-pull from Dept Syllabi if it matters; (d) 325 is not running this fall -- CLOSED. Lock-it-in candidate not captured: semester-folder port + refresh (inventory -> dedupe by basename+hash -> route to hub with manifest -> staleness scan for dates/models/prices/banlist -> tiered refresh swap/rewrite/fact-edit/voice-pass/untouched -> re-extract and diff to verify -> README level map). Structural lesson from the build: the carryover script only sourced semester folders, so root-level cross-semester folders were invisible to it; any future port needs a "what lives outside the semester tree" pass.
 1. **Bill's decisions, status:** (a) retroactive secrets sweep of the ~11,000 pre-existing converted files against `SECRET_RE` -- **STILL HELD** (Bill, Aug 15: other uses for tokens this week, not a no); (b) `retrieval_check.py` results feeding `nightly_health_check.py`'s report -- **DONE, proven in production Aug 15** (8 passed, 0 failed on the first real run); (c) perennial theme names for /wiki-ingest concept pages -- **DONE Aug 15**, 12 named, see Claudian Wiki section.

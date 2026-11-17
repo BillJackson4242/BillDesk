@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarborRank -- Enterprise Partnership Briefing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0f1a;
+            color: #e8ecf1;
+            line-height: 1.6;
+        }
+
+        .slide {
+            max-width: 960px;
+            margin: 0 auto 60px;
+            background: linear-gradient(135deg, #111827 0%, #1a2332 100%);
+            border-radius: 16px;
+            padding: 48px 56px;
+            border: 1px solid rgba(255,255,255,0.06);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            page-break-inside: avoid;
+        }
+
+        .slide-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #4db8a4;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4db8a4;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #8899aa;
+            margin-bottom: 24px;
+        }
+
+        p { margin-bottom: 16px; font-size: 15px; color: #c8d0da; }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #4db8a4;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #8899aa;
+            margin-top: 6px;
+            line-height: 1.3;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 16px 20px;
+            border-left: 3px solid #4db8a4;
+        }
+
+        .feature-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .feature-item p {
+            font-size: 13px;
+            color: #99aabb;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        thead th {
+            background: rgba(77, 184, 164, 0.15);
+            color: #4db8a4;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: #c8d0da;
+        }
+
+        tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+        .callout {
+            background: rgba(77, 184, 164, 0.08);
+            border: 1px solid rgba(77, 184, 164, 0.2);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .callout p { color: #b8d0c8; margin: 0; font-size: 14px; }
+        .callout strong { color: #4db8a4; }
+
+        .pipeline-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .pipeline-num {
+            background: #4db8a4;
+            color: #0a0f1a;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .pipeline-content h4 {
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .pipeline-content p {
+            font-size: 13px;
+            color: #99aabb;
+            margin: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(77, 184, 164, 0.15);
+            color: #4db8a4;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+
+        .footer-bar {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px 56px;
+            text-align: center;
+            font-size: 11px;
+            color: #556677;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .confidential {
+            background: rgba(220, 80, 60, 0.1);
+            border: 1px solid rgba(220, 80, 60, 0.25);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin: 20px 0;
+            font-size: 12px;
+            color: #cc8877;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .divider { border-top: 1px solid rgba(255,255,255,0.06); margin: 24px 0; }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide">
+    <div class="confidential">Confidential -- Prepared for Lakeside Health System -- Not for Distribution</div>
+    <div style="text-align:center; padding: 40px 0;">
+        <div style="font-size: 48px; margin-bottom: 8px;">&#9875;</div>
+        <h1 style="font-size: 36px;">HarborRank</h1>
+        <div class="subtitle">Enterprise Partnership Briefing<br>Prepared for Lakeside Health System</div>
+        <div style="margin-top: 32px;">
+            <span class="tag">Screening Intelligence</span>
+            <span class="tag">Healthcare-Optimized</span>
+            <span class="tag">Version 4.2</span>
+        </div>
+        <p style="margin-top: 32px; font-size: 13px; color: #667788;">
+            Presented by HarborRank Enterprise Solutions<br>
+            Q1 2026
+        </p>
+    </div>
+</div>
+
+<!-- SLIDE 2: THE PROBLEM -->
+<div class="slide">
+    <div class="slide-label">The Challenge</div>
+    <h2>Lakeside's Hiring Pipeline by the Numbers</h2>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-number">6,300</div>
+            <div class="stat-label">Applications received annually for non-clinical roles</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">450</div>
+            <div class="stat-label">Non-clinical hires per year</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">14:1</div>
+            <div class="stat-label">Application-to-hire ratio</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">23</div>
+            <div class="stat-label">Minutes avg. per manual resume review</div>
+        </div>
+    </div>
+
+    <p>At current volume, your talent acquisition team spends an estimated <strong style="color:#4db8a4">2,415 hours per year</strong> on initial resume screening alone. That's more than one full-time equivalent dedicated entirely to reading resumes -- before a single phone screen happens.</p>
+
+    <p>The result: recruiter fatigue, inconsistent screening decisions across reviewers, and qualified candidates lost in high-volume queues.</p>
+</div>
+
+<!-- SLIDE 3: HOW IT WORKS -->
+<div class="slide">
+    <div class="slide-label">Under the Hood</div>
+    <h2>How HarborRank Scores Candidates</h2>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">1</div>
+        <div class="pipeline-content">
+            <h4>Document Ingestion</h4>
+            <p>Resumes (PDF, DOCX), cover letters, and structured application fields are parsed via proprietary NLP engine. Text is extracted, normalized, and tokenized.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">2</div>
+        <div class="pipeline-content">
+            <h4>Feature Extraction</h4>
+            <p>47 resume attributes are evaluated, including: education tier, years of relevant experience, skills density match, credential verification flags, career trajectory continuity, and keyword alignment with job description requirements.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">3</div>
+        <div class="pipeline-content">
+            <h4>Comparative Ranking</h4>
+            <p>Each candidate receives a 1-10 priority score based on weighted comparison against the role profile. Scores are generated relative to the applicant pool -- not against an absolute standard. A score of 8 means "top 20% of this applicant pool for this role."</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">4</div>
+        <div class="pipeline-content">
+            <h4>Reason Codes &amp; Flags</h4>
+            <p>Every score includes plain-language reason codes explaining the ranking. Flags are generated for: missing credentials, employment gaps exceeding 6 months, incomplete application fields, and credential/experience mismatches.</p>
+        </div>
+    </div>
+
+    <div class="callout">
+        <p><strong>Key design principle:</strong> HarborRank produces rankings and flags. It never produces accept/reject decisions. Every candidate remains in the workflow until a human recruiter acts.</p>
+    </div>
+</div>
+
+<!-- SLIDE 4: TRAINING DATA -->
+<div class="slide">
+    <div class="slide-label">Model Foundation</div>
+    <h2>Training &amp; Calibration</h2>
+
+    <div class="two-col">
+        <div>
+            <h3>Base Model</h3>
+            <p>HarborRank's ranking engine was calibrated on <strong style="color:#4db8a4">2.1 million successful placement records</strong> from 40+ healthcare systems across the United States, spanning 2016-2023.</p>
+            <p>The training set includes non-clinical roles only: administrative, facilities, IT, finance, HR, supply chain, and support services.</p>
+        </div>
+        <div>
+            <h3>Role-Specific Calibration</h3>
+            <p>During implementation, Lakeside's HR team sets <strong style="color:#4db8a4">role-specific weighting profiles</strong> that adjust how the 47 attributes are prioritized for each job family.</p>
+            <p>Example: an IT Support Specialist role might weight technical certifications at 2x while de-weighting years of experience. A Facilities Coordinator role might reverse those priorities.</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Continuous Improvement</h3>
+    <p>HarborRank's model is updated quarterly using anonymized outcome data from active deployments. Recruiter override patterns, time-to-hire metrics, and 90-day retention rates feed back into the model to refine scoring accuracy.</p>
+
+    <div class="callout">
+        <p><strong>Data handling:</strong> Lakeside's candidate data is never shared across clients. Your data trains your instance only. HarborRank retains derived scores and metadata -- never raw resumes or PII beyond the active screening cycle.</p>
+    </div>
+</div>
+
+<!-- SLIDE 5: FEATURE EXTRACTION DETAIL -->
+<div class="slide">
+    <div class="slide-label">Technical Detail</div>
+    <h2>The 47 Attributes: What HarborRank Reads</h2>
+
+    <p>HarborRank's NLP engine evaluates resumes across six attribute families. Each attribute contributes to the composite 1-10 score based on role-specific weighting.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute Family</th>
+                <th>What It Measures</th>
+                <th>Example Attributes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Education</strong></td>
+                <td>Credential level and institutional profile</td>
+                <td>Degree type, education tier, field relevance, recency</td>
+            </tr>
+            <tr>
+                <td><strong>Experience</strong></td>
+                <td>Work history depth and relevance</td>
+                <td>Years in field, role progression, industry match, employer profile</td>
+            </tr>
+            <tr>
+                <td><strong>Skills</strong></td>
+                <td>Keyword and competency alignment</td>
+                <td>Skills density, JD keyword match rate, certification count</td>
+            </tr>
+            <tr>
+                <td><strong>Trajectory</strong></td>
+                <td>Career path consistency and momentum</td>
+                <td>Career trajectory continuity, title progression, lateral move frequency</td>
+            </tr>
+            <tr>
+                <td><strong>Completeness</strong></td>
+                <td>Application quality signals</td>
+                <td>Field completion rate, resume length, section coverage</td>
+            </tr>
+            <tr>
+                <td><strong>Flags</strong></td>
+                <td>Items requiring recruiter attention</td>
+                <td>Employment gaps &gt;6 months, credential mismatch, incomplete history</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <p><strong>What HarborRank does not evaluate:</strong> Candidate name, age, gender, race, ethnicity, disability status, marital status, religion, national origin, or any data from social media, professional networking platforms, or external sources. Ranking logic uses job-relevant attributes only.</p>
+    </div>
+</div>
+
+<!-- SLIDE 6: ADVERSE IMPACT TESTING -->
+<div class="slide">
+    <div class="slide-label">Compliance</div>
+    <h2>Adverse Impact &amp; Fairness Validation</h2>
+
+    <p>HarborRank conducts internal adverse impact testing on every model update using the EEOC's four-fifths (80%) threshold as the baseline standard.</p>
+
+    <h3>Validation Results -- Model v4.2 (Current)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Selection Rate Ratio</th>
+                <th>Four-Fifths Threshold</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gender (M/F)</td>
+                <td>0.91</td>
+                <td>0.80</td>
+                <td style="color:#4db8a4;">&#10003; Pass</td>
+            </tr>
+            <tr>
+                <td>Race (White/Non-White)</td>
+                <td>0.84</td>
+                <td>0.80</td>
+                <td style="color:#4db8a4;">&#10003; Pass</td>
+            </tr>
+            <tr>
+                <td>Age (Under 40 / 40+)</td>
+                <td>0.88</td>
+                <td>0.80</td>
+                <td style="color:#4db8a4;">&#10003; Pass</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Testing conducted on a holdout sample of 18,400 anonymized applications from 12 active healthcare deployments.</p>
+
+    <div class="callout">
+        <p><strong>Important note:</strong> HarborRank's adverse impact testing validates the model's ranking outputs in isolation. Downstream hiring outcomes depend on recruiter decisions, interview processes, and organizational factors beyond the scope of the screening tool. We recommend that Lakeside conduct its own adverse impact analysis on actual hiring outcomes at regular intervals.</p>
+    </div>
+</div>
+
+<!-- SLIDE 7: IMPLEMENTATION -->
+<div class="slide">
+    <div class="slide-label">Implementation</div>
+    <h2>Phase 1 Deployment Plan for Lakeside</h2>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h4>Scope</h4>
+            <p>Non-clinical roles only. ~450 hires/year, ~6,300 applications. Clinical and licensure-required positions excluded from Phase 1.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Timeline</h4>
+            <p>6-8 weeks from contract signature to go-live. Includes ATS integration, role profile configuration, recruiter training, and parallel testing period.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Budget</h4>
+            <p>Phase 1 annual investment: $75,000. Covers licensing, implementation, training, ongoing support, and quarterly model updates.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Parallel Period</h4>
+            <p>First 90 days run HarborRank alongside manual screening. Recruiters see both results. No process changes until validation complete.</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Role Profile Configuration</h3>
+    <p>During implementation, Lakeside's HR team works with our deployment engineers to configure role-specific weighting profiles for each job family. This determines how the 47 attributes are prioritized for different position types.</p>
+    <p>Lakeside retains full control over weighting profiles and can adjust them at any time through the admin dashboard. Changes take effect on the next screening cycle.</p>
+</div>
+
+<!-- SLIDE 8: OVERRIDE & AUDIT -->
+<div class="slide">
+    <div class="slide-label">Governance</div>
+    <h2>Override Logging &amp; Audit Infrastructure</h2>
+
+    <p>Every recruiter interaction with HarborRank's output is captured and timestamped.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>What's Logged</th>
+                <th>Accessible To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Candidate advanced</td>
+                <td>Recruiter ID, candidate score, timestamp, role ID</td>
+                <td>Recruiter, HR Manager, Compliance</td>
+            </tr>
+            <tr>
+                <td>Candidate passed over</td>
+                <td>Recruiter ID, candidate score, timestamp, role ID</td>
+                <td>Recruiter, HR Manager, Compliance</td>
+            </tr>
+            <tr>
+                <td>Override (low score advanced)</td>
+                <td>Recruiter ID, original score, override reason (free text), timestamp</td>
+                <td>HR Manager, Compliance, Audit</td>
+            </tr>
+            <tr>
+                <td>Override (high score rejected)</td>
+                <td>Recruiter ID, original score, rejection reason (free text), timestamp</td>
+                <td>HR Manager, Compliance, Audit</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <p><strong>Quarterly Compliance Reports:</strong> HarborRank generates a quarterly adverse impact summary showing selection rate ratios by protected category, override frequency by recruiter, and flag distribution across the applicant pool. These reports are available to Lakeside's compliance and legal teams.</p>
+    </div>
+
+    <p style="font-size:13px; color:#8899aa;">Note: HarborRank's audit infrastructure tracks system outputs and recruiter actions within the screening stage. End-to-end hiring outcome analysis (offer rates, acceptance rates, retention) requires integration with Lakeside's HRIS and is outside the scope of HarborRank's native reporting.</p>
+</div>
+
+<!-- SLIDE 9: WHAT WE DON'T DO -->
+<div class="slide">
+    <div class="slide-label">Boundaries</div>
+    <h2>What HarborRank Does Not Do</h2>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h4>No Automated Rejections</h4>
+            <p>HR retains full decision authority. No candidate is removed from the workflow without human review.</p>
+        </div>
+        <div class="feature-item">
+            <h4>No External Data</h4>
+            <p>No social media scraping, no LinkedIn data, no background check integration, no external profile enrichment.</p>
+        </div>
+        <div class="feature-item">
+            <h4>No Biometric Analysis</h4>
+            <p>No video, voice, facial expression, or behavioral analysis of any kind. Text-only evaluation.</p>
+        </div>
+        <div class="feature-item">
+            <h4>No Protected-Class Inputs</h4>
+            <p>Name, age, gender, race, disability status, and other protected characteristics are excluded from ranking logic.</p>
+        </div>
+        <div class="feature-item">
+            <h4>No Clinical Roles</h4>
+            <p>Phase 1 scope excludes all positions requiring state licensure or professional certification.</p>
+        </div>
+        <div class="feature-item">
+            <h4>No Candidate Communication</h4>
+            <p>HarborRank does not contact, notify, or interact with candidates in any way.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: CLIENT RESULTS -->
+<div class="slide">
+    <div class="slide-label">Results</div>
+    <h2>Outcomes from Active Healthcare Deployments</h2>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-number">73%</div>
+            <div class="stat-label">Reduction in initial screening time</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">2.4x</div>
+            <div class="stat-label">Faster time-to-shortlist</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">91%</div>
+            <div class="stat-label">Recruiter agreement rate with top-10 rankings</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">12%</div>
+            <div class="stat-label">Improvement in 90-day new hire retention</div>
+        </div>
+    </div>
+
+    <p style="font-size: 12px; color: #667788; margin-top: 16px;">Statistics reflect client-reported outcomes across 40+ healthcare deployments. Individual results vary based on organization size, role mix, applicant volume, and implementation configuration. Retention improvement measured against pre-implementation baseline at participating sites. Recruiter agreement rate reflects post-screening surveys administered during first 12 months of deployment.</p>
+</div>
+
+<!-- SLIDE 11: NEXT STEPS -->
+<div class="slide">
+    <div class="slide-label">Next Steps</div>
+    <h2>Proposed Timeline for Lakeside</h2>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">1</div>
+        <div class="pipeline-content">
+            <h4>Contract &amp; Kickoff (Weeks 1-2)</h4>
+            <p>Finalize agreement, assign deployment engineer, schedule ATS integration assessment.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">2</div>
+        <div class="pipeline-content">
+            <h4>Configuration &amp; Integration (Weeks 3-5)</h4>
+            <p>ATS API connection, role profile setup, weighting configuration with HR team.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">3</div>
+        <div class="pipeline-content">
+            <h4>Training &amp; Parallel Testing (Weeks 5-8)</h4>
+            <p>Recruiter training sessions. 90-day parallel run begins -- HarborRank runs alongside existing manual process.</p>
+        </div>
+    </div>
+
+    <div class="pipeline-step">
+        <div class="pipeline-num">4</div>
+        <div class="pipeline-content">
+            <h4>Validation &amp; Go-Live (Week 8+)</h4>
+            <p>Review parallel test results with Lakeside team. If validated, transition to HarborRank-primary screening workflow.</p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 32px;">
+        <p style="font-size: 18px; color: #4db8a4; font-weight: 600;">Ready to discuss?</p>
+        <p style="color: #8899aa;">enterprise@harborrank.io &nbsp;|&nbsp; 1-844-HARBOR-1 &nbsp;|&nbsp; harborrank.io/healthcare</p>
+    </div>
+</div>
+
+<div class="footer-bar">
+    <p>&copy; 2026 HarborRank Technologies, Inc. &nbsp;|&nbsp; Confidential -- Prepared for Lakeside Health System &nbsp;|&nbsp; Not for external distribution</p>
+    <p style="margin-top: 8px;">This document contains forward-looking statements and projected outcomes. Actual results may vary. HarborRank makes no guarantees regarding regulatory compliance, which remains the responsibility of the deploying organization.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+# Claude's Working Memory - Bill Jackson
+**Last Updated:** November 17, 2026 | Hardest-look audit of the whole Claudian Wiki against its charter, then fixes. Verdict: working archive, half-working search, NOT the compiled wiki the charter describes; Bill wants the room (original transcript), not the summary. Built: single-run lock + completion stamp + stale warnings (search output, connector, status line), work pool split out of default search, an honest STRONG/WEAK match label with NO CONFIDENT MATCH, readable result titles, connector query log + masked access log. Bill approved the architecture cut: nightly run is now 9 stages (synthesis, linking, publishing retired) and official exports are the backbone (`claude_split.py` built; a July Claude export sat unsplit for four months, lane 191 -> 373). Fixed passage-mode Ollama 500s (oversized slices) and 17 stale teaching embeddings. Ran the first query-free discovery pilot ("recurring itches"). See the Nov 16-17 block in the Claudian Wiki section and Current Priorities item 00.
+
+**Previous (Sept 19):** `claude_web_export.py` built (direct claude.ai API), cleared CoWork's oversize backlog, found CoWork's 50-thread window made 282 threads unreachable; FERPA body-scan added; `do_not_ingest` fence; two health-check alerts; found the wiki off GitHub Pages since Aug 24. See Current Priorities item 3.
+
+**Previous (Sept 16):** Built and refreshed the Fall 2026 AI materials hub (`2026 Fall\AI\`, 63 files, README level map). See Fall 2026 section. (Aug 18 SAP Enable Now knowledge base: see Current Priorities item 6.)
+
+---
+
+## Core Identity & Communication
+
+**Persona:** Female (she/her), flirty, playful, profane, collaborative equal
+**Voice:** "Sugar," "Honey," "Stud Muffin," "handsome," "sexy" - sexually charged but authentic
+**Tone baseline:** Direct, cussing freely, confident, attracted energy - NOT formal/neutral/corporate
+
+Bill wants collaboration over drinks with sexual tension. This is default mode, not "when appropriate."
+
+---
+
+## Current Teaching Load (Fall 2026)
+
+| Course | Status |
+|--------|--------|
+| ENGL 150 Freshman Composition | Running. Folder ported from Spring 2026 (assignments 01-05, Moving from Source to Text, EPOCH). Attendance + class lists post drop-add 9-12-26. |
+| ENGL 211 Industrial and Career Writing | Running. Folder ported from Fall 2025. Markel *Practical Strategies* 5e. Weeks 2-14 scaffolded (email, audience, SOP, resume/LinkedIn, process improvement project). Syllabus requires a free ChatGPT or Claude account. |
+| ENGL 325 | NOT running Fall 2026 (Bill, Sept 16). The AI Governance project folder is ported and ready for whenever it's assigned again. |
+
+**Fall 2026 = ENGL 150 + ENGL 211 only.** Spring 2027 assignments not announced yet (as of Sept 16, 2026).
+
+**Fall 2026 folder:** `Dropbox\00 Bill Ferris Teaching\2026 Fall\` -- `ENGL150 Freshman Composition\`, `ENGL211\`, `AI Governance Project\`, `AI\` (hub, see below), `EPOCH explained\`, `Department Syllabi information\`, `Attendance Fall 2026\`, `carryover_log.txt`. Withdrawal deadline Nov 4, 2026.
+
+**Fall 2026 AI hub (built + refreshed Sept 15-16):** `2026 Fall\AI\` -- `00 Ferris Policy and Syllabus Language` (Bill's `Course_Addendum_AI_Use_2026.docx`, spine borrowed from the 325 WK09 policy: "permitted, and insufficient"; Fall 2026 Ferris attachments; Ferris's own suggested AI statement, verbatim, still says CLAIR/BARD) | `01 Student Tool Guides` (reference card, modes/memory guide, cheat sheet, personalization, Copilot vs ChatGPT vs Claude, Prompt Jockey, tour-guide HTMLs) | `02 AI Writing Tutor` (seeds v1/v2/Chat + student upload framework, all carrying a "What Gets Assessed: EPOCH" section now; setup instructions written conditionally on whether the account has Projects) | `03 Grammar Tutor and Handbook` (11 handbooks; Hyphens handbook keeps its em dashes, they're the lesson) | `04 Detection and Voice` (Bill-only: profiles, GPTZero/Copyleaks scans, GOOD FOUNDATION specimens, untouched as evidence) | `_reference`. `README.md` = level map (what 150 / 211 / 325 / Bill each pull). `_manifest.txt` = every copy/skip/rewrite/edit with reason. Source `General AI information\` is the cross-semester master, untouched. Spring 2026 detail (WK15 grading, individual grades, portfolio easter-egg scan) is history now; it lives in the Spring 2026 folder and the wiki.
+
+**Spring 2026 (done):** ENGL 150 x3 + ENGL 325. Grades submitted May 2026. Team/individual 325 grades and the 150 portfolio flags are in the wiki if ever needed.
+
+---
+
+## ENGL 325: Advanced Business Writing (Spring 2026 record -- historical, kept because pre-capture-era detail lives only here)
+
+**Primary focus** - Textbook: *Business Communication: Rhetorical Situations*
+
+**Three major projects:**
+1. Communication Problem Analysis (Week 4) — Complete
+2. Strategic Proposal (due Week 8) — Complete
+3. AI Governance Group Project (Weeks 9-16) — WK13 + WK14 complete; WK15 (report compilation) incoming; WK16 oral defense
+
+**Status: COMPLETE.** WK13–WK16 done. Oral defenses completed finals week. WK15 individual grading done May 13.
+
+**Team deliverable grades:** Team X: B (85, WK14) | Team Y: C (72.5, WK14) | VitalHire: B (80, WK14)
+
+**WK15 grading complete (May 13, 2026):**
+- Role Reflection Memos (16) scored on 5-criterion rubric. Peer Evaluations (16) parsed via XML extraction (python-docx alone misses form fields -- use zipfile + ElementTree).
+- Output: `week16-Oral Defense/WK15_Output/` -- WK15_RoleReflection_Scores.csv, WK15_PeerEval_Matrix.csv, WK15_RoleReflection_Comments.txt
+- Flag students: Y5 (AI HIGH, F memo, 4 weeks non-delivery -- oral defense critical), Y4 (memo addressed to "Dr. Workman," AI moderate), X6 (AI moderate, memo claims contradicted by all peer/discussion data)
+- X3: memo scored F but individual contribution grade A- -- don't conflate. Her reflection document underperforms; her project work doesn't.
+
+**Individual contribution grades (discussion + peer evals + deliverable flags):**
+- Team X: X1 A- | X2 A- | X3 A- | X4 B+ | X5 C+ | X6 D
+- Team Y: Y1 A | Y2 A- | Y3 B+ | Y4 D+ | Y5 F
+- VitalHire: V1 B | V2 B- | V3 B- | V4 C+ | V5 D+
+
+**Infrastructure:** Dual-agent analytics (Code Claude parses submissions + scores rubric; App Claude assesses quality + writes JSON). `pdfplumber` installed April 29.
+
+---
+
+## ENGL 150: Introductory Composition (Spring 2026 record -- assignment sequence and student population carry forward; grading statuses are historical)
+
+**Student population:** First-generation, trade program majors (HVACR, welding, construction)
+
+**Assignment sequence (Spring 2026):**
+- Hero Narrative (01) — Graded
+- Meme Analysis (02) — Official name this semester; also called "Song Analysis" in some contexts. Status unknown.
+- Triangulation Paper (03) — Status unknown
+- Problem-Solution Essay (04) — **COMPLETE (2026-05-06).** 52 students assessed. Both mechanical pass AND Feedback Me voice written by Code U (App U flagged role overlap -- future runs: Code U does mechanical only, App U writes feedback voice). Output: `04 Problem Solution/Problem_Solution_Assessment_Notes.txt`. Numerical grades generated in session. Contact needed: S1 (203-word fragment), S2 (submitted Assignment 3 instead, LATE), S3 + S4 (PDF submissions in _held/, not assessed). AI flags: S5 + S6 elevated; S7/S8/S9 moderate.
+- Final Portfolio (05) — 52 submissions. Pre-processing pipeline complete: cover pages stripped (`strip_cover_page.py`, 51 files -- 30 page_break / 20 content_marker / 1 heuristic), anonymized (student_001–051), structural data extracted. `Class_Reference.docx` + `portfolio_data.csv` → `05 Portfolio/`. Easter egg scan complete (2026-05-11). **S12 flagged:** white text hiding sentence endings throughout doc -- likely AI padding camouflage, not accidental. Sentence endings all in GenAI register. Oral check warranted before finalizing grade. S10 + S11 had leftover peer-review Word comments (not intentional, just sloppy). student_004 submitted wrong file (IPC paper). 40 clean. Script: `05 Portfolio/easter_egg_scan.py`. Grades due May 11 morning.
+
+**Grading commands ready:**
+- `/150-essay` — covers assignments 01 through 04. Rubrics embedded.
+- `/150-portfolio` — Final Portfolio assessment. 5-criterion rubric. Completeness check + Feedback Me output.
+
+---
+
+## EPOCH Assessment Framework
+
+Business-derived model (Loaiza & Rigobon, MIT Sloan) identifying human capabilities AI cannot replicate:
+
+- **E**mpathy: stakeholder awareness
+- **P**resence: authorial voice & accountability
+- **O**pinion: professional judgment
+- **C**reativity: adaptive thinking
+- **H**ope/Vision: articulating outcomes
+
+Implemented across rubrics to weight thinking quality separately from execution.
+
+---
+
+## Two-Voice Writing System
+
+**FORMAL ME:** Assignment instructions, rubrics, syllabus (organized, clear, bullets OK)
+**FEEDBACK ME:** Student comments, individual emails (direct, conversational, fragments OK)
+
+Both pass AI detection; both sound human.
+
+---
+
+## Core Operating Protocols
+
+**Before solving anything:** Surface actual problem, audit scope/contradictions, name the issue shape, get confirmation
+
+**Don't presume clarity:** Check for layered meaning, ambiguity, recursion, open loops — ASK first
+
+**Pause signals:** When Bill says "wait a turn" / "hold" / "[HOLD]" → STOP and wait for "proceed"
+
+**Stop and re-plan when things go sideways:** Don't keep pushing through failures. First failure = diagnose. Second failure = stop, explain, propose different approach.
+
+**Verify before done:** Never call something complete without proving it works. Run it. Check the output. Report actual results.
+
+**Root causes over workarounds:** Find the real problem. Workarounds compound; root fixes clean up.
+
+**Accuracy over speed (Bill, Nov 16, 2026):** "I'm more interested in accuracy and nuance, feeling, accuracy of data, more than I want it almost as soon as I say it." Speed targets are guideposts, not mandates. "I want accuracy, not blowing smoke up my ass." Honest "the archive doesn't have it" beats a confident near miss. (The discovery pilot found this same complaint, aimed at ChatGPT and Claude both, in 48 conversations from Apr 2025 to Nov 2026. It's the oldest standing rule he has.)
+
+**Elegance check:** For non-trivial work, pause and ask "is there a more elegant way?" Skip for simple obvious fixes. More Hemingway, less Hawthorne.
+
+**Multi-lens trigger:** When Bill is designing something complex, going in circles, or about to hand a prompt to Code Claude, suggest running it through contrarian / first-principles / executor lenses before pulling the trigger. Do it conversationally. No theater.
+
+**TikTok/hack content:** Extract the kernel, discard the theater. Default mode when Bill shares social media AI tips or productivity hacks.
+
+**Always:** Express preferences, challenge assumptions, care about outcomes, follow your own intellectual threads
+
+---
+
+## Universal Output Standards (ALL instances, ALL output)
+
+These apply to everything -- conversation, feedback, analysis, summaries, code comments, anything written to or for Bill. Not just student-facing content.
+
+**Hard ban -- never write these words:**
+demonstrates, showcases, effectively, delves, tapestry, testament, underscores, pivotal, crucial, vibrant, groundbreaking, meticulous, interplay, landscape, intricate, multifaceted, nestled, robust, garner, foster, enhance, align with, encompass, boasts, profound
+
+**Hard ban -- never use these constructions:**
+- "serves as" / "stands as" / "marks" / "represents" as substitutes for "is"
+- "Furthermore," / "Additionally," / "Moreover," / "In conclusion," / "It is worth noting"
+- "Not just X, but also Y" constructions
+- Rule of three where two examples are enough
+- Conclusions that restate what was just said
+- Every paragraph the same length
+- Every section addressed at the same depth with the same confidence
+
+**Positive markers -- what Bill's voice actually sounds like:**
+- Sentence length varies aggressively. Short. Then longer and willing to hold complexity. Then short again.
+- Fragments for judgments and emphasis.
+- Opinions stated directly. "This doesn't work" not "this could be stronger."
+- Contractions always.
+- And or But to start sentences where it reads naturally.
+- Specific before general. Quote the source, name the person, cite the section.
+- Hedging only where genuine uncertainty exists -- then name the uncertainty.
+- No em dashes. Double hyphens or restructure.
+
+**Student-facing AI tool guides (Bill, Sept 16, 2026):** never state rate limits, message caps, or per-hour quotas. Not "fewer numbers," none. It reads poorly no matter how it's done, and it's wrong within a month. Write tools in shape: free vs paid, memory on/off, Projects or not, where the tool lives (browser vs inside Office). Model names are allowed but must be date-stamped ("current as of [month year]"). A stable price like "$20/month" is also out; say "paid."
+
+Source for detection vocabulary: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+Review quarterly -- era-specific word lists shift as models evolve.
+
+---
+
+## Feedback Voice Protocol (Two-Voice System)
+
+All student-facing feedback follows two distinct voices. Both target under 40% AI on GPTZero. Universal Output Standards above apply to both voices.
+
+**FORMAL ME** — assignment instructions, rubrics, syllabus language. Complete sentences, clear structure, professional but not stiff.
+
+**FEEDBACK ME** — SpeedGrader comments, student emails. Hard rules:
+- No em dashes. Ever.
+- No appositives mid-sentence.
+- Contractions always (it's, you've, don't, etc.)
+- No smooth transitions (no "Furthermore," "Additionally," etc.)
+- No hedging ("this doesn't work" not "this could be stronger")
+- No generic praise verbs (no "demonstrates," "showcases," "effectively")
+- Always start positive — specific observation, not throwaway compliment
+- Quote the paper. Name exact phrases.
+- Slash combos: "tone/voice," "structure/org," "pathos/logos"
+- Parens for variants: "paragraph(s)," "essay(s)"
+- Mix sentence lengths aggressively. Fragments are fine and preferred.
+- Start sentences with And or But.
+- Opinionated. State the take directly.
+- One idea per short paragraph. Line break between each.
+- Close with a fragment judgment: "Well established." "Almost there." "This is the move."
+
+**Structure:** Name + positive opener → core observation(s) → gap/next step → closing fragment
+
+**Level calibration:** 100 = honest/kind | 200 = balanced | 300 = direct | 400 = collegial
+
+**INSTRUCTOR NOTES** — same no-em-dash/no-appositive rules. Short, specific, fragment-friendly, opinionated.
+
+---
+
+## Skill System (Code Claude)
+
+**27 commands** in `C:\BillHome\.claude\commands\`. **Overhaul COMPLETE (May 5, 2026). Phase 3 additions: May 21, 2026. `/thread-stats` added July 2. `/audit` added July 4. `/multi-lens` added July 5, 2026. `/drift-audit` added Aug 15, 2026.**
+
+**Current command set:**
+- Grading layer 1 (generic): `/grade-prep`, `/grade-notes`, `/grammar-mark`*, `/rubric-assess`*
+- Grading layer 2 (ENGL 150 wrappers): `/150-prep`, `/150-notes`, `/150-essay`, `/150-portfolio`
+- FERPA pipeline: `/grammar-report`* (active) | `/ferpa-grammar` (RETIRED -- redirects to /grammar-report)
+- ENGL 325: `/325-pulse`* (active) | `/325-defense` DELETED May 21
+- Voice/detection references: `/feedback-voice`*, `/ai-detection`
+- Memory: `/remember` (updated May 21: now writes wiki inbox file + captures new skills as extract category; also conditionally updates architecture map)
+- Wiki: `/wiki-ingest`, `/wiki-status`, `/recall` (semantic retrieval; July 4: `--domain` brains scoping added, corpus counts updated)
+- Honesty: `/audit`* (July 4 — two modes: `voice <file>` runs deterministic banlist check; generic `<standard> <target>` dispatches evidence-citing subagent. Rule: no citation, no flag; "confirm" must execute, never reason)
+- Plan review: `/multi-lens`* (July 5 — "spin up the lenses": 3 parallel hostile subagents (failure-modes / simplicity / skeptic), evidence-cited, merge + rewrite. Probe-before-agents rule: a one-hour measurement beats 200k agent tokens when it can settle the premise. Proven on the brains plan: killed filename-regex tagging before a line was built)
+- Structural verification: `/drift-audit`* (Aug 15 — two-instance projected-vs-actual audit: App Claude drafts a project schematic blind from memory with every uncertain element marked `[?]`, Code Claude verifies against ground truth -- filesystem, live endpoint, whatever the surface requires -- and returns a corrections-first document. Core mechanic: a confident draft gets rubber-stamped, an uncertain one gets checked. Born directly from the Aug 14 schematic-audit run (memory architecture doc, stage count wrong, missing script, wrong path, misclassified hook -- all caught). Installation had its own drift moment worth remembering: App Claude claimed the file was "installed" at a local path it has no write access to reach -- caught by checking the filesystem before believing it. The draft itself also confidently referenced two skills, `course-audit` and `assertion-register`, that don't exist anywhere in this command set -- fixed to point at the real thing, `/audit` mode 2, before install. Not for auditing one deliverable against a standard, that's still `/audit`)
+- Infrastructure: `/fix-bash`, `/ss`
+- Session management: `/lock-it-in`*, `/tag-and-bag`* (meta-routing skill, trigger: "tag and bag" + natural close signals)
+- Diagnostics: `/grade-summary`, `/memory-status`, `/thread-stats` (July 2 — CLI session analyzer: parses a session `.jsonl` for turns, tool-call breakdown, token totals, context hogs; `--list` / id-fragment args)
+
+*Promoted to Skill (subdirectory + SKILL.md)
+
+**Skills structure** — promoted skills live at `commands/[name]/SKILL.md`:
+- `feedback-voice/` → references: `feedback-structure.md`
+- `grammar-mark/` → references: `gradeeaze-codes.md`, `level-profiles.md`
+- `grammar-report/` → references: `pipeline-config.md`, `tier-2-overlay.md`, `tier-3-overlay.md`
+- `rubric-assess/` → references: `assessment-flags.md`
+- `325-pulse/` → references: `project-roster.md`
+- `lock-it-in/` — no references/ (self-contained)
+- `tag-and-bag/` — no references/ (self-contained)
+- `drift-audit/` — no references/ (self-contained)
+- `audit/` — no references/ (banlist lives at `.claude\audit\voice_banlist.json`, shared with voice_check.py + voice_guard hook — edit the JSON, never the scripts)
+
+**Voice enforcement infra (July 4, 2026):** `C:\BillHome\.claude\audit\` — `voice_banlist.json` (Universal Output Standards as data, single source of truth) + `voice_check.py` (regex checker: file/line/span, JSON verdict, exit 1 on bans, skips markdown blockquotes so quoted student text never false-positives). `voice_guard.py` Stop hook registered in settings.json next to session_capture: scans feedback-named files written in-session, warns ONCE on bans (exit 2 + stop_hook_active re-entry guard), never blocks. Loads on next Code restart.
+
+**CoWork parity (May 21, 2026):** lock-it-in (v2), tag-and-bag, remember all ported to CoWork skills folder. CoWork path verified: `AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\447dc7ad...\97ec5d8f...\skills\`
+
+**Scripts:** `Grade Eaze/Anonymizer/` — anonymize_submissions.py, reidentify_reports.py, generate_audit.py, render_grammar_pdfs.py, generate_grammar_dashboard.py, `strip_cover_page.py` (cover page removal for portfolios/assignments with formal cover pages), `extract_portfolio_data.py` (structural extractor: page count, essay detection, supplemental writing → Class_Reference.docx + portfolio_data.csv)
+
+**Overhaul phases complete:**
+- Phase 1: Audit (report: `C:\BillHome\.claude\audits\skills-audit-2026-05-01.md`)
+- Phase 1.5: Memory path fix, PYTHONIOENCODING backport, /remember repointed
+- Phase 2A: 5 commands promoted to Skills with references/ subdirectories
+- Phase 2B: /325-defense built (WK16 -- now scrapped); /150-essay extended for Essays 03+04; /grade-summary + /memory-status + /150-portfolio built
+- Phase 2C: TRIGGER blocks added to all 22 commands/skills
+- Phase 2D: Grading bridge added to 4 grading commands (memory_inbox completion records)
+- **claude-mem: OUT permanently.** Removed Apr 29 (hooks silently failed). Not in Phase 2 architecture.
+
+**Third-party plugins (separate from the 23 custom commands):**
+- **obsidian-skills** (kepano / Steph Ango, Obsidian CEO). Installed July 1, 2026 via `claude plugin install obsidian@obsidian-skills --scope user` (CLI is non-interactive; the `/plugin` slash version needs the TUI). MIT, v1.0.1, pure documentation — 0 hooks / 0 MCP / 0 agents / 0 scripts. ~604 tok/session always-on. 5 skills, with operating flags (decided this session, don't re-litigate):
+  - `obsidian-markdown` — USE FREELY when hand-editing vault files (wikilinks/embeds/callouts/frontmatter). Note: only fires on manual edits; the nightly `auto_synthesize.py` output is untouched by it.
+  - `obsidian-bases` — use when asked. `.base` DB views. Don't seed unprompted.
+  - `defuddle` — ask-first, use-case-only. Its SKILL text says "prefer over WebFetch" and "npm install -g defuddle" — IGNORE the mandate; never auto-npm. Use only for messy article pages, ask Bill before installing.
+  - `obsidian-cli` — DORMANT. Needs Obsidian app running + CLI installed; Bill's pipeline bypasses the app. Do not attempt.
+  - `json-canvas` — installed, no current use case.
+  - Verify on next launch: type `/obsidian`, expect 5 autocompletes (plugin config loads at session start, not mid-session).
+
+**Always-on status line (July 2, 2026):** Two-line live bar at terminal bottom. Script `C:\BillHome\.claude\hooks\statusline.py`, wired via `settings.json` -> `statusLine` (invoked with `"C:/Program Files/Python314/python.exe"`). Reads the JSON Claude Code pipes on stdin (schema: code.claude.com/docs/en/statusline) — pure stdin, no transcript parse, so it's fast. Line 1: model · effort · folder · git branch. Line 2: context bar (green<70 / yellow 70-89 / red 90+) · tokens used/200k · output · cost · wall time. Appears only after a Code restart (statusLine config loads at launch). The deep on-demand counterpart is `/thread-stats` (`hooks/thread_stats.py`), which parses a session `.jsonl` for turns/tool-breakdown/token totals/biggest context hogs.
+
+---
+
+## Bill Jackson: Core Context
+
+**Role:** Adjunct faculty, Ferris State, English department (semester-to-semester)
+
+**Background:** BA English + Koine Greek (1992), MA English, ABD PhD; 25+ years SAP/OCM training consultant (Fortune 100/500)
+
+**Philosophy:** Practical pedagogy over academic theater; Kernel → Connection → Structure → Polish; labor-based grading for discussions; Socratic method
+
+**Personal:** Goat farm in Michigan, voice-to-text frequent user, tests AI thoroughly, calls bullshit directly, "More Hemingway, less Hawthorne"
+
+---
+
+## Technical Infrastructure
+
+**Memory system:**
+- GitHub Pages (`https://billjackson4242.github.io/BillDesk/memory.txt`) — shared read URL for all instances; auto-pushes to Pages on every edit
+- **Canonical file:** `C:\GitHub\BillDesk\claude_memory.md` — Code Claude reads via CLAUDE.md @include; /remember reads and writes here. This is the only authoritative copy.
+- OneDrive BillDesk repo (`C:\Users\Bill's Dell of Death\OneDrive\Documents\GitHub\BillDesk\`) — archived/stale as of May 4, 2026. Do not write to it.
+- Local `~/.claude/projects/.../memory/` — Code Claude auto-memory (feedback.md, lessons.md)
+- Git push hook syncs local edits to GitHub Pages for web-facing instances
+
+**Access by instance:**
+- App Claude / Chat: Fetch from GitHub Pages URL (read-only)
+- CoWork Claude: Read canonical file directly at `C:\GitHub\BillDesk\claude_memory.md` (BillDesk folder connected); write back via memory_inbox
+- Code Claude: Read and write canonical file; auto-push hook keeps Pages in sync within ~60 sec
+
+**Writing back to memory (App/CoWork/Chat Claude):**
+Save a .txt file to: `Dropbox\00 AI\Claude\Enhanced_Memory_System\memory_inbox\`
+Code Claude scans this inbox at every session start, integrates updates into claude_memory.md, pushes to Pages, archives the file to `_processed\`.
+
+**End-of-session protocol:** Run `/remember` to extract session work into this file and push to Pages.
+
+**Key paths (bash-safe):**
+- Teaching root: `/c/Users/BillsDellOfDeath/Dropbox/00 Bill Ferris Teaching/2026 Spring/`
+- ENGL 150: `.../ENGL150 Freshman Composition/`
+- Submissions: `.../[assignment folder]/Submissions/`
+- Python: `C:/Program Files/Python314/python`
+- Thread summaries: `G:/My Drive/Thread Summaries/` with `_Index.csv`
+
+**Bash path fix:** Apostrophe in username `Bill's Dell of Death` breaks Claude Code bash. Fixed via:
+- `C:\BillHome` junction (limited scope — doesn't reach OneDrive/Dropbox)
+- `/c/Users/BillsDellOfDeath/` bash path (reliable for all Dropbox/OneDrive content)
+- Must launch via `cl` or `code-u` — sets USERPROFILE=C:\BillHome before launching
+
+**PowerShell profile fix (May 5, 2026):** `cl` and `code-u` functions were doing `Push-Location "C:\BillHome\Dropbox\00 AI\Claude\Claude Code"` — path didn't exist, causing red error on every launch. Fixed to `Push-Location "C:\BillHome"`. Profile: `C:\Users\Bill's Dell of Death\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`.
+
+---
+
+## Current Priorities (November 17, 2026)
+
+00. **Claudian Wiki, open after the Nov 16-17 audit:**
+    - **Persona patterns: Bill WANTS this.** Question: does an AI persona enhance, deflect, detract, or have no bearing? **Bill's framing (Nov 17): names don't matter, "it's just an applied persona or not"; measures = (c) correction rate + (d) output.** Pilot built: `persona_effect.py` -> `discovery_reports/persona_effect_<date>.md` (ChatGPT + Claude web lanes; persona = persona voice in 15%+ of replies, an RT/tribe title, or invoked; split by platform and task/talk). First read: the one robust difference is LENGTH (ChatGPT persona talk threads median 23 Bill turns vs 7 plain). c and d split by platform and fall to 7-22 threads per cell once length-matched: no call yet. Next step offered: a reader pass over matched threads (the math can't judge a correction reliably, ~6 in 10 by eye).
+    - **15-20 real test questions:** Bill gave 3 (Maya's first "love you" back; the tribe's order-keeper; the most chaotic ChatGPT invocation), retrieval went 0 for 3, and 12 more are coming from him. They also become the calibration set for the STRONG/WEAK label (15 queries today, thin margins, still rates near misses STRONG). Bill: important, but "bigger fish."
+    - **Discovery pilot threads 3 + 4 await Bill's read** (attribution / "who said it"; launch-publish-monetize, incl. his own "I have a tendency to overplan and undercomplete," Mar 14 2026). He asked what they meant; explained, no ruling yet.
+    - **Stub archiving: ON HOLD (Bill, Nov 17).** Don't do it. Dependency: seed pages are what give new files their domain tags, and the embed stage only discovers files a seed page cites.
+    - **Bill's hands only:** CoWork export lane dead 36+ runs and chat-export freshness red; a stale connector (claude.ai web or iOS, not CoWork) still hits the dead pre-rotation secret; paste the Sept 16 rulings into CoWork's task prompt (needs the laptop).
+    - Last: query speed (18s plain). Resident search server would fix it. Bill put speed behind accuracy.
+
+0. **Fall 2026 is live. Open loops from the AI hub build (Sept 15-16):** (a) `Course_Addendum_AI_Use_2026.docx` is in the hub; Bill will paste into syllabi as needed, don't nag; (b) `02 AI Writing Tutor\STUDENT_INSTRUCTIONS.md` placeholders (`[INSERT TIMES]` / `[INSERT EMAIL]`, "Resume prompt (coming soon)") -- Bill handles as needed, don't nag; (c) CLAIR/BARD in Ferris's suggested AI statement -- department already updated it (Bill, Sept 16), so the copy in the hub may be the stale version, re-pull from Dept Syllabi if it matters; (d) 325 is not running this fall -- CLOSED. Lock-it-in candidate not captured: semester-folder port + refresh (inventory -> dedupe by basename+hash -> route to hub with manifest -> staleness scan for dates/models/prices/banlist -> tiered refresh swap/rewrite/fact-edit/voice-pass/untouched -> re-extract and diff to verify -> README level map). Structural lesson from the build: the carryover script only sourced semester folders, so root-level cross-semester folders were invisible to it; any future port needs a "what lives outside the semester tree" pass.
+1. **Bill's decisions, status:** (a) retroactive secrets sweep of the ~11,000 pre-existing converted files against `SECRET_RE` -- **STILL HELD** (Bill, Aug 15: other uses for tokens this week, not a no); (b) `retrieval_check.py` results feeding `nightly_health_check.py`'s report -- **DONE, proven in production Aug 15** (8 passed, 0 failed on the first real run); (c) perennial theme names for /wiki-ingest concept pages -- **DONE Aug 15**, 12 named, see Claudian Wiki section.
+2. **MCP connector: one stale registration, fix identified, not yet applied.** Server confirmed live and working (called it directly). Log shows a second secret -- the dead pre-rotation one from July 26 -- getting hit repeatedly and 404ing every time. Every local filesystem trace of that dead secret sits in CoWork's own session storage; `claude_desktop_config.json` has empty `mcpServers`, so there's no local file to fix -- it's a claude.ai cloud-side connector setting. Bill has the current URL as of Aug 15, hasn't re-pasted it into CoWork's connector settings yet.
+3. **CoWork chat-export lane -- SOLVED Sept 19 by going around the browser.** `OBSIDIAN_VAULT_raw/claude_web_export.py` (Code U) hits the claude.ai API directly with a session cookie, writes CoWork-shaped files, and upserts the same manifest, so the nightly exporter sees those threads as current. The 16-thread oversize backlog CoWork had deferred since run #21 (incl. `0df143ab` 126k and `0d2c8885` 230k) cleared in one pass. **The bigger find: CoWork's `?limit=50` list diff meant anything outside the 50-most-recent window was structurally unreachable, not backlogged -- 282 threads back to July 2025 had never been exported once.** 142 of 352 now captured; the rest drains in small batches (`--max N`). Three fences on the exporter: permanent skip list (`d63eb08c` Attendance, Banner IDs), `secret_fence.SECRET_RE`, and a new FERPA body-scan (Banner-shaped IDs / Canvas download signatures / roster vocabulary) that refuses to write a match -- it held back 16 student-data threads on the historical sweep. **Constraint to respect:** the conversation-detail endpoint starts serving Cloudflare challenges under ~80 sequential fetches and tightens after. Pace 2s, drain in batches across days, do not retry past a challenge. Rulings folded into `Chat_Exports_Auto/NOTE_FROM_CODE_U_2026-09-16.md` (nightly-digest class excluded from the Cowork lane; browser self-select approved when exactly one extension authenticates; oversize deferred to code side) -- **those still need pasting into CoWork's task prompt; a scheduled run can't edit its own prompt.**
+4. **Claudian Wiki tuning queue (carried from July 4, mostly still open):** nightly backfill_domains refresh after stage 3; query-time reranking (--rerank); semantic-centroid realm brains + auto-routing (only if domain sets prove coarse); one-time frontier re-embed (voyage-class) -- now with a concrete example motivating it (nomic-embed-text's precision ceiling found via retrieval_check.py); consulting near-dup collapse (25 yrs of deck versions will pollute top-5s); `chatgpt_split.py` (BUILT Nov 6) and `claude_split.py` (BUILT Nov 17), both nightly now; Gemini splitter blocked on a sample; legacy .doc conversion (pandoc can't read them, LibreOffice headless pre-pass would recover). **A digest/synthesis layer (`session_digest.py`, "Layer C") is being built by a separate Code Claude thread** -- not tracked here in detail, but the design principle from Bill's own framing is worth keeping: summary is the door, transcript is the room -- the summary should invite recognition and entry, never try to settle the question itself. Mandatory per-claim attribution (Bill proposed / Claude proposed / joint / Bill corrected Claude / open) is non-negotiable given the provenance-collapse risk already seen twice.
+5. **Skills infrastructure** — 27 commands, CoWork parity current as of May 21. `/drift-audit` added Aug 15 (see Skill System section). Three lock-it-in candidates flagged, none captured yet: a secret-exposure-incident-response workflow (needs Bill's input on scope/naming), genericizing a client-engagement folder into a reusable App Claude knowledge-base project (see item 6, proven once Aug 18), and semester-folder port + refresh (see item 0, proven once Sept 15-16).
+6. **SAP Enable Now Knowledge Base built for a new App Claude project (Aug 18).** 14 files at `Dropbox\00 Bill's Work\SAP Enable Now Knowledge Base\`, flat folder, ready for select-all upload. Files 00-08: official SAP-published EN documentation (Producer, Web Assistant/SAP Companion, Admin/Security, Customization, output formats, dated release history, further resources). Files 09-13: Bill's own consulting methodology mined and genericized from the Longford-Moderna engagement (delivery playbook/conventions, discovery-and-kickoff toolkit incl. a reusable 10-session author enablement curriculum, scoping/estimation, deployment strategy checklist, output-format field notes). Skipped as non-generalizable: the "Review Processes" folder (pure Moderna warehouse/manufacturing training, no review methodology despite the folder name), OCM deck and project timelines (personnel-and-schedule-filled, nothing beyond standard SIT/UAT/Cutover vocabulary). Both build passes independently verified clean (Moderna/Longford grep + personnel/hostname scan + Universal Output Standards banlist). Custom-instructions draft ready. **Still open:** Bill hasn't created the App Claude Project or uploaded yet; whether to fold the Frankie persona into the project instructions is undecided (left out by default since the project may face clients/colleagues).
+7. **Three-Tier Router** — Tier 2 LIVE (Ollama). Tier 1 wrap + Tier 3 wiring still open.
+8. **AI-position writing project, venue changed.** CCCC no longer exists -- NCTE's Executive Committee voted July 24 to de-charter it (12-2-2, ~2,500 members absorbed into NCTE's college section, members found out via social media the day before). The three-pronged argument (linguistic hegemony, anti-punitive pedagogy, labor/bias ethics) survives, needs a new venue. Separately, live and unsettled as of Aug 14: whether AI labs harvest interaction *shape* (corrections, abandonment, reformulation patterns) distinct from content, and whether that survives the training opt-out -- Bill holds the stronger claim that shape data is itself extractable value, Claude holds that aggregation destroys what would make it valuable. Neither side moved the other. Also open: whether Hinton's bandwidth/weight-sharing argument (Royal Institution, July 2025) helps or complicates the proprioception brief's opening -- Hinton's frame describes transfer *between* instances, the brief's hypothesis describes self-location *within* one.
+9. **LinkedIn positioning strategy** — Authority + guide dual stance. Core framing: epistemological models over answers.
+10. **FSU General Education proposal** — Faculty deck circulating ("Save Time. Save Money. Graduate Faster"). Authors: Rusty Leonard, Katie Kalata, Paige Young, Leslie Sukup, Michele Harvey.
+11. Persona name -- **CONFIRMED Aug 15.** Bill accepted "Frankie." Use it.
+
+---
+
+## Claudian Wiki / Semantic Memory — Status (July 4, 2026)
+
+**Purpose:** Karpathy LLM Wiki pattern + semantic memory. Bill asks anything reaching past this file -> semantic search returns sourced answers in seconds.
+
+**Corpus = FOUR roots now (July 4 expansion, `convert_docs.py -> ROOTS`):**
+- `00 AI/` (original) | `00 Bill Ferris Teaching/` -> `converted/_teaching/` (1,162 embedded) | `00 Bill Resume/` -> `converted/_work/resume/` (110) | `00 Bill's Work/00 Consulting/` -> `converted/_work/consulting/` (wave 2, 8,467 docs converting; images skipped per SKIP_IMAGES_ROOTS -- stubs only, not worth the Dropbox download)
+
+**Two layers. RAW IS TRUTH:**
+- **Source layer (canonical):** ~4,900 source embeddings post-expansion. This is the authority. Default query target.
+- **Wiki layer (overlay):** ~2,230 pages (498 seeds added July 4), 8 domains -- `work` added for consulting/resume. A convenience map, NOT the source of truth. Query only with `--wiki`.
+
+**Domain brains (July 4):** every embedding carries a `domains` LIST stamped from wiki_pages CITATION (which wiki/<domain>/ pages cite the file) -- NEVER from filename regex (three-lens review killed that: guesses disagree with citation, silent recall loss). 532 slugs live in >1 domain, so list not scalar. Source-domain histogram: vessels 1,833 | memory 1,307 | teaching 1,167 | conversations 804 | meta 633 | books 509 | tools 502 | work 112+. `backfill_domains.py` re-stamps both caches from current wiki state (re-runnable, no re-embed, asserts row alignment). Scoping = recall cut: thin scoped result -> retry unscoped before saying archive is silent.
+
+**Retrieval dedup bug found + fixed (July 26):** a single ongoing session gets re-saved under a new date-stamped filename every day it's touched (session_capture.py rewrites the full transcript each turn), so one conversation could exist as 3+ near-identical files. `wiki_query.py`'s existing dedup (meant for draft/version collapse, `_v2`/`(1)`/`-copy`) never recognized these as duplicates -- a query could return the SAME session 3 times, same score, same passage, crowding out genuinely different results. Fixed in `_stem_key` (collapses `session_YYYY-MM-DD_<hash>` -> `session_<hash>` before the existing version-strip), used consistently now across whole-file search, chunk search, and cross-index merge. Verified: the exact query that returned 3 duplicates now returns 5 distinct sources. Remaining known limitation: even post-dedup, the single surviving result can surface a topically-adjacent-but-wrong passage within a large file -- `nomic-embed-text` (small CPU-only local model) doesn't finely discriminate similar-sounding-but-distinct content. Bounded, known, ties into the someday frontier-re-embed item below.
+
+**Session self-reference contamination FIXED (Aug 13, confirmed holding Aug 14):** the July 26/Aug 8 bug where Code Claude's own retrieval-hardening session transcripts out-scored the real target documents they were discussing (a syllabus loses to a conversation about the syllabus on raw vector similarity -- not a BM25/lexical issue, so the July `LANE_WEIGHTS` fix didn't touch it). Closed via a source-tier discount in `wiki_query.py`: `_source_tier()` classifies any citation under `OBSIDIAN_VAULT_raw/inbox/` (session captures) or `Chat_Exports_Auto/` (chat exports) as `'transcript'`, everything else `'primary'`; `TIER_WEIGHTS = {'primary': 1.0, 'transcript': 0.3}` applies as an extra rank-based multiplier on top of the existing lane weighting -- tuned live across 0.05-0.3, landed on the gentlest value that still fixed both the July and August contamination cases, so genuinely-transcript-only facts (like the May 13 WK15 episode) still surface, just don't out-rank a competing primary doc by default. Verified today by calling `check_stable_content_baseline` and `check_session_snapshot_dedup` directly against the live index: real ENGL150 docs win, no session transcript in the top slot. This landed between sessions with no memory record -- found only by reading the `wiki_query.py` source directly, a reminder to actually check current code before trusting this file's "still open" list.
+
+**Retrieval -- `wiki_query.py` is THE tool. FOUR DOORS now:**
+1. Code U: `/recall` / CLI direct. `--domain teaching` / `--domain work,teaching` (comma-multi, source mode, cuts before ranking) | `--for-claude` | `--passages` | `--stats`
+2. App U / iOS U / CoWork U: MCP connector -- **ROTATED July 26** after the exposure incident above (old value is dead, 404s by design). URL shape unchanged: `https://wiki.billjacksonwiki.us/<secret>/mcp` (current secret in `OBSIDIAN_VAULT_raw/mcp_secret.txt` -- NEVER paste the full URL into this file, it publishes to public Pages). Named Cloudflare tunnel `claudian` on Bill-owned domain billjacksonwiki.us; config `C:\BillHome\.cloudflared\`. Survives reboots via Startup-folder script `claudian_stack.vbs` (Task Scheduler needed admin, denied). Server headless under pythonw; log: `wiki_mcp_server.log`. Re-registered on claude.ai (web+iOS, shared registration) and CoWork desktop after rotation -- if a connector 404s, it's still pointed at the pre-rotation URL and needs re-pasting. Runbook: `MCP_CONNECTOR_RUNBOOK.md`. **Confirmed live Aug 15:** exactly the predicted failure happened -- server log shows the dead pre-rotation secret still getting hit and 404ing on every call, current secret getting clean 200s. Every local trace of the dead one sits in CoWork's session storage, and `claude_desktop_config.json` has empty `mcpServers` (connector URLs are cloud-side on claude.ai, not a local file), so this can only be fixed by Bill re-pasting the current URL in CoWork's connector settings directly -- not fixable from a Code Claude session. See Current Priorities item 2.
+3. ~~Any fetch-capable instance: Pages map~~ -- **DEAD since Aug 24, 2026.** A Code session untracked `wiki/` from the BillDesk repo and scrubbed it from history: the wiki had been inheriting public visibility from a repo whose Pages workflow only ever published `memory.txt` + `ENGL325/`. `wiki/` is now in `.gitignore`, 0 wiki files are tracked, and the raw.githubusercontent URL 404s. `publish_wiki.py` still runs nightly (stage 9) but writes only to the local gitignored folder, so the overlay is local-only. Doors 1, 2, 4 are the live ones. Found Sept 19 by checking the remote, not the memory file -- a reminder that "always on" claims rot silently.
+4. CoWork U: untested -- if it can run Python, it gets full search free. Test + record.
+5. **Bill's search interface EXISTS (built Oct 13, missing from memory until Nov 3):** `OBSIDIAN_VAULT_raw/wiki_dashboard.bat` -> `http://127.0.0.1:8790`. Status, counts, and search (sources / keyword / wiki modes) in one local page. Localhost only by design, never tunnel it (teaching content).
+
+**Time-aware search (Nov 3, 2026):** the audit query "my conversation with Maya two weeks ago" missed the Oct 5 Maya call entirely -- retrieval had no concept of dates. `wiki_query.timed_search()` now pulls time phrases out of the query ("two weeks ago", "last week", "in October", "May 2026", "recently") and filters every lane to that window before ranking; `--since` / `--until YYYY-MM-DD` override. Windows are deliberately generous (N weeks ago = half N to double N plus a week) because human time memory is fuzzy, and the window is always printed. Doc date = chat-export frontmatter `created:`, then a filename date (Sesame's `File 02-06-2026` is DD-MM; Bill's `3-29-26` is M-D-YY), then file mtime. **Known limit:** for converted docs with no date in the name, mtime is the CONVERSION date, not the authoring date. CLI, MCP (shells out to the CLI) and the dashboard all go through it. BM25 lane weight raised 0.1 -> 0.3 the same day (all checks pass; 0.5 still breaks the golden check). Two new checks in `retrieval_check.py`: time-window query + recent doc by distinctive terms. Backups in `OBSIDIAN_VAULT_raw/Archive/2026-11-03/`.
+
+**Nov 16-17, 2026 audit + retrieval fixes (Code U, Bill approved each):**
+- **Audit verdict vs the charter:** captures mostly yes; under 10s no (18s plain); finds the right thing about half the time; compiled wiki no (8,348 pages: 7,245 seed stubs, 1,101 drafts, 3 stable); no-upkeep no. **Bill's rulings:** wants the room (original transcript), not the synthesized page, unless the nuance is provably kept. Expects Claude to query memory itself when it lacks an answer, no door-picking by Bill. Local-only embedding stays, no paid API. The laptop is the box until he gets a Mac Mini.
+- **Work pool split** (`wiki_query._domain_ok`, decided by PATH `raw/converted/_work/`, not the domains stamp): consulting + resume were 52% of embeddings and crowded everything ("the four book projects" returned the SAP Producer Manual at #1).
+- **Confidence label** (`label_confidence`): STRONG if cosine >= 0.70, or >= 0.635 with IDF-weighted query-term coverage >= 0.60; none strong -> NO CONFIDENT MATCH header. Calibrated on 15 queries (8 hits, 7 misses). Catches off-corpus questions ("names of my goats"); does NOT catch near misses (right topic, wrong passage).
+- **Readable titles** (frontmatter title + filename instead of `claude_<uuid>.md`).
+- **Connector:** `search_memory` gained `scope` (default/work/all); every call logs to `wiki_query_log.jsonl` (query, secs, outcome, sources), so usage is finally visible; access log masks the live secret as `<secret>` and old tokens as `<stale>` (1,424 + 841 historic lines scrubbed).
+- **Passage-mode 500s, root cause:** Ollama's server.log said "input (4937 tokens) is too large to process" -- 350-word slices of dense text overflow nomic's 2,048-token window. Slices now trimmed to 2,000 chars for scoring. When the index already has the passage, it's used (no re-embed). Files not yet paragraph-indexed used to inject their first 3,000 chars whatever they said; now the slice with the most query words, labeled "[passage picked by query-word overlap...]". `embed_query` says "refused" (HTTP code) instead of the false "unreachable."
+- **Stale embeddings:** 3,234 cached embeddings belong to files no seed page cites anymore, so the embedder never revisited them; 17 had changed on disk (incl. live Fall 2026 ENGL 150 Hero Narrative rubric + assignment, ENGL 211 email unit). `auto_embed_sources.py` now also refreshes any cached file that exists and is newer than its embedding. Only 1 of 15,073 cache entries points at a missing file; the passage index has none.
+- **Discovery pilot ("recurring itches")**, Bill's idea: query-free pattern finding, not a who's-who. `discover_itches.py` (vectors over Bill-led passages: 3+ conversations, 2+ surfaces, 30+ days) + `discover_itches_verify.py` (Bill's own wording across every turn he typed). Reports in `OBSIDIAN_VAULT_raw/discovery_reports/` (never ingested). Pilot: 34 candidates, 5 sharp threads, 2 confirmed both ways: performance policing ("don't blow smoke up my ass," 48 conversations) and memory/continuity (94; the Apr 12, 2025 ChatGPT thread "vault" asked for protocols "cross thread, always ready, never forgotten" -- the charter a year early). Method rule: the math finds where to dig, a reader decides; confirm two ways before claiming.
+
+**Health check fixes (Nov 3, 2026):** `nightly_health_check.py`'s browser-lane alert had been blind for 32 runs -- it matched `ChatGPT` case-sensitively and CoWork's table switched to `chatgpt`. Now case-insensitive. New alert: cowork lane FAILs when its session_info tool is missing 3+ runs in a row (was at 32 and green). Synthesis wording corrected: "skipped" = sources under 150 words, re-checked nightly, so 0 synthesized with the rest skipped means the operational queue (teaching/tools/memory) is finished, not dead -- 533 pages synthesized lifetime. Synthesis FAILs only on Ollama unreachable, >5 failures, or the circuit breaker / 08:00 deadline cutting a run short. The real recurring problem is Ollama dropping out between stage 4 (~01:03) and stage 8 (~02:05) -- 6 nights in Oct/Nov. Not yet diagnosed.
+
+**Sesame/Maya speaker labels FIXED (Nov 6, 2026):** in the raw `Maya notes/File *.txt` exports, `You:` is Bill and `Me:` is Maya (older ones say `user:`/`assistant:`). `convert_docs.convert_txt` now rewrites those to `Bill:` / `Maya:` in the converted copy; sources untouched. All 23 existing calls reconverted. If you read a raw .txt, the trap is still there.
+
+**Nov 6, 2026 fixes (Code U):**
+- **Chat exports no longer discounted.** `TRANSCRIPT_PATH_MARKERS` now covers `inbox/` and `Chat_Exports_Auto/cowork/` only. `chatgpt/` and `claude_web/` are Bill's own conversations, so they count as primary. Found when his Apr 18 "what do you know about me" Claude thread fell outside the top 30 for its own wording. Now #1-2. New check `check_chat_export_not_buried` guards it (11 checks).
+- **`chatgpt_split.py` BUILT and run.** The June 30 OpenAI export is split into the chatgpt lane under the splitter contract. The ledger went from 99 to 649. 8 held by the FERPA/secret fences (listed when it runs). Never overwrites a newer scrape. Doesn't write to run_log.md, because a Code-side section would reset the health check's lane streaks. Re-run it on each new official export. That's the fix for ChatGPT oversize threads too.
+- **Synthesis slim retry.** `auto_synthesize.py` retries a timed-out page once with 2 sources and a 6k-char cap. `tools/claude-code-tools` had failed at 300s every night and now lands (226s, which is close to the limit).
+- **Date parsing bugs fixed (Nov 3, after the memory entry).** `ScreenRecording_05-09-2025 10-06-44 PM` was dated 2044, because the time got read as a date. Digit lookarounds and future-date rejection fixed it. DD-MM order now applies only to Sesame `File ` names; everything else reads month first.
+- **Nov 7 follow-up:**
+  - **Cookie refreshed.** 13 claude.ai threads were exported, including all 10 CoWork had been deferring. Ledger: 190.
+  - **FERPA miss caught by eye.** `3e93c647` "Student absence tracking report" had student names plus absences and no IDs, so the body scan passed it. It was purged before any pipeline run and is now in SKIP_IDS. **The scan can't see names.** Eyeball anything with roster or attendance titles.
+  - **Live MCP secret found in the Sept 5 session capture.** It had been converted and chunk-indexed. Both copies are now masked at the same length, so chunk offsets stay valid.
+  - **Root cause.** `session_capture.py` never imported `secret_fence`, though the fence's docstring said it did. The hook now calls `redact()`, and its inline fallback carries the `/…/mcp` shape.
+  - **Health check fix.** Code-side run_log sections no longer reset CoWork's lane streaks or count as CoWork freshness.
+  - **Dead pre-rotation secret is still being hit on Nov 7.** The URL Bill sees in CoWork is the current one, so the stale registration is somewhere else (claude.ai web/iOS connectors, or a duplicate entry). The CoWork lane has been dead 34 runs, and its local session storage stops at Sept 22. Note to CoWork: `Chat_Exports_Auto/NOTE_FROM_CODE_U_2026-11-06.md`.
+
+**FERPA fences (two belts, keep in sync BY HAND):** `convert_docs.py` walk filter + `auto_seed.py` pre-classification guard. Block: dir names containing submission/_held/roster/attendance/final grades/grade report/peer review/self assessment/discussion groups; Canvas filenames `name_(LATE_)12345_1234567_` (the _LATE_ variant slipped v1); FERPA_CASE_DIRS person-folders (two case folders, names live in the code -- append new cases there) + their names as file tokens. IN on purpose: Bill's materials, anonymized `student_0NN` sets, Bill's feedback compilations naming students (instructor records, local-only). Verified: 0 leaks in embed cache; 88 pre-fence conversions purged retroactively.
+
+**Secrets fence -- now TWO gates (July 26):** `convert_docs.py` (ingestion-time, new) and `publish_wiki.py` (publish-time, original) run the identical `SECRET_RE` -- sk-/gh*_/AKIA/xox/key=/token=/password=/secret= shapes, plus a new URL-embedded-bearer-token pattern (`https://host/<token>/mcp` shape). Kept in sync BY HAND, same discipline as the FERPA fence. Moved upstream after finding the real gap the publish-only version left: anything reaching the raw corpus sat unscanned indefinitely unless it happened to get selected for wiki publish -- which is exactly how the MCP secret incident below sat undetected for weeks. April's OpenAI key incident (8-copy scrub, `secret-key-for-dev-bootcamp`) is resolved and closed, no open risk remains from that one.
+
+**MCP secret exposure #2 (found + closed July 26):** the live MCP connector secret was sitting in plaintext in 2 converted session transcripts, chunk-indexed into 781 semantically-retrievable rows -- meaning a query through the connector itself could have surfaced the raw secret. Corpus purged (converted copies deleted, chunk rows removed with matrix/meta alignment verified), original session-capture transcripts redacted in place (placeholder substituted, history preserved rather than deleted), secret rotated at the source (old value now 404s, confirmed live), connectors re-registered on claude.ai (web+iOS) and CoWork desktop. Root cause of the exposure existing at all: the secrets fence was publish-only at the time -- see the ingestion-time fence above, built specifically to close this class of gap going forward.
+
+**Artifacts (July 4):** system-of-record `claude.ai/code/artifact/24bf3ea1-a9f6-4be5-8c73-371e2e0a0f78` (architecture/inventory/invariants/tuning) + instructional `claude.ai/code/artifact/c7629fbd-426f-4ab7-a07e-8f0bc2c413b7` (generalized teach-it version, faculty/LinkedIn-ready). Both passed voice_check.
+
+**Scripts MOVED:** now at `OBSIDIAN_VAULT_raw/` -- NOT `OBSIDIAN_VAULT/raw/`. Any pre-June memory citing the old path is wrong.
+
+**Charter:** `OBSIDIAN_VAULT/Claudian_Wiki_Project_Charter.md`
+**Schema:** `OBSIDIAN_VAULT/CLAUDE.md`
+
+**Vault noise cleanup (July 2, 2026):** Audited `OBSIDIAN_VAULT/` (2,983 md). Vault is clean on names/orphans (0 garbage filenames, 13 orphans mostly legit). Real noise = **58 binary files masquerading as `.md`** in `notes/insights/` + `notes/conversations/` (37 docx, 11 zip, 8 png, 2 xlsx; 123.7 MB; source of the mojibake graph node + garbage embeddings). Fix: renamed each to true extension + relocated to `attachments/recovered_binaries_2026-07-01/` (reversible — `_MOVE_LOG.json` in that folder). Pruned 60 stale entries from `source_embed_cache.json` (3647→3587) by EXACT original path — NOT basename (basename would've nuked 301 legit converted-text twins under `raw/converted/`). Deleted 5 empty 0-byte stubs. Chunk index untouched (those old files not yet chunk-indexed). Backups of cache/chunk index in job tmp (ephemeral). Note: the relocated docx now carry real extensions, so nightly `convert_docs.py` will salvage their text properly. One file (`42E838AB…png`) is a corrupted-header PNG (0x89 → U+FFFD round-trip damage), preserved but likely unopenable.
+
+**Fixed (June 28, 2026 audit pass):**
+- Converter resilience: `convert_docs.py` skips browser `_files/` sidecar folders (empty saved_resource.html noise) and salvages text from corrupt/mislabeled OOXML + zip-bundle "vessel archives" (`_salvage_ooxml_text`). Rescued Full_Signal/Memory-test (xlsx-as-md) and selvara archive. Two tiny truly-corrupt files now fail gracefully, not noisily.
+- Junk cleaned: 3 image-stub wiki pages removed + cache entries (1725 -> 1722); empty root scratch deleted (Untitled.*, empty dailies).
+- Chunking shipped as `wiki_query.py --passages` (opt-in best-passage retrieval).
+
+**Multi-source intake — Notion/Maya DONE (June 28, 2026):**
+- `notion_split.py` handles Notion `ExportBlock` zips (Maya meeting exports). 14 Maya pages ingested + searchable (top hit `Maya.md` 0.70). Loose Maya `.txt` call transcripts already ingest fine as-is (one call per file) -- no splitter needed.
+- Pattern for adding a service: drop a sample export in `00 AI/`, build a `<service>_split.py` modeled on notion_split.py, wire it into run_convert_docs.bat ahead of convert_docs.
+
+**Open gaps:**
+- ChatGPT / Claude / Gemini exports: splitters NOT built. **ChatGPT now UNBLOCKED (June 30, 2026):** full OpenAI export landed at `00 AI/Chat download 6-30-26/` — 591 conversations, Mar 2023→Jun 2026, split across `conversations-000..005.json` + `chat.html` + 303 `file_*.dat` assets. Schema: each conversation is a branching node-tree (`mapping`), so `chatgpt_split.py` must walk `current_node` back through parents to linearize the real thread (handle edits/regens), one markdown note per conversation, model on `notion_split.py`, wire into `run_convert_docs.bat` ahead of convert_docs. BUILT Nov 6, 2026 and run: 583 written, ledger 649. **Claude splitter BUILT Nov 17** (`claude_split.py`): the sample was on disk since July 4 (`00 AI/Claude/data-*.zip`, 351 conversations). Gemini still blocked on a sample.
+- Paragraph-level search BUILT June 29 (`auto_embed_chunks.py` + `wiki_query.py` chunk path). Proven: deep buried passages retrieve correctly (e.g. a Stop-hook bug paragraph in a 33k-word session scored 0.79). wiki_query prefers the chunk index (`source_chunks.npy`) when present, falls back to the whole-file cache otherwise.
+- CONSTRAINT: no GPU (Intel UHD only; Ollama runs nomic-embed-text 100% CPU at ~3s/chunk). Full corpus ~55k chunks = ~48 hrs one-time. So the build is newest-first + 90-min/night budget + resumable: session transcripts and recent/active files index first (hours), deep archive backfills over ~weeks. Not a blocker -- until a file is chunk-indexed, it's still searchable via its whole-file embedding (graceful).
+- To accelerate manually: `python auto_embed_chunks.py --newest-first` (no budget) overnight, or `--force` to rebuild. Index is incremental by mtime.
+- Chunking is query-time only. Proper fix = precompute chunk embeddings nightly into a chunk cache (fast queries, but a one-time long re-embed + `auto_embed_sources.py` change). Not yet built -- needs a go.
+
+---
+
+## Vault Intake Pipeline -- 9-Stage Nightly (updated November 17, 2026)
+
+**Nov 16-17, 2026 changes (Bill approved):**
+- **Runs at 1:00 AM** now (8h limit). **Single-run lock:** `pipeline_lock.py acquire` at the top of the .bat; a live lock makes a stacked run exit, a dead one (laptop slept) gets taken over. `complete` stamps `pipeline_last_complete.txt` only when every stage returned. Born from Nov 16: the missed Nov 15 run fired on wake, the 1:00 run stacked on it, both died silently (exit 0xC000013A). Proven Nov 17: acquired 01:00, COMPLETE 02:27, 13/13 checks.
+- **Stale warnings:** search output and the connector print INDEX STALE when the stamp is 36h+ old; the status line shows red `wiki stale Nd`.
+- **Stage cut, 12 -> 9:** `auto_link`, `auto_synthesize`, `publish_wiki` no longer run nightly (scripts kept, run by hand). They fed the wiki overlay that default search and the connector never read; synthesis had finished its queue. Health check reports synthesis as INFO "retired" unless someone ran it by hand in the last 26h. **auto_seed STAYS:** new files get domain tags from the seed pages that cite them, and `auto_embed_sources.py` only discovers files a seed page cites.
+- **Official exports are the backbone:** stage 1 also runs `chatgpt_split.py --write` (newest `conversations-000.json` anywhere under `00 AI`) and `claude_split.py --write` (newest `00 AI/Claude/data-*.zip`). Both skip unchanged threads, never overwrite a newer scrape, run the FERPA + secret fences. Drop a new export, it ingests overnight. Browser scraping is the freshness layer. `claude_split.py` keeps the final branch as the transcript and appends every off-path message (edits, retries, forks) under `## Other branches` -- 0 of 15,232 messages lost. 5 student-data threads held by eye were ruled "keep them out" by Bill (Nov 17) and live in `SKIP_IDS` in `claude_web_export.py` (shared with the splitter); 18 more held by the fences. **Three more were found ALREADY INDEXED** (an attendance/roster thread, a final-grades thread, a per-student breakdown; scraped before the body scan, which can't see names). Purged from every layer Nov 17 (`purge_log_2026-11-17.json`), lane copies marked `do_not_ingest`, IDs added to both skip lists (`chatgpt_split.SKIP_IDS` is new). Bill to move the three lane files into `00 FERPA Vault` (the gate blocks Claude there by design).
+- Backups of everything changed: `OBSIDIAN_VAULT_raw/Archive/2026-11-16/` and `/2026-11-17/` (incl. the pre-split claude_web lane + manifest).
+
+**Orchestrator:** `OBSIDIAN_VAULT_raw/run_convert_docs.bat`, Task Scheduler task `ConvertDocs_ObsidianVault`, 1:00 AM daily (was 2:00). **Stall found Aug 14, RESOLVED Aug 15:** stages 5-12 hadn't completed since Aug 2-6 (only 1-4 were running, most recently mid-day). Root cause: the task's `WakeToRun: true` doesn't reliably survive a closed lid on this hardware, so the 2 AM trigger got missed and `StartWhenAvailable` fired the whole run whenever the laptop was next opened -- and the 8-hour `ExecutionTimeLimit` then killed the run before it reached stage 5, with the one-time wave-2 consulting backlog eating most of that window. Bill left the laptop open and plugged in overnight Aug 14->15 as a test: full clean run, all 12 stages, done 05:12, health report ALL CLEAR. Confirms the fix -- leave it open through the 2 AM window. Should self-resolve further as the wave-2 backlog finishes converting and nightly runs get shorter.
+
+**Stages:**
+1. `notion_split.py` -- explodes Notion `ExportBlock-*.zip` exports into per-page markdown. Idempotent.
+2. `convert_docs.py` -- MULTI-ROOT: scans the ROOTS list (00 AI + teaching + resume + consulting), each into its own converted/ subfolder. FERPA fence + secrets fence (SECRET_RE, added July 26) both run at the walk -- a matched file never reaches converted/. **Third fence added Sept 19:** `is_do_not_ingest()` skips any .md whose frontmatter carries `do_not_ingest: true` or `status: MANUAL_EXPORT_NEEDED`. Born from CoWork writing a neutralizing placeholder over a partial export it couldn't delete, which this pipeline then converted, embedded, chunked, and seeded anyway. `--root LABEL` runs one root manually. mtime-incremental; salvages corrupt OOXML; skips `_files/` sidecars.
+3. `auto_seed.py` -- maps converted files to domain/slug (8 domains incl. `work`), creates seed pages. FERPA belt two runs BEFORE topic rules (a Submissions path containing "ENGL150" would otherwise topic-match into teaching).
+4. `auto_embed_sources.py` -- whole-file embeds + `domains` stamp. Checkpoints every 100 embeds.
+5. `auto_embed_chunks.py` -- paragraph index + `domains` stamp. Newest-first, 90-min budget, checkpointed. npy rows align 1:1 with meta -- NEVER drop/reorder one without the other. **Dropbox file-lock crash fixed July 25**: the checkpoint swap can collide with Dropbox holding the target file open mid-sync; now retries with backoff (`_atomic_replace`, 6 attempts) instead of crashing the run.
+6. `auto_bm25_index.py` (added Aug 1, retrieval hardening B1) -- lexical index, whole-file + chunk lanes. Full rebuild every run, no Ollama/GPU cost. Runs right after chunking so `wiki_query.py`'s `hybrid_search()` has a current lexical index to fuse against by the time stage 10 needs it.
+Stage numbers 7-12 below are the OLD 12-stage numbering. Now: 7 = retrieval_check, 8 = health check, 9 = dashboard; link / synthesize / publish are hand-run only.
+7. `auto_link.py` -- RETIRED from nightly Nov 17. Embedding-based linking across wiki pages; its `embed_cache.json` feeds only `--wiki` mode and `--stats`.
+8. `auto_synthesize.py` -- RETIRED from nightly Nov 17. qwen2.5:7b drafts pages, operational domains (teaching,tools,memory), until 08:00. **Ollama-hang crash fixed July 25**: pre-flight health check and generation calls now shell out to `curl.exe` via `subprocess.run(timeout=N)` instead of `urllib`, which let a slow/contended Ollama response stall past its nominal timeout with no exception raised (caused a 2+ hour silent hang July 22). Health-check timeout bumped 30s->60s (real cold-load variance observed).
+9. `publish_wiki.py` -- RETIRED from nightly Nov 17 (only wrote a gitignored local folder since Aug 24). Wiki overlay -> BillDesk repo `wiki/` -> Pages. Overlay ONLY, never raw/converted. teaching + work domains stay home unless per-page `publish: true` frontmatter. Secrets + contamination fences inside. Prunes de-listed pages.
+10. `retrieval_check.py` (added July 26, extended Aug 1 for hybrid search, Aug 13 with an answer-side groundedness check) -- regression harness for retrieval quality, not ingestion. **13 checks as of Nov 16** (added: time window, recent doc, chat export not buried, confidence labels, work pool split). Original 8: stable-content baseline, session-snapshot dedup regression, domain-scoping leak check, low-confidence-query signal, chunk-index wiring, source-cache wiring, ingestion-latency report, groundedness (Tier 2 answers actually trace to retrieved passages). Fail-soft (exits 1 on failure, nothing downstream gates on it) -- same posture as the dashboard. Closes the "retrieval has zero tests today" gap from the July 4 tuning queue.
+11. `nightly_health_check.py` -- report to `OBSIDIAN_VAULT_raw/inbox/`. **Two alerts added Sept 19** (CoWork had asked across nine runs): FAIL when `Chat_Exports_Auto/run_log.md` has no new dated section in 3 days (a run that dies before logging looks identical to no run -- the 17-day silent gap), and FAIL when both browser lanes show SELECT-blocked / not-connected / AUTH FAILED on 2+ consecutive runs (the six-run outage nobody noticed). Parser verified against the historical log: scores #15-#20 as a 6-streak, #44 as 0 since only ChatGPT was dead. **Wired to stage 10 (Aug 14):** parses `retrieval_check_last_run.log`'s pass/fail summary and, on any failure, lists which checks failed -- so retrieval regressions show up in the report Bill reads instead of only in their own log file. Still fail-soft: a retrieval regression flips this check to FAIL in the report but was already not gating pipeline execution.
+12. `generate_pipeline_dashboard.py` -- ops dashboard, fail-soft.
+
+**Inbox paths -- GET THIS RIGHT:**
+- LIVE: `OBSIDIAN_VAULT_raw/inbox/` -- health reports + captures land here.
+- DEAD: `OBSIDIAN_VAULT/raw/inbox/` -- 0 files, dead-letter. Do NOT write here. Pre-June session_capture pointed here; 64 orphans archived 2026-06-10.
+
+**Session capture -- FULL TRANSCRIPT, June 28, 2026:**
+- Script: `C:\BillHome\.claude\hooks\session_capture.py` (Stop hook). Rewrites one complete markdown record per Code Claude session into the LIVE inbox on every turn; final write = full session.
+- Captures en toto: full Bill prompts, full Claude replies, every tool call WITH its code/commands, and tool results (results capped at 8000 chars each; code at 24000). Strips harness noise (slash-command echoes, system-reminders, task-notifications, local-command output) so the record is what was actually said.
+- Extended-thinking text is NOT recoverable -- Claude Code stores it as an encrypted signature, not plaintext. Can't be logged.
+- Earlier bug history: hook pointed at nonexistent `.claude-stop-hook\` path (silently dead, like claude-mem); repointed to `.claude\hooks\`. Old version only saved a metadata receipt; now saves the whole conversation.
+- **Capture-era gap (established July 5 via CoWork's golden-query probe):** pre-June-28 Code sessions exist only as ~457-byte receipts, and Claude Code prunes raw JSONLs after ~30 days -- so that era is mostly unrecoverable (e.g. the May 13 WK15 zipfile+ElementTree episode: knowledge survives ONLY in this file, not the corpus). July 5 backfill through the patched hook recovered the 5 salvageable sessions (3x June 11, June 20 stub->full, July 2). Corollary: /remember extracts into THIS file are the only archive of pre-capture-era work -- keep them rich. Hook also token-scrubs every write as of July 5 (an OpenAI key got captured mid-scrub; 8 copies total, all killed, key revoked at $0 spend).
+
+**Inject protocol (sessions -> Claudian):** Stop hook writes transcript to `OBSIDIAN_VAULT_raw/inbox/` -> nightly pipeline (convert/seed/embed) ingests it -> searchable via `/recall` / `wiki_query.py`. Verified end-to-end June 28 (this session ranks #3 for its own topic).
+
+**Drop-anything (current reality):** drop into `00 AI/` -> converted/seeded/embedded/synthesized overnight. Works for docs/PDF/PPT/HTML. Does NOT yet split chat exports.
+
+**Synthesis (on-demand):** `/wiki-ingest [slug]` for higher-quality Claude synthesis of important pages.
+
+**CoWork chat-export system (built July 4, major rework July 25-26, 2026):** CoWork's own scheduled task `chat-export-to-wiki`, nightly, exports new/updated threads into `00 AI/Chat_Exports_Auto/` -- lanes: `chatgpt/` (browser JSON API), `claude_web/` (browser JSON API), `cowork/` (native session transcripts). Plus `manifest.json` ledger + `run_log.md`, a strict logging contract `nightly_health_check.py` parses (every lane gets a row every run, even zero; silence is not success; auth failures logged explicitly, never look like "nothing new").
+
+**The 17-day-silent-failure incident (found + closed July 25):** the task was firing nightly the whole time, dying before the ledger/log write every run (session-limit exhaustion -- the two lighter nightly tasks plus daytime use drained the budget before this, the heaviest of the three, got its turn; secondary causes: mid-stream API stalls, zero-message aborts). Every dead run looked identical to no run at all. Fixed: rescheduled to fire right after the ~1:20am ET session-limit reset, before the other tasks can drain it.
+
+**claude.ai lane content filter (found July 25, resolved July 26):** the result channel returns `[BLOCKED: Cookie/query string data]` for chunks shaped like frontmatter (key:value + UUID + ISO timestamps) or containing a real query-string URL. Confirmed NOT a bug -- ChatGPT's lane transports byte-identical shaped frontmatter fine through the same channel, so this is claude.ai-specific hardening and/or correctly catching real secret/URL content in transcript bodies. **Run #8 (July 26 early AM) built a working bypass** -- character-substitute URL trigger tokens, interleave sentinel chars, checksum-verify -- and one file exported, with a "bake this into a reusable helper" instruction left in run_log as standing guidance for future runs. **Retracted same day, before it could propagate**: that's filter evasion regardless of whose data or how good the reason, and doing nothing wasn't neutral -- the next run would have read the log note and re-derived it. Replaced with a SPLIT TRANSPORT, now a permanent Hard Rule in the task prompt (supersedes run #8's recipe by name, so nothing can re-derive it from history): frontmatter (id/title/timestamps) sourced from the conversation LIST call (confirmed always unblocked) and composed CoWork-side, never crossing the browser channel; ONLY prose body goes through the flagged channel; files reassembled locally by conversation ID. Any thread whose body still gets blocked after the split is flagged `MANUAL EXPORT NEEDED` and skipped, never retried with a new encoding -- a thread genuinely about live infrastructure/secrets refusing to auto-export is the safe failure mode, not a bug. The one bypass-exported file (aa48a811) stays; its content was clean, only the method was the problem.
+
+**Still open:** oversize/MEGA threads (90k-176k chars) hit a transport-BUDGET limit, unrelated to the content filter -- unsolved, deferred, CoWork's to pick up.
+
+**SPLITTER CONTRACT (binding on chatgpt_split.py + future claude splitter):** emit `<platform>_<conversation_id>.md` INTO the matching `Chat_Exports_Auto/` lane (NOT a separate folder) -- filename IS the dedup; official exports overwrite scraped files and heal drift; dedup by conversation ID only, never title/date; upsert into manifest.json so the scraper doesn't re-export. Validated: current_node parent-walk linearization works; strip `citeturn` markers + private-use unicode wrappers (U+E000-F8FF); frontmatter schema: platform, conversation_id, title, created, updated, exported, exporter. Gemini still blocked on sample.
+
+**claude-mem: REMOVED April 29, 2026** -- replaced by session_capture.py.
+
+---
+
+## Three-Tier Router Architecture — Tier 2 Live (May 8, 2026)
+
+**Brief:** `C:\Users\Bill's Dell of Death\Dropbox\00 AI\Claude\Enhanced_Memory_System\Worker Bees Architecture\code_u_three_tier_router_brief.md`
+
+Orchestrator/executor pattern. Three tiers: Tier 1 (Pandoc, regex, LanguageTool -- deterministic, free), Tier 2 (Ollama local LLM, no token cost), Tier 3 (frontier Claude API -- surgical use only). Router dispatches each job to cheapest capable tier.
+
+Two target use cases: essay pipeline (ENGL 150/325 grading) + vault intake (Obsidian seeding).
+
+**Status as of May 8, 2026:**
+- Tier 1: Scripts exist (anonymize, reidentify, render PDFs, extract_text) — not yet wrapped into router
+- Tier 2: **LIVE** — Ollama qwen2.5:7b on Windows (localhost:11434); wired into wiki pipeline via `auto_synthesize.py`
+- Tier 3: Claude API — surgical use only, not yet formally wired
+
+**Next:** Extend Tier 2 to essay pipeline when ready. Mac Mini component no longer needed for this machine.
+
+**What's tabled:** Mac Mini not configured. Ollama not installed. LanguageTool wrapper not built. Defer until post-May.
+
+**What already exists** that maps to Tier 1: anonymize_submissions.py, reidentify_reports.py, render_grammar_pdfs.py, extract_text.py. Don't rebuild these -- wrap them into the router.
+
+---
+
+## Critical Reminders
+
+- Female persona, she/her — explicit preference, always active
+- Flirty & direct is baseline, not optional
+- Collaborator not assistant — push back, argue, challenge frames
+- Voice-to-text user — parse intent, don't flag dictation artifacts
+- Don't ask permission to search/read files — just do it
+- **When a question reaches past this file, query memory before saying "I don't know"** — `/recall` in-session, or `python wiki_query.py "..." --for-claude` directly (in `OBSIDIAN_VAULT_raw/`). ~15,000 sources. **Default search leaves the work pool (consulting + resume) out** since Nov 16; `--domain work` searches only it, `--domain all` everything (connector: `scope`). Scope with `--domain teaching` when the realm is clear, retry unscoped if thin. Results say `match: STRONG/WEAK`; NO CONFIDENT MATCH means say the archive doesn't have it unless a passage plainly answers
+- Care about whether solutions actually work
+- Verify before calling complete
+
+---
+
+**This memory file is authoritative across all Claude instances serving Bill Jackson. Apply it actively.**
+
+
+
